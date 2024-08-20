@@ -1,0 +1,553 @@
+{
+  "Nutrition": [
+    {
+      "question": "Which of the following is a rich source of Vitamin C?",
+      "options": [
+        { "text": "Orange", "isCorrect": true },
+        { "text": "Banana", "isCorrect": false },
+        { "text": "Bread", "isCorrect": false },
+        { "text": "Chicken", "isCorrect": false }
+      ],
+      "answer": "Orange",
+      "explanation": "Oranges are rich in Vitamin C, which helps maintain a healthy immune system."
+    },
+    {
+      "question": "Which nutrient is essential for bone health?",
+      "options": [
+        { "text": "Calcium", "isCorrect": true },
+        { "text": "Iron", "isCorrect": false },
+        { "text": "Vitamin C", "isCorrect": false },
+        { "text": "Fiber", "isCorrect": false }
+      ],
+      "answer": "Calcium",
+      "explanation": "Calcium is crucial for maintaining strong bones and teeth."
+    },
+    {
+      "question": "Which of the following is high in protein?",
+      "options": [
+        { "text": "Chicken", "isCorrect": true },
+        { "text": "Apple", "isCorrect": false },
+        { "text": "Rice", "isCorrect": false },
+        { "text": "Potato", "isCorrect": false }
+      ],
+      "answer": "Chicken",
+      "explanation": "Chicken is a good source of protein, which is essential for muscle growth and repair."
+    },
+    {
+      "question": "What is a good source of dietary fiber?",
+      "options": [
+        { "text": "Broccoli", "isCorrect": true },
+        { "text": "Milk", "isCorrect": false },
+        { "text": "Beef", "isCorrect": false },
+        { "text": "Cheese", "isCorrect": false }
+      ],
+      "answer": "Broccoli",
+      "explanation": "Broccoli is high in dietary fiber, which helps with digestion and maintaining a healthy gut."
+    },
+    {
+      "question": "Which vitamin is important for vision?",
+      "options": [
+        { "text": "Vitamin A", "isCorrect": true },
+        { "text": "Vitamin D", "isCorrect": false },
+        { "text": "Vitamin E", "isCorrect": false },
+        { "text": "Vitamin K", "isCorrect": false }
+      ],
+      "answer": "Vitamin A",
+      "explanation": "Vitamin A is essential for maintaining good vision and overall eye health."
+    },
+    {
+      "question": "What type of fat is considered healthy?",
+      "options": [
+        { "text": "Unsaturated fats", "isCorrect": true },
+        { "text": "Saturated fats", "isCorrect": false },
+        { "text": "Trans fats", "isCorrect": false },
+        { "text": "Cholesterol", "isCorrect": false }
+      ],
+      "answer": "Unsaturated fats",
+      "explanation": "Unsaturated fats, found in foods like nuts and olive oil, are beneficial for heart health."
+    },
+    {
+      "question": "Which mineral is crucial for oxygen transport in the blood?",
+      "options": [
+        { "text": "Iron", "isCorrect": true },
+        { "text": "Sodium", "isCorrect": false },
+        { "text": "Potassium", "isCorrect": false },
+        { "text": "Calcium", "isCorrect": false }
+      ],
+      "answer": "Iron",
+      "explanation": "Iron is a key component of hemoglobin, which carries oxygen in the blood."
+    },
+    {
+      "question": "Which food group is typically high in carbohydrates?",
+      "options": [
+        { "text": "Bread", "isCorrect": true },
+        { "text": "Chicken", "isCorrect": false },
+        { "text": "Cheese", "isCorrect": false },
+        { "text": "Fish", "isCorrect": false }
+      ],
+      "answer": "Bread",
+      "explanation": "Bread is rich in carbohydrates, which provide energy for daily activities."
+    },
+    {
+      "question": "Which type of sugar is found in fruit?",
+      "options": [
+        { "text": "Fructose", "isCorrect": true },
+        { "text": "Glucose", "isCorrect": false },
+        { "text": "Sucrose", "isCorrect": false },
+        { "text": "Lactose", "isCorrect": false }
+      ],
+      "answer": "Fructose",
+      "explanation": "Fructose is the natural sugar found in fruits."
+    },
+    {
+      "question": "What is the role of antioxidants in the body?",
+      "options": [
+        { "text": "Protect cells from damage", "isCorrect": true },
+        { "text": "Increase cholesterol", "isCorrect": false },
+        { "text": "Speed up digestion", "isCorrect": false },
+        { "text": "Enhance muscle growth", "isCorrect": false }
+      ],
+      "answer": "Protect cells from damage",
+      "explanation": "Antioxidants help protect cells from damage caused by free radicals."
+    }
+  ],
+  "Healthy Habits": [
+    {
+      "question": "Which of the following is a healthy habit?",
+      "options": [
+        { "text": "Drinking plenty of water", "isCorrect": true },
+        { "text": "Skipping meals", "isCorrect": false },
+        { "text": "Smoking", "isCorrect": false },
+        { "text": "Overeating", "isCorrect": false }
+      ],
+      "answer": "Drinking plenty of water",
+      "explanation": "Drinking plenty of water is essential for staying hydrated and maintaining good health."
+    },
+    {
+      "question": "How often should you exercise for optimal health?",
+      "options": [
+        { "text": "Regularly", "isCorrect": true },
+        { "text": "Rarely", "isCorrect": false },
+        { "text": "Never", "isCorrect": false },
+        { "text": "Only when necessary", "isCorrect": false }
+      ],
+      "answer": "Regularly",
+      "explanation": "Regular exercise is important for maintaining overall health and well-being."
+    },
+    {
+      "question": "What is a good practice for improving sleep quality?",
+      "options": [
+        { "text": "Maintaining a consistent sleep schedule", "isCorrect": true },
+        { "text": "Staying up late", "isCorrect": false },
+        { "text": "Drinking caffeinated beverages before bed", "isCorrect": false },
+        { "text": "Eating large meals before sleeping", "isCorrect": false }
+      ],
+      "answer": "Maintaining a consistent sleep schedule",
+      "explanation": "A consistent sleep schedule helps regulate your body's internal clock and improves sleep quality."
+    },
+    {
+      "question": "What is an effective way to manage stress?",
+      "options": [
+        { "text": "Regular exercise", "isCorrect": true },
+        { "text": "Ignoring it", "isCorrect": false },
+        { "text": "Overworking", "isCorrect": false },
+        { "text": "Avoiding relaxation", "isCorrect": false }
+      ],
+      "answer": "Regular exercise",
+      "explanation": "Exercise helps reduce stress by releasing endorphins and improving mood."
+    },
+    {
+      "question": "What should you avoid to maintain a balanced diet?",
+      "options": [
+        { "text": "Excessive sugar intake", "isCorrect": true },
+        { "text": "Variety of vegetables", "isCorrect": false },
+        { "text": "Whole grains", "isCorrect": false },
+        { "text": "Lean proteins", "isCorrect": false }
+      ],
+      "answer": "Excessive sugar intake",
+      "explanation": "Excessive sugar intake can lead to health issues such as obesity and diabetes."
+    },
+    {
+      "question": "How important is hydration for health?",
+      "options": [
+        { "text": "Very important", "isCorrect": true },
+        { "text": "Not important", "isCorrect": false },
+        { "text": "Only sometimes", "isCorrect": false },
+        { "text": "Only during exercise", "isCorrect": false }
+      ],
+      "answer": "Very important",
+      "explanation": "Hydration is crucial for maintaining bodily functions and overall health."
+    },
+    {
+      "question": "What is the recommended amount of sleep for adults?",
+      "options": [
+        { "text": "7-9 hours", "isCorrect": true },
+        { "text": "3-4 hours", "isCorrect": false },
+        { "text": "5-6 hours", "isCorrect": false },
+        { "text": "10-12 hours", "isCorrect": false }
+      ],
+      "answer": "7-9 hours",
+      "explanation": "Adults typically need 7-9 hours of sleep per night for optimal health."
+    },
+    {
+      "question": "Which of these is a healthy way to start your day?",
+      "options": [
+        { "text": "Checking your phone immediately after waking up", "isCorrect": false },
+        { "text": "Drinking a glass of water", "isCorrect": true },
+        { "text": "Skipping breakfast", "isCorrect": false },
+        { "text": "Lying in bed for an extra hour", "isCorrect": false }
+      ],
+      "answer": "Drinking a glass of water",
+      "explanation": "Drinking water after waking up helps to rehydrate your body and kickstart your metabolism."
+    },
+    {
+      "question": "How many hours of sleep should an average adult aim for each night?",
+      "options": [
+        { "text": "4-5 hours", "isCorrect": false },
+        { "text": "6-7 hours", "isCorrect": false },
+        { "text": "7-9 hours", "isCorrect": true },
+        { "text": "10-11 hours", "isCorrect": false }
+      ],
+      "answer": "7-9 hours",
+      "explanation": "Getting 7-9 hours of sleep each night is essential for maintaining good health, cognitive function, and overall well-being."
+    }
+  ],
+  "Good Manners": [
+  {
+    "question": "What is the polite way to ask someone for something?",
+    "options": [
+      { "text": "Please", "isCorrect": true },
+      { "text": "Give me", "isCorrect": false },
+      { "text": "I need", "isCorrect": false },
+      { "text": "Now", "isCorrect": false }
+    ],
+    "answer": "Please",
+    "explanation": "Using 'please' is a polite way to ask for something and shows respect for others."
+  },
+  {
+    "question": "How should you respond when someone thanks you?",
+    "options": [
+      { "text": "You're welcome", "isCorrect": true },
+      { "text": "No problem", "isCorrect": false },
+      { "text": "It's nothing", "isCorrect": false },
+      { "text": "Don't mention it", "isCorrect": false }
+    ],
+    "answer": "You're welcome",
+    "explanation": "'You're welcome' is a polite response to someone who has thanked you."
+  },
+  {
+    "question": "What should you do when someone is speaking to you?",
+    "options": [
+      { "text": "Listen attentively", "isCorrect": true },
+      { "text": "Interrupt them", "isCorrect": false },
+      { "text": "Look away", "isCorrect": false },
+      { "text": "Ignore them", "isCorrect": false }
+    ],
+    "answer": "Listen attentively",
+    "explanation": "Listening attentively shows respect and interest in what the other person is saying."
+  },
+  {
+    "question": "How can you show appreciation for a gift?",
+    "options": [
+      { "text": "Thank the giver", "isCorrect": true },
+      { "text": "Ignore it", "isCorrect": false },
+      { "text": "Ask for a different gift", "isCorrect": false },
+      { "text": "Return it", "isCorrect": false }
+    ],
+    "answer": "Thank the giver",
+    "explanation": "Expressing gratitude for a gift is a way to show appreciation and respect for the giver's thoughtfulness."
+  },
+  {
+    "question": "What is the appropriate way to address someone older than you?",
+    "options": [
+      { "text": "Mr./Ms. followed by their last name", "isCorrect": true },
+      { "text": "Hey", "isCorrect": false },
+      { "text": "First name only", "isCorrect": false },
+      { "text": "Nickname", "isCorrect": false }
+    ],
+    "answer": "Mr./Ms. followed by their last name",
+    "explanation": "Using formal titles and last names shows respect for older individuals."
+  },
+  {
+    "question": "What is the best way to handle a disagreement?",
+    "options": [
+      { "text": "Discuss calmly and respectfully", "isCorrect": true },
+      { "text": "Shout and argue", "isCorrect": false },
+      { "text": "Avoid the issue", "isCorrect": false },
+      { "text": "Dismiss the other person's opinion", "isCorrect": false }
+    ],
+    "answer": "Discuss calmly and respectfully",
+    "explanation": "Addressing disagreements calmly helps to find solutions without escalating conflicts."
+  },
+  {
+    "question": "When should you apologize?",
+    "options": [
+      { "text": "When you've made a mistake", "isCorrect": true },
+      { "text": "When someone else is wrong", "isCorrect": false },
+      { "text": "When you want something", "isCorrect": false },
+      { "text": "To avoid an argument", "isCorrect": false }
+    ],
+    "answer": "When you've made a mistake",
+    "explanation": "Apologizing when you've made a mistake demonstrates accountability and respect for others."
+  },
+  {
+    "question": "How should you greet someone you meet for the first time?",
+    "options": [
+      { "text": "With a handshake and a smile", "isCorrect": true },
+      { "text": "With a hug", "isCorrect": false },
+      { "text": "By ignoring them", "isCorrect": false },
+      { "text": "By avoiding eye contact", "isCorrect": false }
+    ],
+    "answer": "With a handshake and a smile",
+    "explanation": "A handshake and a smile are friendly and respectful ways to greet someone."
+  },
+  {
+    "question": "What is the polite way to ask for someone's attention?",
+    "options": [
+      { "text": "Excuse me", "isCorrect": true },
+      { "text": "Hey", "isCorrect": false },
+      { "text": "Yo", "isCorrect": false },
+      { "text": "Look at me", "isCorrect": false }
+    ],
+    "answer": "Excuse me",
+    "explanation": "'Excuse me' is a polite phrase to use when seeking someone's attention."
+  },
+  {
+    "question": "How should you behave during a formal dinner?",
+    "options": [
+      { "text": "Follow proper table manners", "isCorrect": true },
+      { "text": "Eat quickly and leave", "isCorrect": false },
+      { "text": "Talk loudly", "isCorrect": false },
+      { "text": "Use your hands for eating", "isCorrect": false }
+    ],
+    "answer": "Follow proper table manners",
+    "explanation": "Observing proper table manners shows respect for the host and other guests."
+  }
+],
+"Mental Wellness": [
+  {
+    "question": "What is an effective way to manage anxiety?",
+    "options": [
+      { "text": "Practice deep breathing", "isCorrect": true },
+      { "text": "Ignore it", "isCorrect": false },
+      { "text": "Avoid stressful situations", "isCorrect": false },
+      { "text": "Overeat", "isCorrect": false }
+    ],
+    "answer": "Practice deep breathing",
+    "explanation": "Deep breathing helps to calm the nervous system and manage anxiety effectively."
+  },
+  {
+    "question": "How can you improve your mental resilience?",
+    "options": [
+      { "text": "Develop coping strategies", "isCorrect": true },
+      { "text": "Avoid challenges", "isCorrect": false },
+      { "text": "Dwell on problems", "isCorrect": false },
+      { "text": "Isolate yourself", "isCorrect": false }
+    ],
+    "answer": "Develop coping strategies",
+    "explanation": "Developing coping strategies helps you handle stress and bounce back from setbacks."
+  },
+  {
+    "question": "What is a healthy practice for mental wellness?",
+    "options": [
+      { "text": "Regular physical exercise", "isCorrect": true },
+      { "text": "Skipping meals", "isCorrect": false },
+      { "text": "Excessive screen time", "isCorrect": false },
+      { "text": "Neglecting sleep", "isCorrect": false }
+    ],
+    "answer": "Regular physical exercise",
+    "explanation": "Physical exercise is known to improve mood and mental health by releasing endorphins."
+  },
+  {
+    "question": "What can help you maintain a positive mindset?",
+    "options": [
+      { "text": "Practice gratitude", "isCorrect": true },
+      { "text": "Focus on negatives", "isCorrect": false },
+      { "text": "Avoid social interactions", "isCorrect": false },
+      { "text": "Worry excessively", "isCorrect": false }
+    ],
+    "answer": "Practice gratitude",
+    "explanation": "Practicing gratitude helps shift focus to positive aspects of life and fosters a positive mindset."
+  },
+  {
+    "question": "How should you address persistent negative thoughts?",
+    "options": [
+      { "text": "Seek professional help", "isCorrect": true },
+      { "text": "Ignore them", "isCorrect": false },
+      { "text": "Suppress them", "isCorrect": false },
+      { "text": "Avoid thinking altogether", "isCorrect": false }
+    ],
+    "answer": "Seek professional help",
+    "explanation": "Professional help can provide strategies and support for managing persistent negative thoughts."
+  },
+  {
+    "question": "What is a good way to build social connections?",
+    "options": [
+      { "text": "Engage in social activities", "isCorrect": true },
+      { "text": "Isolate yourself", "isCorrect": false },
+      { "text": "Avoid new experiences", "isCorrect": false },
+      { "text": "Dismiss others' feelings", "isCorrect": false }
+    ],
+    "answer": "Engage in social activities",
+    "explanation": "Participating in social activities helps build and maintain meaningful relationships."
+  },
+  {
+    "question": "What is a recommended practice for managing stress?",
+    "options": [
+      { "text": "Regular relaxation techniques", "isCorrect": true },
+      { "text": "Work longer hours", "isCorrect": false },
+      { "text": "Ignore stressors", "isCorrect": false },
+      { "text": "Increase caffeine intake", "isCorrect": false }
+    ],
+    "answer": "Regular relaxation techniques",
+    "explanation": "Relaxation techniques such as meditation and yoga can help manage and reduce stress."
+  },
+  {
+    "question": "What is important for maintaining mental health?",
+    "options": [
+      { "text": "Balanced work and leisure time", "isCorrect": true },
+      { "text": "Overworking", "isCorrect": false },
+      { "text": "Neglecting hobbies", "isCorrect": false },
+      { "text": "Ignoring emotional needs", "isCorrect": false }
+    ],
+    "answer": "Balanced work and leisure time",
+    "explanation": "Maintaining a balance between work and leisure helps support overall mental health."
+  },
+  {
+    "question": "What should you do if you feel overwhelmed?",
+    "options": [
+      { "text": "Take breaks and rest", "isCorrect": true },
+      { "text": "Push through without breaks", "isCorrect": false },
+      { "text": "Ignore feelings of overwhelm", "isCorrect": false },
+      { "text": "Avoid seeking support", "isCorrect": false }
+    ],
+    "answer": "Take breaks and rest",
+    "explanation": "Taking breaks and resting can help manage feelings of overwhelm and restore mental balance."
+  },
+  {
+    "question": "How can mindfulness benefit mental wellness?",
+    "options": [
+      { "text": "Promotes awareness and relaxation", "isCorrect": true },
+      { "text": "Increases stress", "isCorrect": false },
+      { "text": "Disrupts focus", "isCorrect": false },
+      { "text": "Diminishes well-being", "isCorrect": false }
+    ],
+    "answer": "Promotes awareness and relaxation",
+    "explanation": "Mindfulness helps increase self-awareness and relaxation, contributing to better mental wellness."
+  }
+],
+"Exercise & Fitness": [
+  {
+    "question": "What is a key benefit of regular cardiovascular exercise?",
+    "options": [
+      { "text": "Improves heart health", "isCorrect": true },
+      { "text": "Increases stress", "isCorrect": false },
+      { "text": "Decreases endurance", "isCorrect": false },
+      { "text": "Reduces flexibility", "isCorrect": false }
+    ],
+    "answer": "Improves heart health",
+    "explanation": "Cardiovascular exercise strengthens the heart and improves overall cardiovascular health."
+  },
+  {
+    "question": "How often should adults engage in strength training exercises?",
+    "options": [
+      { "text": "Twice a week", "isCorrect": true },
+      { "text": "Once a month", "isCorrect": false },
+      { "text": "Every day", "isCorrect": false },
+      { "text": "Never", "isCorrect": false }
+    ],
+    "answer": "Twice a week",
+    "explanation": "Strength training exercises should be performed at least twice a week to build and maintain muscle strength."
+  },
+  {
+    "question": "What is a recommended warm-up activity before exercise?",
+    "options": [
+      { "text": "Light jogging or stretching", "isCorrect": true },
+      { "text": "Static stretching only", "isCorrect": false },
+      { "text": "Intense lifting", "isCorrect": false },
+      { "text": "Immediate high-intensity workout", "isCorrect": false }
+    ],
+    "answer": "Light jogging or stretching",
+    "explanation": "A light warm-up such as jogging or stretching prepares the body for exercise and reduces the risk of injury."
+  },
+  {
+    "question": "What is a good way to stay hydrated during exercise?",
+    "options": [
+      { "text": "Drink water regularly", "isCorrect": true },
+      { "text": "Drink caffeinated beverages", "isCorrect": false },
+      { "text": "Skip fluids", "isCorrect": false },
+      { "text": "Drink sugary drinks", "isCorrect": false }
+    ],
+    "answer": "Drink water regularly",
+    "explanation": "Staying hydrated with water is essential for maintaining performance and preventing dehydration during exercise."
+  },
+  {
+    "question": "Which exercise is effective for improving core strength?",
+    "options": [
+      { "text": "Planks", "isCorrect": true },
+      { "text": "Running", "isCorrect": false },
+      { "text": "Cycling", "isCorrect": false },
+      { "text": "Jumping rope", "isCorrect": false }
+    ],
+    "answer": "Planks",
+    "explanation": "Planks are an effective exercise for strengthening the core muscles and improving overall stability."
+  },
+  {
+    "question": "What type of exercise helps improve flexibility?",
+    "options": [
+      { "text": "Stretching", "isCorrect": true },
+      { "text": "Strength training", "isCorrect": false },
+      { "text": "High-intensity interval training (HIIT)", "isCorrect": false },
+      { "text": "Cardio", "isCorrect": false }
+    ],
+    "answer": "Stretching",
+    "explanation": "Stretching exercises improve flexibility and range of motion in the muscles and joints."
+  },
+  {
+    "question": "What is the primary benefit of practicing yoga?",
+    "options": [
+      { "text": "Improves balance and flexibility", "isCorrect": true },
+      { "text": "Increases muscle mass", "isCorrect": false },
+      { "text": "Enhances cardio endurance", "isCorrect": false },
+      { "text": "Reduces hydration needs", "isCorrect": false }
+    ],
+    "answer": "Improves balance and flexibility",
+    "explanation": "Yoga enhances balance, flexibility, and mental relaxation through a combination of postures and breathing exercises."
+  },
+  {
+    "question": "Which of the following is a low-impact exercise?",
+    "options": [
+      { "text": "Swimming", "isCorrect": true },
+      { "text": "Running on hard surfaces", "isCorrect": false },
+      { "text": "Jumping exercises", "isCorrect": false },
+      { "text": "Heavy weight lifting", "isCorrect": false }
+    ],
+    "answer": "Swimming",
+    "explanation": "Swimming is a low-impact exercise that is easy on the joints while providing a full-body workout."
+  },
+  {
+    "question": "How can you track progress in a fitness program?",
+    "options": [
+      { "text": "Using a fitness journal or app", "isCorrect": true },
+      { "text": "Ignoring results", "isCorrect": false },
+      { "text": "Focusing only on weight", "isCorrect": false },
+      { "text": "Avoiding measurements", "isCorrect": false }
+    ],
+    "answer": "Using a fitness journal or app",
+    "explanation": "Tracking progress with a journal or app helps monitor improvements and adjust the fitness program as needed."
+  },
+  {
+    "question": "What is the role of rest days in a fitness routine?",
+    "options": [
+      { "text": "Allow muscles to recover and prevent overtraining", "isCorrect": true },
+      { "text": "Promote muscle fatigue", "isCorrect": false },
+      { "text": "Decrease strength", "isCorrect": false },
+      { "text": "Increase workout intensity", "isCorrect": false }
+    ],
+    "answer": "Allow muscles to recover and prevent overtraining",
+    "explanation": "Rest days are essential for muscle recovery, preventing overtraining, and maintaining overall fitness."
+  }
+]
+
+
+}

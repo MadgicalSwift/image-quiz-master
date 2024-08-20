@@ -2,6 +2,9 @@ import * as natural from 'natural';
 import { localisedStrings } from 'src/i18n/en/localised-strings';
 
 class IntentClassifier {
+  classify(text: any) {
+    throw new Error('Method not implemented.');
+  }
   private classifier: natural.BayesClassifier;
   constructor() {
     this.classifier = new natural.BayesClassifier();
