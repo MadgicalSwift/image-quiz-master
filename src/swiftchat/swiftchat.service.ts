@@ -16,12 +16,11 @@ export class SwiftchatMessageService {
   async sendWelcomeMessage(from: string, language: string) {
     const localisedStrings = LocalizationService.getLocalisedString(language);
     const requestData = this.prepareRequestData(from, localisedStrings.welcomeMessage);
-    await this.sendMessage(this.baseUrl, requestData);
+    await this.sendMessage(requestData);
     await this.sendInitialOptions(from);
   }
 
   async sendInitialOptions(from: string): Promise<void> {
-    const url = `${this.apiUrl}/${this.botId}/messages`;
     const messageData = {
       to: from,
       type: 'button',
@@ -39,19 +38,13 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(url, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
     } catch (error) {
       console.error('Error sending initial options:', error);
     }
   }
 
   async sendSetSelectionMessage(from: string): Promise<void> {
-    const url = `${this.apiUrl}/${this.botId}/messages`;
     const messageData = {
       to: from,
       type: 'button',
@@ -70,24 +63,19 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(url, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
     } catch (error) {
       console.error('Error sending set selection message:', error);
     }
   }
 
   async sendSelectedSetMessage(from: string, setNumber: number): Promise<void> {
-    const message = `You have been assigned to Set ${setNumber}. The quiz will start now.`;
-    await this.sendMessage(from, message);
+    const message = `The quiz will start now.`;
+    const messageData = this.prepareRequestData(from, message);
+    await this.sendMessage(messageData);
   }
 
   async sendTopicSelectionMessage(from: string) {
-    const url = `${this.apiUrl}/${this.botId}/messages`;
     const messageData = {
       to: from,
       type: 'button',
@@ -108,19 +96,13 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(url, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
     } catch (error) {
       console.error('Error sending topic selection message:', error);
     }
   }
 
   async sendQuizInstructions(from: string, topic: string): Promise<void> {
-    const url = `${this.apiUrl}/${this.botId}/messages`;
     const messageData = {
       to: from,
       type: 'button',
@@ -135,12 +117,7 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(url, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
 
       // Randomly assign a set and start the quiz
       const quizSets = Object.keys(quizData[topic]);
@@ -176,12 +153,7 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(this.baseUrl, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
     } catch (error) {
       console.error('Error sending quiz question:', error);
     }
@@ -189,8 +161,8 @@ export class SwiftchatMessageService {
 
   async sendFeedbackMessage(from: string, topic: string, questionIndex: number, isCorrect: boolean, explanation: string, correctAnswer: string): Promise<void> {
     const feedbackMessage = isCorrect
-      ? `Correct! ${correctAnswer} is the right answer. ${explanation}`
-      : `Not quite. The correct answer is ${correctAnswer}. ${explanation}`;
+      ? `Correct! 😄 ${correctAnswer} is the right answer. ${explanation}`
+      : ` 😞 Not quite. The correct answer is ${correctAnswer}. ${explanation}`;
 
     const messageData = {
       to: from,
@@ -209,12 +181,7 @@ export class SwiftchatMessageService {
     };
 
     try {
-      await axios.post(this.baseUrl, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      await this.sendMessage(messageData);
     } catch (error) {
       console.error('Error sending feedback message:', error);
     }
@@ -222,61 +189,75 @@ export class SwiftchatMessageService {
 
   async sendQuizSummaryMessage(from: string, topic: string, correctAnswersCount: number): Promise<void> {
     const totalQuestions = 10; // Assuming there are always 10 questions
-    const summaryMessage = `You're all done! Here's how you did on the ${topic} quiz:\n\nYou answered ${correctAnswersCount} out of ${totalQuestions} questions correctly!`;
 
-    const messageData = {
-      to: from,
-      type: 'button',
-      button: {
-        body: {
-          type: 'text',
-          text: { body: summaryMessage },
+    const summaryMessagePart1 = `You're all done! 😎 Here's how you did on the ${topic} quiz:`;
+    const summaryMessagePart2 = `You answered ${correctAnswersCount} out of ${totalQuestions} questions correctly!`;
+
+    // Define message data for the first part
+    const messageDataPart1 = {
+        to: from,
+        type: 'button',
+        button: {
+            body: {
+                type: 'text',
+                text: { body: summaryMessagePart1 },
+            },
+            buttons: [
+                { type: 'solid', body: 'OK', reply: 'ACKNOWLEDGE_PART1' }
+            ],
+            allow_custom_response: false,
         },
-        buttons: [
-          { type: 'solid', body: 'Retake Quiz', reply: 'Retake Quiz' },
-          { type: 'solid', body: 'Choose Another Topic', reply: 'Choose Another Topic' },
-        ],
-        allow_custom_response: false,
-      },
+    };
+
+    // Define message data for the second part
+    const messageDataPart2 = {
+        to: from,
+        type: 'button',
+        button: {
+            body: {
+                type: 'text',
+                text: { body: summaryMessagePart2 },
+            },
+            buttons: [
+                { type: 'solid', body: 'Retake Quiz', reply: 'Retake Quiz' },
+                { type: 'solid', body: 'Choose Another Topic', reply: 'Choose Another Topic' },
+            ],
+            allow_custom_response: false,
+        },
     };
 
     try {
-      await axios.post(this.baseUrl, messageData, {
-        headers: {
-          Authorization: `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      });
+        // Send the first part of the message
+        await this.sendMessage(messageDataPart1);
+        // Send the second part of the message
+        await this.sendMessage(messageDataPart2);
     } catch (error) {
-      console.error('Error sending quiz summary message:', error);
+        console.error('Error sending quiz summary message:', error);
     }
-  }
+}
+
 
   async sendQuizCompletionMessage(from: string): Promise<void> {
-    const localisedStrings = LocalizationService.getLocalisedString('english');
-    const requestData = this.prepareRequestData(from, localisedStrings.quizCompletionMessage);
-    await this.sendMessage(this.baseUrl, requestData);
+    const localisedStrings = LocalizationService.getLocalisedString('en'); // Default language or fetch dynamically
+    const messageData = this.prepareRequestData(from, localisedStrings.quizCompletionMessage);
+    await this.sendMessage(messageData);
   }
 
-  async sendLanguageChangedMessage(from: string, language: string) {
-    const localisedStrings = LocalizationService.getLocalisedString(language);
-    const requestData = this.prepareRequestData(from, localisedStrings.select_language);
-    await this.sendMessage(this.baseUrl, requestData);
-  }
-
-  private prepareRequestData(to: string, text: string): any {
+  private prepareRequestData(to: string, message: string) {
     return {
       to,
       type: 'text',
-      text: { body: text },
+      text: {
+        body: message,
+      },
     };
   }
 
-  private async sendMessage(url: string, data: any): Promise<void> {
+  private async sendMessage(data: any): Promise<void> {
     try {
-      await axios.post(url, data, {
+      await axios.post(this.baseUrl, data, {
         headers: {
-          Authorization: `Bearer ${this.apiKey}`,
+          'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -285,7 +266,7 @@ export class SwiftchatMessageService {
     }
   }
 
-  private getQuizQuestions(topic: string, set: string): any[] {
-    return quizData[topic]?.[set] || [];
+  private getQuizQuestions(topic: string, setNumber: string) {
+    return quizData[topic]?.[setNumber] || [];
   }
 }
