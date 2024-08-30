@@ -16,9 +16,6 @@ export class UserService {
       );
       if (existingUser) {
         existingUser.language = language;
-        if (existingUser.chatHistory.length > 1) {
-          existingUser.chatHistory = existingUser.chatHistory.slice(-1);
-        }
         const updateUser = {
           TableName: USERS_TABLE,
           Item: existingUser,
