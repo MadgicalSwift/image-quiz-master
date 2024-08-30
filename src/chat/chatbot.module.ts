@@ -7,27 +7,21 @@ import IntentClassifier from '../intent/intent.classifier';
 import { UserService } from 'src/model/user.service';
 import { SwiftchatMessageService } from 'src/swiftchat/swiftchat.service';
 import { MessageService } from 'src/message/message.service';
-import { MockUserService } from 'src/model/mockuser.service';
 import { HttpModule } from '@nestjs/axios';
-import { FeedbackService } from './feedback.service';  // Adjust path as necessary
 
 @Module({
   imports: [SwiftchatModule, HttpModule], // Import SwiftchatModule
   providers: [
     ChatbotService,
+    UserService,
     IntentClassifier,
-    FeedbackService,
-    {
-      provide: UserService,
-      useClass: MockUserService,
-    },
+  
     {
       provide: MessageService,
       useClass: SwiftchatMessageService,
     },
-    FeedbackService,
-    FeedbackService,
+   
   ],
-  exports: [ChatbotService, IntentClassifier, FeedbackService],
+  exports: [ChatbotService, IntentClassifier],
 })
 export class ChatbotModule {}
