@@ -5,7 +5,9 @@ import { SwiftchatMessageService } from 'src/swiftchat/swiftchat.service';
 import * as quizData from 'src/config/edata.json'; // Adjust the path to your JSON file
 import { shuffleOptions } from 'src/config/shuffle-options';
 import { UserService } from 'src/model/user.service';
+import { MixpanelService } from 'src/mixpanel/mixpanel.service';
 import * as dotenv from "dotenv"
+
 dotenv.config()
 @Injectable()
 export class ChatbotService {
@@ -13,6 +15,7 @@ export class ChatbotService {
   private readonly message: MessageService;
   private readonly userService: UserService;
   private readonly swiftchatMessageService: SwiftchatMessageService;
+  private readonly mixpanel: MixpanelService;
   private currentQuestionIndex: { [key: string]: number } = {};
   private currentTopic: { [key: string]: string } = {};
   private currentSet: { [key: string]: number } = {};
@@ -23,11 +26,13 @@ export class ChatbotService {
     message: MessageService,
     userService: UserService,
     swiftchatMessageService: SwiftchatMessageService,
+    mixpanel: MixpanelService,
   ) {
     this.intentClassifier = intentClassifier;
     this.message = message;
     this.userService = userService;
     this.swiftchatMessageService = swiftchatMessageService;
+    this.mixpanel = mixpanel;
   }
 
   public async processMessage(body: any): Promise<any> {
@@ -61,8 +66,18 @@ console.log(userData)
           this.currentSet[from],
         );
         await this.startQuiz(from, response, this.currentSet[from]);
-      } else if (response === 'Yes') {
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
+      } else if (response === 'Yes' || response === 'Choose Another Topic' || response === 'Topic Selection') {
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
       } else if (response === 'Start Quiz') {
         const topic = this.currentTopic[from];
         const set = this.currentSet[from] || 1;
@@ -70,11 +85,19 @@ console.log(userData)
           `processMessage: Starting quiz for topic: ${topic}, set: ${set}`,
         );
         await this.startQuiz(from, topic, set);
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
       } else if (response === 'Next Question') {
         console.log('processMessage: Handling next question');
         await this.handleNextQuestion(from);
-      } else if (response === 'Topic Selection') {
-        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
       } else if (response === 'Retake Quiz') {
         const topic = this.currentTopic[from];
         const set = this.currentSet[from] || 1;
@@ -84,11 +107,14 @@ console.log(userData)
         this.currentQuestionIndex[from] = 0;
         this.correctAnswersCount[from] = 0;
         await this.startQuiz(from, topic, set);
-      } else if (response === 'Choose Another Topic') {
-        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
       } else {
         console.log('processMessage: Processing quiz answer');
-        await this.processQuizAnswer(from, response);
+        await this.processQuizAnswer(from, response, userData.language);
       }
     } else {
       console.log('processMessage: Handling text input', text);
@@ -173,7 +199,7 @@ console.log(userData)
     );
   }
 
-  private async processQuizAnswer(from: string, answer: string): Promise<void> {
+  private async processQuizAnswer(from: string, answer: string, language: string): Promise<void> {
     console.log('processQuizAnswer: Processing quiz answer', answer);
     const topic = this.currentTopic[from];
     const setNumber = this.currentSet[from] || 1;
@@ -200,6 +226,14 @@ console.log(userData)
         console.log(
           `processQuizAnswer: Incremented correct answers count to ${this.correctAnswersCount[from]}`,
         );
+        this.mixpanel.track('Taking_Quiz', {
+          distinct_id: from,
+          language: language,
+          question: question.question,
+          user_answer: answer,
+          correct_answer: question.answer,
+          answer_is: 'correct',
+        });
         await this.swiftchatMessageService.sendFeedbackMessage(
           from,
           topic,
@@ -209,6 +243,14 @@ console.log(userData)
           correctAnswer,
         );
       } else {
+        this.mixpanel.track('Taking_Quiz', {
+          distinct_id: from,
+          language: language,
+          question: question.question,
+          user_answer: answer,
+          correct_answer: question.answer,
+          answer_is: 'incorrect',
+        });
         await this.swiftchatMessageService.sendFeedbackMessage(
           from,
           topic,
