@@ -16,10 +16,6 @@ export class ChatbotService {
   private readonly userService: UserService;
   private readonly swiftchatMessageService: SwiftchatMessageService;
   private readonly mixpanel: MixpanelService;
-  private currentQuestionIndex: { [key: string]: number } = {};
-  private currentTopic: { [key: string]: string } = {};
-  private currentSet: { [key: string]: number } = {};
-  private correctAnswersCount: { [key: string]: number } = {};
 
   constructor(
     intentClassifier: IntentClassifier,
@@ -36,14 +32,17 @@ export class ChatbotService {
   }
 
   public async processMessage(body: any): Promise<any> {
-    console.log('processMessage: Start', body);
+
 
     const { from, text, button_response } = body;
     const botId = process.env.BOT_ID;
-    const userData = await this.userService.findUserByMobileNumber(from,botId);
+    let userData = await this.userService.findUserByMobileNumber(from,botId);
+    if (!userData) {
+      await this.userService.createUser(from,"English", botId);
+    }
 console.log(userData)
     if (button_response) {
-      console.log('processMessage: Handling button response', button_response);
+    
       const response = button_response.body;
 
       if (
@@ -55,17 +54,21 @@ console.log(userData)
           'Exercise & Fitness',
         ].includes(response)
       ) {
-        console.log(`processMessage: User selected topic: ${response}`);
-        this.currentTopic[from] = response;
-        this.currentSet[from] = this.getRandomSetNumber(response); // Assign a random set
-        this.currentQuestionIndex[from] = 0;
-        this.correctAnswersCount[from] = 0;
+      
+        let currentSet = this.getRandomSetNumber(response); // Assign a random set
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
 
+        await this.userService.saveCurrentTopic(from,botId, response)
+        await this.userService.saveCurrentSetNumber(from,botId,currentSet)
+        await this.userService.saveQuestIndex(from,botId, currentQuestionIndex)
+        await this.userService.saveCurrentScore(from,botId, correctAnswersCount)
+        userData = await this.userService.findUserByMobileNumber(from,botId);
         await this.swiftchatMessageService.sendSelectedSetMessage(
           from,
-          this.currentSet[from],
+          userData.setNumber,
         );
-        await this.startQuiz(from, response, this.currentSet[from]);
+        await this.startQuiz(from, response, userData.setNumber, userData);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
@@ -73,62 +76,59 @@ console.log(userData)
         });
       } else if (response === 'Yes' || response === 'Choose Another Topic' || response === 'Topic Selection') {
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+       
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button:button_response?.body,
         });
       } else if (response === 'Start Quiz') {
-        const topic = this.currentTopic[from];
-        const set = this.currentSet[from] || 1;
-        console.log(
-          `processMessage: Starting quiz for topic: ${topic}, set: ${set}`,
-        );
-        await this.startQuiz(from, topic, set);
+        const topic = userData.currentTopic
+        const set = userData.setNumber || 1;
+      
+        await this.startQuiz(from, topic, set, userData);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button:button_response?.body,
         });
       } else if (response === 'Next Question') {
-        console.log('processMessage: Handling next question');
-        await this.handleNextQuestion(from);
+       
+        await this.handleNextQuestion(from, userData);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button:button_response?.body,
         });
       } else if (response === 'Retake Quiz') {
-        const topic = this.currentTopic[from];
-        const set = this.currentSet[from] || 1;
-        console.log(
-          `processMessage: Retaking quiz for topic: ${topic}, set: ${set}`,
-        );
-        this.currentQuestionIndex[from] = 0;
-        this.correctAnswersCount[from] = 0;
-        await this.startQuiz(from, topic, set);
+        const topic = userData.currentTopic;
+        const set = userData.setNumber || 1;
+      
+
+        await this.userService.saveQuestIndex(from,botId,0)
+        await this.userService.saveCurrentScore(from,botId,0)
+
+        await this.startQuiz(from, topic, set, userData);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button:button_response?.body,
         });
       } else {
-        console.log('processMessage: Processing quiz answer');
-        await this.processQuizAnswer(from, response, userData.language);
+       
+        await this.processQuizAnswer(from, response, userData.language, userData);
       }
     } else {
-      console.log('processMessage: Handling text input', text);
+      
 
       const { intent, entities } = this.intentClassifier.getIntent(text.body);
-      console.log('processMessage: Identified intent', intent);
-
-      if (userData.language === 'english' || userData.language === 'hindi') {
-
-        // await this.userService.saveUser(userData);
-      }
-
+   
       if (intent === 'greeting') {
-        await this.userService.createUser(from,userData.language, botId)
+        const userData = await this.userService.findUserByMobileNumber(from,botId);
+        if (!userData) {
+          await this.userService.createUser(from,"English", botId);
+        }
+      
         await this.message.sendWelcomeMessage(from, userData.language);
 
       } else if (intent === 'select_language') {
@@ -140,7 +140,7 @@ console.log(userData)
       }
     }
 
-    console.log('processMessage: End');
+  
     return 'ok';
   }
 
@@ -148,18 +148,15 @@ console.log(userData)
     from: string,
     topic: string,
     setNumber: number,
+    userData: any
   ): Promise<void> {
-    console.log(
-      `startQuiz: Starting quiz for topic: ${topic}, set: ${setNumber}`,
-    );
+  
     const questions = this.getQuizQuestions(topic, setNumber);
-    console.log(
-      `startQuiz: Retrieved ${questions.length} questions for the topic: ${topic}, set: ${setNumber}`,
-    );
+   
 
     if (questions.length > 0) {
       await this.swiftchatMessageService.sendQuizInstructions(from, topic);
-      await this.shuffleAndSendQuestions(from, topic, setNumber);
+      await this.shuffleAndSendQuestions(from, topic, setNumber, userData);
     }
   }
 
@@ -167,23 +164,25 @@ console.log(userData)
     from: string,
     topic: string,
     setNumber: number,
+    userData: any
+
   ): Promise<void> {
-    console.log(
-      `shuffleAndSendQuestions: Shuffling and sending questions for topic: ${topic}, set: ${setNumber}`,
-    );
+   
     const questions = this.getQuizQuestions(topic, setNumber);
     if (questions.length > 0) {
-      await this.sendQuizQuestion(from, questions[0], topic, setNumber);
+      await this.sendQuizQuestion(from,userData.Botid, questions[0], topic, setNumber, userData);
     }
   }
 
   private async sendQuizQuestion(
     from: string,
+    botId: string,
     question: any,
     topic: string,
     set: number,
+    userData: any
   ): Promise<void> {
-    console.log('sendQuizQuestion: Sending quiz question', question);
+  
     question.options = shuffleOptions(question.options);
 
     await this.swiftchatMessageService.sendQuizQuestion(
@@ -192,20 +191,19 @@ console.log(userData)
       topic,
       set.toString(),
     );
-    this.currentQuestionIndex[from] =
-      (this.currentQuestionIndex[from] || 0) + 1;
-    console.log(
-      `sendQuizQuestion: Updated current question index to ${this.currentQuestionIndex[from]}`,
-    );
+
+    await this.userService.saveQuestIndex(from,botId,userData.currentQuestIndex + 1)
+    
+   
   }
 
-  private async processQuizAnswer(from: string, answer: string, language: string): Promise<void> {
-    console.log('processQuizAnswer: Processing quiz answer', answer);
-    const topic = this.currentTopic[from];
-    const setNumber = this.currentSet[from] || 1;
+  private async processQuizAnswer(from: string, answer: string, language: string, userData: any): Promise<void> {
+  
+    const topic = userData.currentTopic;
+    const setNumber = userData.setNumber || 1;
     const questions = this.getQuizQuestions(topic, setNumber);
-    const currentIndex = (this.currentQuestionIndex[from] || 0) - 1;
-
+    const currentIndex = (userData.currentQuestIndex || 0) - 1;
+   
     if (currentIndex < questions.length) {
       const question = questions[currentIndex];
       const selectedOption = question.options.find(
@@ -215,17 +213,11 @@ console.log(userData)
       const correctAnswer = question.options.find((opt) => opt.isCorrect)?.text;
       const explanation = question.explanation;
 
-      console.log(
-        'processQuizAnswer: Answer is',
-        isCorrect ? 'correct' : 'incorrect',
-      );
+    
 
       if (isCorrect) {
-        this.correctAnswersCount[from] =
-          (this.correctAnswersCount[from] || 0) + 1;
-        console.log(
-          `processQuizAnswer: Incremented correct answers count to ${this.correctAnswersCount[from]}`,
-        );
+        await this.userService.saveCurrentScore(from, userData.Botid, userData.score+1)
+       
         this.mixpanel.track('Taking_Quiz', {
           distinct_id: from,
           language: language,
@@ -261,54 +253,54 @@ console.log(userData)
         );
       }
 
-      await this.handleNextQuestion(from);
+      await this.handleNextQuestion(from, userData);
     }
   }
 
-  private async handleNextQuestion(from: string): Promise<void> {
-    console.log('handleNextQuestion: Handling next question for user', from);
-    const currentIndex = this.currentQuestionIndex[from];
-    const topic = this.currentTopic[from];
-    const setNumber = this.currentSet[from] || 1;
+  private async handleNextQuestion(from: string, userData: any): Promise<void> {
+  
+    const currentIndex = userData.currentQuestIndex;
+    let topic = userData.currentTopic;
+    const setNumber = userData.setNumber || 1;
     const questions = this.getQuizQuestions(topic, setNumber);
-
+    console.log(currentIndex)
+    console.log(questions.length)
     if (currentIndex < questions.length) {
       await this.sendQuizQuestion(
         from,
+        userData.Botid,
         questions[currentIndex],
         topic,
         setNumber,
+        userData
       );
     } else {
-      const correctAnswers = this.correctAnswersCount[from] || 0;
-      console.log(
-        'handleNextQuestion: Quiz completed. Sending summary and completion message.',
-      );
-      await this.swiftchatMessageService.sendQuizCompletionMessage(from);
+      console.log("quiz complete")
+      userData = await this.userService.findUserByMobileNumber(from,userData.Botid)
+      const correctAnswers = userData.score || 0;
+    
+      // await this.swiftchatMessageService.sendQuizCompletionMessage(from);
       await this.swiftchatMessageService.sendQuizSummaryMessage(
         from,
         topic,
         correctAnswers,
       );
+      await this.userService.saveQuestIndex(from,userData.Botid, 0)
     }
   }
 
   private getQuizQuestions(topic: string, setNumber: number): any[] {
-    console.log(
-      `getQuizQuestions: Fetching questions for topic: ${topic}, set: ${setNumber}`,
-    );
+   
     return (
       quizData[topic]?.find((set) => set.set === setNumber)?.questions || []
     );
   }
 
   private getRandomSetNumber(topic: string): number {
-    console.log(
-      `getRandomSetNumber: Selecting a random set number for topic: ${topic}`,
-    );
+   
     const sets = quizData[topic]?.map((set) => set.set) || [];
     const randomSet = sets[Math.floor(Math.random() * sets.length)] || 1;
-    console.log(`getRandomSetNumber: Selected set number: ${randomSet}`);
+  
     return randomSet;
   }
 }
