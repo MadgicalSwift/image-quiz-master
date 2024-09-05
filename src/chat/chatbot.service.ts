@@ -115,8 +115,10 @@ console.log(userData)
           language: userData.language,
           button:button_response?.body,
         });
-      } else {
-       
+      } else if(response === 'END'){
+        await this.message.sendEndBotMessage(from)
+      }
+      else{
         await this.processQuizAnswer(from, response, userData.language, userData);
       }
     } else {
@@ -129,7 +131,8 @@ console.log(userData)
         }
       
         await this.message.sendWelcomeMessage(from, userData.language);
-
+        await this.userService.saveQuestIndex(from,botId, 0)
+        await this.userService.saveCurrentScore(from,botId, 0)
       } 
     }
 

@@ -13,6 +13,7 @@ export abstract class MessageService {
   abstract sendIncorrectAnswerResponse(from: string, correctAnswer: string, explanation: string): Promise<void>;
   abstract sendNextQuestionPrompt(from: string): Promise<void>;
   abstract sendQuizCompletionMessage(from: string): Promise<void>;
+  abstract sendEndBotMessage(from: string):  Promise<void>
 
   // sendEndInteractionMessage(from: any, language: string) {
   //   throw new Error('Method not implemented.');

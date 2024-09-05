@@ -13,5 +13,5 @@ export const localisedStrings = {
   language_hindi: 'हिन्दी',
   validText:['hi', 'Hi', 'HI', 'hI','Hii','hii', 'Hello', 'hello', 'hola'],
   chooseAnotherTopic: 'Choose Another Topic',
-  
+  endMessage: "👋 Hey there! Whenever you're ready to continue, just type 'Hi' to start the bot again. Looking forward to helping you out! 😊"
 };

@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import { localisedStrings } from 'src/i18n/en/localised-strings'; // Adjust the path to your localizedStrings file
 import * as quizData from 'src/config/edata.json'; // Adjust the path to your JSON file
 
+
 dotenv.config();
 
 @Injectable()
@@ -71,6 +72,12 @@ export class SwiftchatMessageService {
 
   async sendSelectedSetMessage(from: string, setNumber: number): Promise<void> {
     const message = `The quiz will start now.`;
+    const messageData = this.prepareRequestData(from, message);
+    await this.sendMessage(messageData);
+  }
+
+  async sendEndBotMessage(from: string): Promise<void> {
+    const message = localisedStrings.endMessage;
     const messageData = this.prepareRequestData(from, message);
     await this.sendMessage(messageData);
   }
