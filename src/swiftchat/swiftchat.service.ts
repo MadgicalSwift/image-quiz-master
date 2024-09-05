@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import * as dotenv from 'dotenv';
-import { LocalizationService } from 'src/localization/localization.service';
+import { localisedStrings } from 'src/i18n/en/localised-strings'; // Adjust the path to your localizedStrings file
 import * as quizData from 'src/config/edata.json'; // Adjust the path to your JSON file
 
 dotenv.config();
@@ -14,8 +14,8 @@ export class SwiftchatMessageService {
   private baseUrl = `${this.apiUrl}/${this.botId}/messages`;
 
   async sendWelcomeMessage(from: string, language: string) {
-    const localisedStrings = LocalizationService.getLocalisedString(language);
-    const requestData = this.prepareRequestData(from, localisedStrings.welcomeMessage);
+    const message = localisedStrings.welcomeMessage;
+    const requestData = this.prepareRequestData(from, message);
     await this.sendMessage(requestData);
     await this.sendInitialOptions(from);
   }
@@ -27,7 +27,7 @@ export class SwiftchatMessageService {
       button: {
         body: {
           type: 'text',
-          text: { body: 'Choose the option' },
+          text: { body: localisedStrings.chooseOption },
         },
         buttons: [
           { type: 'solid', body: 'Yes, let\'s go!', reply: 'Yes' },
@@ -51,7 +51,7 @@ export class SwiftchatMessageService {
       button: {
         body: {
           type: 'text',
-          text: { body: 'Please choose a set number:' },
+          text: { body: localisedStrings.chooseSet },
         },
         buttons: Array.from({ length: 10 }, (_, i) => ({
           type: 'solid',
@@ -82,7 +82,7 @@ export class SwiftchatMessageService {
       button: {
         body: {
           type: 'text',
-          text: { body: 'Choose a topic you\'d like to explore:' },
+          text: { body: localisedStrings.chooseTopic },
         },
         buttons: [
           { type: 'solid', body: 'Nutrition', reply: 'Nutrition' },
@@ -103,13 +103,14 @@ export class SwiftchatMessageService {
   }
 
   async sendQuizInstructions(from: string, topic: string): Promise<void> {
+    const message = localisedStrings.quizInstructions(topic);
     const messageData = {
       to: from,
       type: 'button',
       button: {
         body: {
           type: 'text',
-          text: { body: `Great choice! I'll ask you 10 questions about ${topic}. After each question, I'll give you the correct answer and a short explanation. Ready?` },
+          text: { body: message },
         },
         buttons: [{ type: 'solid', body: 'I\'m ready!', reply: 'Start Quiz' }],
         allow_custom_response: false,
@@ -161,23 +162,15 @@ export class SwiftchatMessageService {
 
   async sendFeedbackMessage(from: string, topic: string, questionIndex: number, isCorrect: boolean, explanation: string, correctAnswer: string): Promise<void> {
     const feedbackMessage = isCorrect
-      ? `Correct! 😄 ${correctAnswer} is the right answer. ${explanation}`
-      : ` 😞 Not quite. The correct answer is ${correctAnswer}. ${explanation}`;
+      ? localisedStrings.correctAnswerMessage(correctAnswer, explanation)
+      : localisedStrings.incorrectAnswerMessage(correctAnswer, explanation);
 
     const messageData = {
       to: from,
-      type: 'button',
-      button: {
-        body: {
-          type: 'text',
-          text: { body: feedbackMessage },
-        },
-        buttons: [
-          { type: 'solid', body: 'Go to topic selection', reply: 'Topic Selection' },
-          { type: 'solid', body: 'Next question', reply: 'Next Question' },
-        ],
-        allow_custom_response: false,
-      },
+      type: 'text',
+          text: 
+          { body: feedbackMessage },
+    
     };
 
     try {
@@ -190,8 +183,8 @@ export class SwiftchatMessageService {
   async sendQuizSummaryMessage(from: string, topic: string, correctAnswersCount: number): Promise<void> {
     const totalQuestions = 10; // Assuming there are always 10 questions
 
-    const summaryMessagePart1 = `You're all done! 😎 Here's how you did on the ${topic} quiz:`;
-    const summaryMessagePart2 = `You answered ${correctAnswersCount} out of ${totalQuestions} questions correctly!`;
+    const summaryMessagePart1 = localisedStrings.quizCompletionMessagePart1(topic);
+    const summaryMessagePart2 = localisedStrings.quizCompletionMessagePart2(correctAnswersCount, totalQuestions);
 
     // Define message data for the first part
     const messageDataPart1 = {
@@ -219,43 +212,34 @@ export class SwiftchatMessageService {
                 text: { body: summaryMessagePart2 },
             },
             buttons: [
-                { type: 'solid', body: 'Retake Quiz', reply: 'Retake Quiz' },
-                { type: 'solid', body: 'Choose Another Topic', reply: 'Choose Another Topic' },
+                { type: 'solid', body: localisedStrings.retakeQuiz, reply: 'Retake Quiz' },
+                { type: 'solid', body: localisedStrings.chooseAnotherTopic, reply: 'Choose Another Topic' },
             ],
             allow_custom_response: false,
         },
     };
 
     try {
-        // Send the first part of the message
+        // Send the first part of the summary message
         await this.sendMessage(messageDataPart1);
-        // Send the second part of the message
+        // Send the second part of the summary message
         await this.sendMessage(messageDataPart2);
     } catch (error) {
         console.error('Error sending quiz summary message:', error);
     }
-}
-
-
-  async sendQuizCompletionMessage(from: string): Promise<void> {
-    const localisedStrings = LocalizationService.getLocalisedString('en'); // Default language or fetch dynamically
-    const messageData = this.prepareRequestData(from, localisedStrings.quizCompletionMessage);
-    await this.sendMessage(messageData);
   }
 
-  private prepareRequestData(to: string, message: string) {
+  private prepareRequestData(to: string, bodyText: string): any {
     return {
       to,
       type: 'text',
-      text: {
-        body: message,
-      },
+      text: { body: bodyText },
     };
   }
 
-  private async sendMessage(data: any): Promise<void> {
+  private async sendMessage(requestData: any): Promise<void> {
     try {
-      await axios.post(this.baseUrl, data, {
+      await axios.post(this.baseUrl, requestData, {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
@@ -266,7 +250,7 @@ export class SwiftchatMessageService {
     }
   }
 
-  private getQuizQuestions(topic: string, setNumber: string) {
-    return quizData[topic]?.[setNumber] || [];
+  private getQuizQuestions(topic: string, set: string): any[] {
+    return quizData[topic][set] || [];
   }
 }
