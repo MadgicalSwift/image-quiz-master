@@ -256,7 +256,7 @@ console.log(userData)
     let topic = userData.currentTopic;
     const setNumber = userData.setNumber || 1;
     const questions = this.getQuizQuestions(topic, setNumber);
-    console.log(currentIndex)
+
     console.log(questions.length)
     if (currentIndex < questions.length) {
       await this.sendQuizQuestion(
@@ -296,4 +296,6 @@ console.log(userData)
   
     return randomSet;
   }
+
+
 }

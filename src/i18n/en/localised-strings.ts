@@ -11,7 +11,7 @@ export const localisedStrings = {
   quizCompletionMessagePart2: (correctAnswersCount: number, totalQuestions: number) => `🎉 "You got ${correctAnswersCount} out of ${totalQuestions} questions right! Great job! 👏`,
   retakeQuiz: 'Retake Quiz',
   language_hindi: 'हिन्दी',
-  validText:['hi', 'Hi', 'HI', 'hI', 'Hello', 'hello', 'hola'],
+  validText:['hi', 'Hi', 'HI', 'hI','Hii','hii', 'Hello', 'hello', 'hola'],
   chooseAnotherTopic: 'Choose Another Topic',
   
 };
