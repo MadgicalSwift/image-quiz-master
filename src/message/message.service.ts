@@ -23,9 +23,7 @@ export abstract class MessageService {
   async prepareWelcomeMessage() {
     return localisedStrings.welcomeMessage;
   }
-  getSeeMoreButtonLabel() {
-    return localisedStrings.seeMoreMessage;
-  }
+
 
   async sendMessage(baseUrl: string, requestData: any, token: string) {
     

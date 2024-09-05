@@ -6,6 +6,7 @@ import * as quizData from 'src/config/edata.json'; // Adjust the path to your JS
 import { shuffleOptions } from 'src/config/shuffle-options';
 import { UserService } from 'src/model/user.service';
 import { MixpanelService } from 'src/mixpanel/mixpanel.service';
+import { localisedStrings } from 'src/i18n/en/localised-strings';
 import * as dotenv from "dotenv"
 
 dotenv.config()
@@ -120,10 +121,8 @@ console.log(userData)
       }
     } else {
       
-
-      const { intent, entities } = this.intentClassifier.getIntent(text.body);
    
-      if (intent === 'greeting') {
+      if (localisedStrings.validText.includes(text.body)) {
         const userData = await this.userService.findUserByMobileNumber(from,botId);
         if (!userData) {
           await this.userService.createUser(from,"English", botId);
@@ -131,13 +130,7 @@ console.log(userData)
       
         await this.message.sendWelcomeMessage(from, userData.language);
 
-      } else if (intent === 'select_language') {
-        const selectedLanguage = entities[0];
-        userData.language = selectedLanguage;
-
-        // await this.userService.saveUser(userData);
-        await this.message.sendLanguageChangedMessage(from, userData.language);
-      }
+      } 
     }
 
   
