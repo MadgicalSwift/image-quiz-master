@@ -40,13 +40,44 @@ export class ChatbotService {
     let userData = await this.userService.findUserByMobileNumber(from,botId);
     if (!userData) {
       await this.userService.createUser(from,"English", botId);
+      userData = await this.userService.findUserByMobileNumber(from, botId);
     }
-console.log(userData)
-    if (button_response) {
+    // console.log(userData)
+    if (userData.isNameRequired) {
+      if (text.body) { // User has sent their name
+        await this.userService.saveUserName(from, botId, text.body); // Save name
+        await this.userService.updateIsNameRequired(from, botId, false); // Update isNameRequired to false
+        userData = await this.userService.findUserByMobileNumber(from, botId);
+        console.log(userData.name, userData.isNameRequired);
+        await this.swiftchatMessageService.sendQues(from, userData.name);
+        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+      } else {
+        await this.swiftchatMessageService.sendName(from);
+      }
+      return 'ok';
+    }
+     if (button_response) {
     
       const response = button_response.body;
 
-      if (
+      if (response === 'Yes' ) {
+        userData.name=null;
+        userData.isNameRequired= true;
+        if (!userData.name) { // Name not provided yet, ask for it
+          await this.userService.updateIsNameRequired(from, botId, true); // Set isNameRequired to true
+          await this.swiftchatMessageService.sendName(from);
+        } else {
+          // If name already exists, proceed to topic selection
+          await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        }
+        
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button:button_response?.body,
+        });
+      }
+      else if (
         [
           'Nutrition',
           'Healthy Habits',
@@ -75,7 +106,7 @@ console.log(userData)
           language: userData.language,
           button:button_response?.body,
         });
-      } else if (response === 'Yes' || response === 'Choose Another Topic' || response === 'Topic Selection') {
+      } else if( response === 'Choose Another Topic' || response === 'Topic Selection'){
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
        
         this.mixpanel.track('Button_Click', {
@@ -83,7 +114,26 @@ console.log(userData)
           language: userData.language,
           button:button_response?.body,
         });
-      } else if (response === 'Start Quiz') {
+      } else if (response === 'See Health Tips') {
+        // Call method to send health tips
+        await this.swiftchatMessageService.sendHealthTips(from);
+        await this.message.sendEndBotMessage(from)
+        this.mixpanel.track('Button_Click', {
+          distinct_id: from,
+          language: userData.language,
+          button: button_response?.body,
+        });
+      }
+      else if(response ==='View Challenges'){
+        await this.handleViewChallenges(from, userData);
+        await this.message.sendEndBotMessage(from)
+        this.mixpanel.track('Button_Click', {
+            distinct_id: from,
+            language: userData.language,
+            button: button_response?.body,
+        })
+      }
+      else if (response === 'Start Quiz') {
         const topic = userData.currentTopic
         const set = userData.setNumber || 1;
       
@@ -253,6 +303,51 @@ console.log(userData)
     }
   }
 
+  private async handleViewChallenges(from: string, userData: any): Promise<void> {
+    try {
+        // Call the getTopStudents method to get the top 3 users
+        const topStudents = await this.userService.getTopStudents(userData.Botid, userData.topic, userData.setNumber);
+        console.log(topStudents);
+        if (topStudents.length === 0) {
+            // If no top users are available, send a message saying so
+            await this.swiftchatMessageService.sendMessage({
+                to: from,
+                type: 'text',
+                text: { body: 'No challenges have been completed yet.' }
+            });
+            return;
+        }
+
+        // Format the response message with the top 3 students
+        let message = 'Top 3 Users:\n\n';
+        topStudents.forEach((student, index) => {
+          console.log(student);
+            const totalScore = student.totalScore || 0;
+            const studentName = student.name || 'Unknown';
+            const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
+
+            message += `${index + 1}. ${studentName}\n`;
+            message += `    Score: ${totalScore}\n`;
+            message += `    Badge: ${badge}\n\n`;
+        });
+
+        // Send the message with the top students' names, scores, and badges
+        await this.swiftchatMessageService.sendMessage({
+            to: from,
+            type: 'text',
+            text: { body: message }
+        });
+    } catch (error) {
+        console.error('Error handling View Challenges:', error);
+        await this.swiftchatMessageService.sendMessage({
+            to: from,
+            type: 'text',
+            text: { body: 'An error occurred while fetching challenges. Please try again later.' }
+        });
+    }
+}
+
+  
   private async handleNextQuestion(from: string, userData: any): Promise<void> {
   
     const currentIndex = userData.currentQuestIndex;
@@ -271,15 +366,41 @@ console.log(userData)
         userData
       );
     } else {
-      console.log("quiz complete")
+      
       userData = await this.userService.findUserByMobileNumber(from,userData.Botid)
       const correctAnswers = userData.score || 0;
     
+      //Determine badge based on correct answers 
+      let badge = '';
+        if (correctAnswers === 10) {
+            badge = 'Gold';
+        } else if (correctAnswers >= 7) {
+            badge = 'Silver';
+        } else if (correctAnswers >= 5) {
+            badge = 'Bronze';
+        } else {
+            badge = 'No';
+        }
+
+      // Store the data to be stored in database
+      const challengeData = {
+        topic: topic,
+        question: [{
+            setNumber: setNumber,
+            score: correctAnswers,
+            badge: badge
+        }]
+      };
+      // Save the challenge data into the database 
+      await this.userService.saveUserChallenge(from, userData.Botid, challengeData);
+
       // await this.swiftchatMessageService.sendQuizCompletionMessage(from);
       await this.swiftchatMessageService.sendQuizSummaryMessage(
         from,
         topic,
         correctAnswers,
+        setNumber,
+        badge
       );
       await this.userService.saveQuestIndex(from,userData.Botid, 0)
     }
@@ -295,7 +416,8 @@ console.log(userData)
   private getRandomSetNumber(topic: string): number {
    
     const sets = quizData[topic]?.map((set) => set.set) || [];
-    const randomSet = sets[Math.floor(Math.random() * sets.length)] || 1;
+    // const randomSet = sets[Math.floor(Math.random() * sets.length)] || 1;
+    const randomSet = 1;
   
     return randomSet;
   }

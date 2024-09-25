@@ -21,6 +21,16 @@ export class SwiftchatMessageService {
     await this.sendInitialOptions(from);
   }
 
+  async sendName(from:string){
+    const message = "Can you please tell me your name?";
+    const requestData = this.prepareRequestData(from, message);
+    await this.sendMessage(requestData);
+  }
+  async sendQues(from:string, name:string){
+    const message = `Thanks ${name}! Let's get started.`;
+    const requestData = this.prepareRequestData(from, message);
+    await this.sendMessage(requestData);
+  }
   async sendInitialOptions(from: string): Promise<void> {
     const messageData = {
       to: from,
@@ -82,6 +92,19 @@ export class SwiftchatMessageService {
     await this.sendMessage(messageData);
   }
 
+  public async sendHealthTips(from: string): Promise<void> {
+    const healthTips = [
+      "💧 Drink plenty of water to stay hydrated.",
+      "🍎 Eat more fruits and vegetables.",
+      "🏃‍♂️ Exercise regularly – at least 30 minutes a day.",
+      "😴 Get enough sleep – aim for 7-8 hours each night.",
+      "🚶‍♀️ Take short breaks and stretch if you sit for long periods."
+    ];
+
+    const tipsMessage = healthTips.join('\n');
+    const messageData= this.prepareRequestData(from, tipsMessage);
+    await this.sendMessage(messageData);
+  }
   async sendTopicSelectionMessage(from: string) {
     const messageData = {
       to: from,
@@ -187,12 +210,23 @@ export class SwiftchatMessageService {
     }
   }
 
-  async sendQuizSummaryMessage(from: string, topic: string, correctAnswersCount: number): Promise<void> {
+  async sendQuizSummaryMessage(from: string, topic: string, correctAnswersCount: number, setNumber:number, badge:string): Promise<void> {
     const totalQuestions = 10; // Assuming there are always 10 questions
+
+    // let badge = '';
+    // if (correctAnswersCount === 10) {
+    //     badge = 'Gold'; // Gold badge for 10 correct answers
+    // } else if (correctAnswersCount >= 7) {
+    //     badge = 'Silver'; // Silver badge for 7 or more correct answers
+    // } else if (correctAnswersCount >= 5) {
+    //     badge = 'Bronze'; // Bronze badge for 5 or more correct answers
+    // } else {
+    //     badge = 'No'; // If less than 5, no badge
+    // }
 
     const summaryMessagePart1 = localisedStrings.quizCompletionMessagePart1(topic);
     const summaryMessagePart2 = localisedStrings.quizCompletionMessagePart2(correctAnswersCount, totalQuestions);
-
+    const summaryMessageBadge = `Congratulations! You earned a ${badge} badge!`; // Add badge message
     // Define message data for the first part
     const messageDataPart1 = {
         to: from,
@@ -216,15 +250,18 @@ export class SwiftchatMessageService {
         button: {
             body: {
                 type: 'text',
-                text: { body: summaryMessagePart2 },
+                text: { body: `${summaryMessagePart2}\n\n${summaryMessageBadge}` },
             },
             buttons: [
                 { type: 'solid', body: localisedStrings.retakeQuiz, reply: 'Retake Quiz' },
                 { type: 'solid', body: localisedStrings.chooseAnotherTopic, reply: 'Choose Another Topic' },
+                { type: 'solid', body: 'View Challenges', reply: 'View Challenges' },                  
+                { type: 'solid', body: 'See Health Tips', reply: 'See Health Tips' }
             ],
             allow_custom_response: false,
         },
     };
+
 
     try {
         // Send the first part of the summary message
@@ -244,7 +281,7 @@ export class SwiftchatMessageService {
     };
   }
 
-  private async sendMessage(requestData: any): Promise<void> {
+  public async sendMessage(requestData: any): Promise<void> {
     try {
       await axios.post(this.baseUrl, requestData, {
         headers: {
