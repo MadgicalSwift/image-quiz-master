@@ -7,10 +7,7 @@ const { USERS_TABLE } = process.env;
 
 @Injectable()
 export class UserService {
-
-
-
-  async createUser(
+    async createUser(
     mobileNumber: string,
     language: string,
     botID: string,
@@ -100,24 +97,26 @@ export class UserService {
     }
   }
 
-  async getTopStudents(botId: string, topic: string, setNumber: number): Promise<User[] | any> {
+  async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
     try {
-        const params = {
-            TableName: USERS_TABLE,
-            ProjectionExpression: '#name, mobileNumber, Botid, challenges,isNameRequired, score, setNumber', // Use an alias 
-            ExpressionAttributeNames: {
-                '#name': 'name' // Map the alias "#nm" to the actual attribute "name"
-            }
-        };
-
-        const result = await dynamoDBClient().scan(params).promise();
+      const params = {
+        TableName: USERS_TABLE,
+        KeyConditionExpression: 'Botid = :Botid',
+        ExpressionAttributeValues: {
+          ':Botid': Botid,
+        },
+      };
+      const result = await dynamoDBClient().query(params).promise();
+      console.log("res:",result.Items)
+        console.log(result)
         const resultKeys = Object.keys(result).slice(0, 5);
         
         const users = result.Items || [];
-        console.log("5 users:",users.slice(0,5));
+        // console.log("userdata",users)
+        // console.log("5 users:",users.slice(0,5));
 
         // Filter users based on botId and mobileNumber
-        const filteredUsers = users.filter(user => user.Botid == botId );
+        const filteredUsers = users.filter(user => user.Botid == Botid );
         console.log("Filtered: ",filteredUsers);
         if (filteredUsers.length === 0) {
           console.log("No users matched the given Botid.");
@@ -159,59 +158,6 @@ export class UserService {
 }
 
 
-// async  getTopStudents(botId: string, topic: string, setNumber: number): Promise<User[] | any> {
-//     try {
-//         // Use the dummy dataset instead of fetching from DynamoDB
-//         const users = dummyUsers;
-
-//         // Log first 5 users (in this case, it'll log the full dummy dataset)
-//         console.log("First 5 users:", users.slice(0, 5));
-
-//         // Filter users based on botId
-//         const filteredUsers = users.filter(user => user.Botid === botId);
-//         console.log("Filtered Users by botId:", filteredUsers);
-
-//         if (filteredUsers.length === 0) {
-//             console.log("No users matched the given Botid.");
-//             return [];
-//         }
-
-//         // Check if users have challenges
-//         if (!filteredUsers[0].challenges) {
-//             console.error("Users missing expected fields:", filteredUsers);
-//             return [];
-//         }
-
-//         // Calculate total score for each user based on the given topic and set number
-//         filteredUsers.forEach(user => {
-//           user['totalScore'] = 0;
-//             if (user.challenges && Array.isArray(user.challenges)) {
-//                 user.challenges.forEach(challenge => {
-//                     if (challenge.topic === topic) {
-//                         if (challenge.question && Array.isArray(challenge.question)) {
-//                             challenge.question.forEach(question => {
-//                                 if (Number(question.setnumber) === Number(setNumber) && question.score != null) {
-//                                     user['totalScore'] += question.score; // Sum up scores for the matching set number
-//                                 }
-//                             });
-//                         }
-//                     }
-//                 });
-//             } else {
-//                 console.log(`User ${user.mobileNumber} has no challenges or challenges is not an array.`);
-//             }
-//         });
-
-//         // Sort by total score in descending order and get the top 3 users
-//         const topUsers = filteredUsers.sort((a, b) => b['totalScore'] - a['totalScore']).slice(0, 3);
-//         console.log("Top 3 Users:", topUsers);
-
-//         return topUsers;
-//     } catch (error) {
-//         console.error('Error retrieving top students:', error);
-//         throw error;
-//     }
-//   }
 
 
   async saveUserChallenge(mobileNumber: string, botID: string, challengeData: any): Promise<any> {
@@ -411,15 +357,8 @@ export class UserService {
   }
 
 
-
-
-
-
-
-  
-  async findUserByMobileNumber(mobileNumber, Botid) {
+async findUserByMobileNumber(mobileNumber, Botid) {
     try {
-      console.log(mobileNumber, Botid)
       const params = {
         TableName: USERS_TABLE,
         KeyConditionExpression: 'mobileNumber = :mobileNumber and Botid = :Botid',
@@ -435,6 +374,23 @@ export class UserService {
       return null;
     }
   }
+  // async getTopStudents( Botid,topic,setNumber) {
+  //   try {
+  //     const params = {
+  //       TableName: USERS_TABLE,
+  //       KeyConditionExpression: 'Botid = :Botid',
+  //       ExpressionAttributeValues: {
+  //         ':Botid': Botid,
+  //       },
+  //     };
+  //     const result = await dynamoDBClient().query(params).promise();
+  //     console.log("res:",result.Items)
+  //     return result.Items?.[0] || null; // Return the first item or null if none found
+  //   } catch (error) {
+  //     console.error('Error querying user from DynamoDB:', error);
+  //     return null;
+  //   }
+  // }
 
   
 }

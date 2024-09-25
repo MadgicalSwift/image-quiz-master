@@ -162,7 +162,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/healthy-habit-bot/dev/1725006180675-2024-08-30T08:23:00.675Z/healthy-habit-bot.zip"
+          "S3Key": "serverless/healthy-habit-bot/dev/1725541565418-2024-09-05T13:06:05.418Z/healthy-habit-bot.zip"
         },
         "Handler": "dist/lambda.handler",
         "Runtime": "nodejs20.x",
@@ -180,14 +180,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionSNJq8LtxOUOsk9mGfGCK4NlRkTIE8LDjNOVYmwHIj8": {
+    "ApiLambdaVersion8yVDYG0Iz7X2ggKJ1I0Eh7k7HgPZk1onaqQcjTlIc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "J9DKH88zGzCyWfA/nTfhegvIABHTaR7JCn8VvGHVQZU="
+        "CodeSha256": "2TbdRlVrEdq4vyRmyc82OWHFQVVeAx6v5f3T/8++fk4="
       }
     },
     "ApiGatewayRestApi": {
@@ -263,7 +263,7 @@
         "ApiLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1725006165576": {
+    "ApiGatewayDeployment1725541555061": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -325,7 +325,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionSNJq8LtxOUOsk9mGfGCK4NlRkTIE8LDjNOVYmwHIj8"
+        "Ref": "ApiLambdaVersion8yVDYG0Iz7X2ggKJ1I0Eh7k7HgPZk1onaqQcjTlIc"
       },
       "Export": {
         "Name": "sls-healthy-habit-bot-dev-ApiLambdaFunctionQualifiedArn"

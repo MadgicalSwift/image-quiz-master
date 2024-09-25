@@ -8,7 +8,6 @@ export class LocalizationService {
     throw new Error('Method not implemented.');
   }
   static getLocalisedString = (language): any => {
-    console.log(language);
     if (language == 'hindi') {
       return hindi;
     } else {

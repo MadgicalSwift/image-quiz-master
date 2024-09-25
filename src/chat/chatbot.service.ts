@@ -42,13 +42,11 @@ export class ChatbotService {
       await this.userService.createUser(from,"English", botId);
       userData = await this.userService.findUserByMobileNumber(from, botId);
     }
-    // console.log(userData)
     if (userData.isNameRequired) {
       if (text.body) { // User has sent their name
         await this.userService.saveUserName(from, botId, text.body); // Save name
         await this.userService.updateIsNameRequired(from, botId, false); // Update isNameRequired to false
         userData = await this.userService.findUserByMobileNumber(from, botId);
-        console.log(userData.name, userData.isNameRequired);
         await this.swiftchatMessageService.sendQues(from, userData.name);
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
       } else {
@@ -305,9 +303,9 @@ export class ChatbotService {
 
   private async handleViewChallenges(from: string, userData: any): Promise<void> {
     try {
+      console.log("id",userData.Botid)
         // Call the getTopStudents method to get the top 3 users
         const topStudents = await this.userService.getTopStudents(userData.Botid, userData.topic, userData.setNumber);
-        console.log(topStudents);
         if (topStudents.length === 0) {
             // If no top users are available, send a message saying so
             await this.swiftchatMessageService.sendMessage({
@@ -321,7 +319,6 @@ export class ChatbotService {
         // Format the response message with the top 3 students
         let message = 'Top 3 Users:\n\n';
         topStudents.forEach((student, index) => {
-          console.log(student);
             const totalScore = student.totalScore || 0;
             const studentName = student.name || 'Unknown';
             const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
@@ -354,8 +351,6 @@ export class ChatbotService {
     let topic = userData.currentTopic;
     const setNumber = userData.setNumber || 1;
     const questions = this.getQuizQuestions(topic, setNumber);
-
-    console.log(questions.length)
     if (currentIndex < questions.length) {
       await this.sendQuizQuestion(
         from,
