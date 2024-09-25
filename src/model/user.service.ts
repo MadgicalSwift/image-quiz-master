@@ -117,7 +117,7 @@ export class UserService {
         console.log("5 users:",users.slice(0,5));
 
         // Filter users based on botId and mobileNumber
-        const filteredUsers = users.filter(user => user.Botid == '0209361209573688' );
+        const filteredUsers = users.filter(user => user.Botid == botId );
         console.log("Filtered: ",filteredUsers);
         if (filteredUsers.length === 0) {
           console.log("No users matched the given Botid.");
