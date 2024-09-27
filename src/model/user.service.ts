@@ -182,7 +182,6 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
       const filteredUsers = users.filter(user => user.Botid === Botid);
       console.log("Filtered Users by Botid:", filteredUsers);
     
-
       if (filteredUsers.length === 0) {
           console.log("No users matched the given Botid.");
           return [];  // No users found for this Botid

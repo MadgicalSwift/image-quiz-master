@@ -42,47 +42,34 @@ export class ChatbotService {
       await this.userService.createUser(from,"English", botId);
       userData = await this.userService.findUserByMobileNumber(from, botId);
     }
-    if (userData.isNameRequired) {
-      if (text.body) { // User has sent their name
-        await this.userService.saveUserName(from, botId, text.body); // Save name
-        await this.userService.updateIsNameRequired(from, botId, false); // Update isNameRequired to false
-        userData = await this.userService.findUserByMobileNumber(from, botId);
-        await this.swiftchatMessageService.sendQues(from, userData.name);
-        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
-      } else {
-        await this.swiftchatMessageService.sendName(from);
-      }
-      return 'ok';
-    }
-    // if (!userData.isNameRequired) {
-    //   // Retrieve the user's name from the database directly
-    //   userData = await this.userService.findUserByMobileNumber(from, botId); // Ensure fresh user data
-    
-    //   // If the user's name is already stored, use it without asking again
-    //   if (userData.name) {
-    //     await this.swiftchatMessageService.sendQues(from, userData.name); // Send quiz question with the retrieved name
-    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from); // Proceed to topic selection
-    //   }
+    // if (userData.isNameRequired) {
+    //   if (text.body) { // User has sent their name
+    //     await this.userService.saveUserName(from, botId, text.body); // Save name
+    //     await this.userService.updateIsNameRequired(from, botId, false); // Update isNameRequired to false
+    //     userData = await this.userService.findUserByMobileNumber(from, botId);
+    //     await this.swiftchatMessageService.sendQues(from, userData.name);
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //   } 
     //   return 'ok';
     // }
+   
      if (button_response) {
     
       const response = button_response.body;
 
       if (response === 'Yes' ) {
-        userData.name=null;
-        userData.isNameRequired= true;
+      //   // userData.name=null;
+      //   // userData.isNameRequired= true;
         
-        await this.userService.updateIsNameRequired(from, botId, true); 
-        await this.swiftchatMessageService.sendName(from); 
+      //   await this.userService.updateIsNameRequired(from, botId, true); 
 
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      }
-      else if (
+      //   this.mixpanel.track('Button_Click', {
+      //     distinct_id: from,
+      //     language: userData.language,
+      //     button:button_response?.body,
+      //   });
+      
+       if (
         [
           'Nutrition',
           'Healthy Habits',
@@ -91,11 +78,9 @@ export class ChatbotService {
           'Exercise & Fitness',
         ].includes(response)
       ) {
-      
         let currentSet = this.getRandomSetNumber(response); // Assign a random set
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
-
         await this.userService.saveCurrentTopic(from,botId, response)
         await this.userService.saveCurrentSetNumber(from,botId,currentSet)
         await this.userService.saveQuestIndex(from,botId, currentQuestionIndex)
@@ -182,6 +167,7 @@ export class ChatbotService {
       
    
       if (localisedStrings.validText.includes(text.body)) {
+        console.log("hiiiiiiiiiiiiii")
         const userData = await this.userService.findUserByMobileNumber(from,botId);
         if (!userData) {
           await this.userService.createUser(from,"English", botId);
@@ -190,13 +176,13 @@ export class ChatbotService {
         await this.message.sendWelcomeMessage(from, userData.language);
         await this.userService.saveQuestIndex(from,botId, 0)
         await this.userService.saveCurrentScore(from,botId, 0)
-      } 
+      } else{
+        await this.message.sendName(from)
+      }
     }
-
-  
     return 'ok';
   }
-
+}
   private async startQuiz(
     from: string,
     topic: string,
@@ -312,10 +298,7 @@ export class ChatbotService {
 
   private async handleViewChallenges(from: string, userData: any): Promise<void> {
     try {
-      console.log("id",userData.Botid)
         // Call the getTopStudents method to get the top 3 users
-        console.log("userData:", userData);
-        console.log("setno:", userData.setNumber);
         const topStudents = await this.userService.getTopStudents(userData.Botid, userData.currentTopic, userData.setNumber);
         if (topStudents.length === 0) {
             // If no top users are available, send a message saying so
@@ -326,18 +309,25 @@ export class ChatbotService {
             });
             return;
         }
-
         // Format the response message with the top 3 students
         let message = 'Top 3 Users:\n\n';
         topStudents.forEach((student, index) => {
-            console.log("Student:",student)
             console.log("stu", student.challenges[0].question[0]);
             console.log("badge", student.challenges[0].question[0].badge);
-            
             const totalScore = student.score || 0;
             const studentName = student.name || 'Unknown';
-            const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
-
+            // const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
+            let badge = '';
+            if (totalScore === 10) {
+                badge = 'Gold';
+            } else if (totalScore >= 7) {
+                badge = 'Silver';
+            } else if (totalScore >= 5) {
+                badge = 'Bronze';
+            } else {
+                badge = 'No';
+            }
+            // const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
             message += `${index + 1}. ${studentName}\n`;
             message += `    Score: ${totalScore}\n`;
             message += `    Badge: ${badge}\n\n`;
