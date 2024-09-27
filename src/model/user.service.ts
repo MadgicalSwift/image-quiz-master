@@ -97,68 +97,154 @@ export class UserService {
     }
   }
 
-  async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
-    try {
+//   async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
+//     try {
+//       const params = {
+//         TableName: USERS_TABLE,
+//         KeyConditionExpression: 'Botid = :Botid',
+//         ExpressionAttributeValues: {
+//           ':Botid': Botid,
+//         },
+//       };
+//       const result = await dynamoDBClient().query(params).promise();
+//       console.log("res:",result.Items)
+//         console.log(result)
+//         const resultKeys = Object.keys(result).slice(0, 5);
+        
+//         const users = result.Items || [];
+//         // console.log("userdata",users)
+//         console.log("5 users:",users.slice(0,5));
+
+//         // Filter users based on botId and mobileNumber
+//         const filteredUsers = users.filter(user => user.Botid == Botid);
+//         console.log("Filtered: ",filteredUsers);
+//         if (filteredUsers.length === 0) {
+//           console.log("No users matched the given Botid.");
+//           // return [];
+//       }
+//       if(!filteredUsers[0].challenges){
+//         console.error("Users missing expected fields:", filteredUsers);
+//       }
+
+//         // Calculate total score for each user based on the given topic and set number
+//         filteredUsers.forEach(user => {
+//             user['totalScore'] = 0;
+//             if (user.challenges && Array.isArray(user.challenges)) {
+//               console.log("User's challenges:", user.challenges);
+//                 user.challenges.forEach(challenge => {
+             
+//                     if (challenge.topic === topic) {
+//                       console.log(`checking from ${challenge.topic} with ${topic}`)
+//                         if (challenge.question && Array.isArray(challenge.question)) {
+//                             challenge.question.forEach(question => {
+//                               console.log(`Checking question with setnumber: ${question.setnumber}, score: ${question.score}`);
+//                                 if (Number(question.setnumber) === Number(setNumber) && question.score != null) {
+//                                   user['totalScore'] += question.score; // Sum up scores for the matching set number
+//                                   console.log(`Updated totalScore for user ${user.mobileNumber}:`, user['totalScore']);
+//                                 }else {
+//                                   console.log(`No match for setnumber or score missing: setnumber ${question.setnumber}, score ${question.score}`);
+//                               }
+//                             });
+//                         }
+//                     }
+//                 });
+//             }
+//             else {
+//               console.log(`User ${user.mobileNumber} has no challenges or challenges is not an array.`);
+//           }
+//         });
+
+//         // Sort by total score in descending order and get the top 3 users
+//         const topUsers = filteredUsers.sort((a, b) => b['totalScore'] - a['totalScore']).slice(0, 3);
+//         console.log("Top users: ",topUsers)
+//         return topUsers;
+//     } catch (error) {
+//         console.error('Error retrieving top students:', error);
+//         throw error;
+//     }
+// }
+
+async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
+  try {
       const params = {
-        TableName: USERS_TABLE,
-        KeyConditionExpression: 'Botid = :Botid',
-        ExpressionAttributeValues: {
-          ':Botid': Botid,
-        },
+          TableName: USERS_TABLE,
+          KeyConditionExpression: 'Botid = :Botid',
+          ExpressionAttributeValues: {
+              ':Botid': Botid,
+          },
       };
       const result = await dynamoDBClient().query(params).promise();
-      console.log("res:",result.Items)
-        console.log(result)
-        const resultKeys = Object.keys(result).slice(0, 5);
-        
-        const users = result.Items || [];
-        // console.log("userdata",users)
-        // console.log("5 users:",users.slice(0,5));
 
-        // Filter users based on botId and mobileNumber
-        const filteredUsers = users.filter(user => user.Botid == Botid );
-        console.log("Filtered: ",filteredUsers);
-        if (filteredUsers.length === 0) {
+      const users = result.Items || [];
+      console.log("5 users from the result:", users.slice(0, 5));  // Log first 5 users for debugging
+
+      // Filter users based on Botid
+      const filteredUsers = users.filter(user => user.Botid === Botid);
+      console.log("Filtered Users by Botid:", filteredUsers);
+    
+
+      if (filteredUsers.length === 0) {
           console.log("No users matched the given Botid.");
-          // return [];
-      }
-      if(!filteredUsers[0].challenges){
-        console.error("Users missing expected fields:", filteredUsers);
+          return [];  // No users found for this Botid
       }
 
-        // Calculate total score for each user based on the given topic and set number
-        filteredUsers.forEach(user => {
-            user.totalScore = 0;
-            if (user.challenges && Array.isArray(user.challenges)) {
-                user.challenges.forEach(challenge => {
-                    if (challenge.topic === topic) {
-                        if (challenge.question && Array.isArray(challenge.question)) {
-                            challenge.question.forEach(question => {
-                                if (Number(question.setnumber) === Number(setNumber) && question.score != null) {
-                                    user.totalScore += question.score; // Sum up scores for the matching set number
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-            else {
+      // Ensure challenges field is present
+      if (!filteredUsers[0].challenges) {
+          console.error("Users missing expected fields (challenges):", filteredUsers);
+          return [];
+      }
+
+      // Calculate total score for each user based on the given topic and set number
+      filteredUsers.forEach(user => {
+          user['totalScore'] = 0;  // Initialize totalScore
+
+          if (user.challenges && Array.isArray(user.challenges)) {
+              console.log("User's challenges:", JSON.stringify(user.challenges, null, 2));  // Log challenges structure for debugging
+
+              // Loop through the user's challenges
+              user.challenges.forEach(challenge => {
+                  if (challenge.topic === topic) {
+                      console.log(`Matched topic: ${challenge.topic} with ${topic}`);
+
+                      // Ensure challenge.question is an array and loop through the questions
+                      if (challenge.question && Array.isArray(challenge.question)) {
+                          challenge.question.forEach(question => {
+                              console.log(`Checking question with setNumber: ${question.setNumber}, score: ${question.score}`);
+
+                              // Match the set number and check if score exists
+                              if (Number(question.setNumber) === Number(setNumber) && question.score != null) {
+                                  user['totalScore'] += question.score;  // Sum up scores for the matching set number
+                                  console.log(`Updated totalScore for user ${user.mobileNumber}:`, user['totalScore']);
+                              } else {
+                                  console.log(`No match for setNumber or score is missing: setNumber ${question.setNumber}, score ${question.score}`);
+                              }
+                          });
+                      } else {
+                          console.log(`No questions found or questions is not an array for user ${user.mobileNumber}`);
+                      }
+                  } else {
+                      console.log(`Topic does not match for user ${user.mobileNumber}: ${challenge.topic} != ${topic}`);
+                  }
+              });
+          } else {
               console.log(`User ${user.mobileNumber} has no challenges or challenges is not an array.`);
           }
-        });
+      });
 
-        // Sort by total score in descending order and get the top 3 users
-        const topUsers = filteredUsers.sort((a, b) => b.totalScore - a.totalScore).slice(0, 3);
+      // Sort by total score in descending order and get the top 3 users
+      const topUsers = filteredUsers
+          .filter(user => user['totalScore'] > 0)  // Only consider users with a score
+          .sort((a, b) => b['totalScore'] - a['totalScore'])  // Sort by totalScore (descending)
+          .slice(0, 3);  // Get the top 3 users
 
-        return topUsers;
-    } catch (error) {
-        console.error('Error retrieving top students:', error);
-        throw error;
-    }
+      console.log("Top 3 users:", topUsers);
+
+      return topUsers;
+  } catch (error) {
+      console.error('Error retrieving top students:', error);
+      throw error;
+  }
 }
-
-
-
 
   async saveUserChallenge(mobileNumber: string, botID: string, challengeData: any): Promise<any> {
     const params = {

@@ -54,6 +54,17 @@ export class ChatbotService {
       }
       return 'ok';
     }
+    // if (!userData.isNameRequired) {
+    //   // Retrieve the user's name from the database directly
+    //   userData = await this.userService.findUserByMobileNumber(from, botId); // Ensure fresh user data
+    
+    //   // If the user's name is already stored, use it without asking again
+    //   if (userData.name) {
+    //     await this.swiftchatMessageService.sendQues(from, userData.name); // Send quiz question with the retrieved name
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from); // Proceed to topic selection
+    //   }
+    //   return 'ok';
+    // }
      if (button_response) {
     
       const response = button_response.body;
@@ -61,14 +72,10 @@ export class ChatbotService {
       if (response === 'Yes' ) {
         userData.name=null;
         userData.isNameRequired= true;
-        if (!userData.name) { // Name not provided yet, ask for it
-          await this.userService.updateIsNameRequired(from, botId, true); // Set isNameRequired to true
-          await this.swiftchatMessageService.sendName(from);
-        } else {
-          // If name already exists, proceed to topic selection
-          await this.swiftchatMessageService.sendTopicSelectionMessage(from);
-        }
         
+        await this.userService.updateIsNameRequired(from, botId, true); 
+        await this.swiftchatMessageService.sendName(from); 
+
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
@@ -115,7 +122,8 @@ export class ChatbotService {
       } else if (response === 'See Health Tips') {
         // Call method to send health tips
         await this.swiftchatMessageService.sendHealthTips(from);
-        await this.message.sendEndBotMessage(from)
+        // await this.message.sendEndBotMessage(from)
+        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
@@ -124,7 +132,8 @@ export class ChatbotService {
       }
       else if(response ==='View Challenges'){
         await this.handleViewChallenges(from, userData);
-        await this.message.sendEndBotMessage(from)
+        // await this.message.sendEndBotMessage(from)
+        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
         this.mixpanel.track('Button_Click', {
             distinct_id: from,
             language: userData.language,
@@ -305,7 +314,9 @@ export class ChatbotService {
     try {
       console.log("id",userData.Botid)
         // Call the getTopStudents method to get the top 3 users
-        const topStudents = await this.userService.getTopStudents(userData.Botid, userData.topic, userData.setNumber);
+        console.log("userData:", userData);
+        console.log("setno:", userData.setNumber);
+        const topStudents = await this.userService.getTopStudents(userData.Botid, userData.currentTopic, userData.setNumber);
         if (topStudents.length === 0) {
             // If no top users are available, send a message saying so
             await this.swiftchatMessageService.sendMessage({
@@ -319,7 +330,11 @@ export class ChatbotService {
         // Format the response message with the top 3 students
         let message = 'Top 3 Users:\n\n';
         topStudents.forEach((student, index) => {
-            const totalScore = student.totalScore || 0;
+            console.log("Student:",student)
+            console.log("stu", student.challenges[0].question[0]);
+            console.log("badge", student.challenges[0].question[0].badge);
+            
+            const totalScore = student.score || 0;
             const studentName = student.name || 'Unknown';
             const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
 
@@ -387,6 +402,7 @@ export class ChatbotService {
         }]
       };
       // Save the challenge data into the database 
+      console.log("Challenge data:",challengeData);
       await this.userService.saveUserChallenge(from, userData.Botid, challengeData);
 
       // await this.swiftchatMessageService.sendQuizCompletionMessage(from);
