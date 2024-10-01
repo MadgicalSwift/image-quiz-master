@@ -43,25 +43,12 @@ export class ChatbotService {
     }
     if (button_response) {
       const response = button_response.body;
-      if (response == 'Yes') {
-
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button: button_response?.body,
-        });
-
-        await this.swiftchatMessageService.sendQues(from, userData.name);
-        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
-      } else if (
-        [
-          'Nutrition',
-          'Healthy Habits',
-          'Good Manners',
-          'Mental Wellness',
-          'Exercise & Fitness',
-        ].includes(response)
-      ) {
+      const topicsList=[localisedStrings.topics.nutrition,
+        localisedStrings.topics.healthyHabits,
+        localisedStrings.topics.goodManners,
+        localisedStrings.topics.mentalWellness,
+        localisedStrings.topics.exerciseAndFitness,];
+     if (topicsList.includes(response)) {
         let currentSet = this.getRandomSetNumber(response); // Assign a random set
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
@@ -90,8 +77,8 @@ export class ChatbotService {
           button: button_response?.body,
         });
       } else if (
-        response === 'Choose Another Topic' ||
-        response === 'Topic Selection'
+        response === localisedStrings.chooseAnotherTopic ||
+        response === localisedStrings.topicSelect
       ) {
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
 
@@ -100,27 +87,25 @@ export class ChatbotService {
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'See Health Tips') {
-        // Call method to send health tips
+      } else if (response === localisedStrings.seeHealth) {
 
         await this.swiftchatMessageService.sendHealthTips(from);
         await this.message.sendEndBotMessage(from)
-        // await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'View Challenges') {
+      } else if (response === localisedStrings.viewChallenges) {
         await this.handleViewChallenges(from, userData);
-        // await this.message.sendEndBotMessage(from)
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'Start Quiz') {
+      } else if (response === localisedStrings.startQuiz) {
         const topic = userData.currentTopic;
         const set = userData.setNumber || 1;
 
@@ -130,14 +115,14 @@ export class ChatbotService {
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'Next Question') {
+      } else if (response === localisedStrings.nextQues) {
         await this.handleNextQuestion(from, userData);
         this.mixpanel.track('Button_Click', {
           distinct_id: from,
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'Retake Quiz') {
+      } else if (response === localisedStrings.retakeQuiz) {
         const topic = userData.currentTopic;
         const set = userData.setNumber || 1;
 
@@ -150,7 +135,7 @@ export class ChatbotService {
           language: userData.language,
           button: button_response?.body,
         });
-      } else if (response === 'END') {
+      } else if (response === localisedStrings.end) {
         await this.message.sendEndBotMessage(from);
       } else {
         await this.processQuizAnswer(
@@ -193,7 +178,7 @@ export class ChatbotService {
     userData: any,
   ): Promise<void> {
     const questions = this.getQuizQuestions(topic, setNumber);
-
+    console.log(questions.length)
     if (questions.length > 0) {
       await this.swiftchatMessageService.sendQuizInstructions(from, topic);
       await this.shuffleAndSendQuestions(from, topic, setNumber, userData);
@@ -314,14 +299,14 @@ export class ChatbotService {
     userData: any,
   ): Promise<void> {
     try {
-      // Call the getTopStudents method to get the top 3 users
+      
       const topStudents = await this.userService.getTopStudents(
         userData.Botid,
         userData.currentTopic,
         userData.setNumber,
       );
       if (topStudents.length === 0) {
-        // If no top users are available, send a message saying so
+  
         await this.swiftchatMessageService.sendMessage({
           to: from,
           type: 'text',
@@ -334,14 +319,14 @@ export class ChatbotService {
       topStudents.forEach((student, index) => {
         const totalScore = student.score || 0;
         const studentName = student.name || 'Unknown';
-        // const badge = student.challenges?.[0]?.question?.[0]?.badge || 'No badge';
+      
         let badge = '';
         if (totalScore === 10) {
-          badge = 'Gold';
+          badge = 'Gold 🥇';
         } else if (totalScore >= 7) {
-          badge = 'Silver';
+          badge = 'Silver 🥈';
         } else if (totalScore >= 5) {
-          badge = 'Bronze';
+          badge = 'Bronze 🥉';
         } else {
           badge = 'No';
         }
@@ -390,14 +375,13 @@ export class ChatbotService {
       );
       const correctAnswers = userData.score || 0;
 
-      //Determine badge based on correct answers
       let badge = '';
       if (correctAnswers === 10) {
-        badge = 'Gold';
+        badge = 'Gold 🥇';
       } else if (correctAnswers >= 7) {
-        badge = 'Silver';
+        badge = 'Silver 🥈';
       } else if (correctAnswers >= 5) {
-        badge = 'Bronze';
+        badge = 'Bronze 🥉';
       } else {
         badge = 'No';
       }
@@ -421,7 +405,6 @@ export class ChatbotService {
         challengeData,
       );
 
-      // await this.swiftchatMessageService.sendQuizCompletionMessage(from);
       await this.swiftchatMessageService.sendQuizSummaryMessage(
         from,
         topic,
@@ -441,8 +424,7 @@ export class ChatbotService {
 
   private getRandomSetNumber(topic: string): number {
     const sets = quizData[topic]?.map((set) => set.set) || [];
-    // const randomSet = sets[Math.floor(Math.random() * sets.length)] || 1;
-    const randomSet = 1;
+    const randomSet = sets[Math.floor(Math.random() * sets.length)] || 1;
 
     return randomSet;
   }

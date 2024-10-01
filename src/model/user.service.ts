@@ -109,39 +109,24 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
       const result = await dynamoDBClient().query(params).promise();
 
       const users = result.Items || [];
-      // console.log("5 users from the result:", users.slice(0, 5));  // Log first 5 users for debugging
-
-      // Filter users based on Botid
+    
       const filteredUsers = users.filter(user => user.Botid === Botid);
-      console.log("Filtered Users by Botid:", filteredUsers);
     
       if (filteredUsers.length === 0) {
-          console.log("No users matched the given Botid.");
-          return [];  // No users found for this Botid
+          return [];  
       }
 
-
-      // Calculate total score for each user based on the given topic and set number
       filteredUsers.forEach(user => {
-          user['totalScore'] = 0;  // Initialize totalScore
+          user['totalScore'] = 0;  
 
           if (user.challenges && Array.isArray(user.challenges)) {
-              console.log("User's challenges:", JSON.stringify(user.challenges, null, 2));  // Log challenges structure for debugging
-
-              // Loop through the user's challenges
+              console.log("User's challenges:", JSON.stringify(user.challenges, null, 2));  
               user.challenges.forEach(challenge => {
                   if (challenge.topic === topic) {
-                      console.log(`Matched topic: ${challenge.topic} with ${topic}`);
-
-                      // Ensure challenge.question is an array and loop through the questions
                       if (challenge.question && Array.isArray(challenge.question)) {
                           challenge.question.forEach(question => {
-                              console.log(`Checking question with setNumber: ${question.setNumber}, score: ${question.score}`);
-
-                              // Match the set number and check if score exists
                               if (Number(question.setNumber) === Number(setNumber) && question.score != null) {
-                                  user['totalScore'] += question.score;  // Sum up scores for the matching set number
-                                  console.log(`Updated totalScore for user ${user.mobileNumber}:`, user['totalScore']);
+                                  user['totalScore'] += question.score;  
                               } else {
                                   console.log(`No match for setNumber or score is missing: setNumber ${question.setNumber}, score ${question.score}`);
                               }
@@ -158,14 +143,10 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
           }
       });
 
-      // Sort by total score in descending order and get the top 3 users
       const topUsers = filteredUsers
-          .filter(user => user['totalScore'] > 0)  // Only consider users with a score
-          .sort((a, b) => b['totalScore'] - a['totalScore'])  // Sort by totalScore (descending)
-          .slice(0, 3);  // Get the top 3 users
-
-      console.log("Top 3 users:", topUsers);
-
+          .filter(user => user['totalScore'] > 0)  
+          .sort((a, b) => b['totalScore'] - a['totalScore']) 
+          .slice(0, 3);  
       return topUsers;
   } catch (error) {
       console.error('Error retrieving top students:', error);
@@ -182,7 +163,7 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
       },
       UpdateExpression: 'SET challenges = list_append(if_not_exists(challenges, :emptyList), :challengeData)',
       ExpressionAttributeValues: {
-        ':challengeData': [challengeData], // Appends the new challenge data to the challenges array
+        ':challengeData': [challengeData], 
         ':emptyList': []
       }
     };

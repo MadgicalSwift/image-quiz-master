@@ -17,7 +17,7 @@ export class SwiftchatMessageService {
     
     const requestData = this.prepareRequestData(from, message);
     await this.sendMessage(requestData);
-    // await this.sendInitialOptions(from);
+  
   }
 
   async sendName(from:string){
