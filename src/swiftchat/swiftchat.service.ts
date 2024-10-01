@@ -4,9 +4,7 @@ import * as dotenv from 'dotenv';
 import { localisedStrings } from 'src/i18n/en/localised-strings'; // Adjust the path to your localizedStrings file
 import * as quizData from 'src/config/edata.json'; // Adjust the path to your JSON file
 
-
 dotenv.config();
-
 @Injectable()
 export class SwiftchatMessageService {
   private botId = process.env.BOT_ID;
@@ -19,7 +17,7 @@ export class SwiftchatMessageService {
     
     const requestData = this.prepareRequestData(from, message);
     await this.sendMessage(requestData);
-    await this.sendInitialOptions(from);
+    // await this.sendInitialOptions(from);
   }
 
   async sendName(from:string){
