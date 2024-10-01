@@ -13,5 +13,25 @@ export const localisedStrings = {
   language_hindi: 'हिन्दी',
   validText:['hi', 'Hi', 'HI', 'hI','Hii','hii', 'Hello', 'hello', 'hola'],
   chooseAnotherTopic: 'Choose Another Topic',
-  endMessage: "👋 Hey there! Whenever you're ready to continue, just type 'Hi' to start the bot again. Looking forward to helping you out! 😊"
+  endMessage: "👋 Hey there! Whenever you're ready to continue, just type 'Hi' to start the bot again. Looking forward to helping you out! 😊",
+  healthTips: [
+    "💧 Drink plenty of water to stay hydrated.",
+    "🍎 Eat more fruits and vegetables.",
+    "🏃‍♂️ Exercise regularly – at least 30 minutes a day.",
+    "😴 Get enough sleep – aim for 7-8 hours each night.",
+    "🚶‍♀️ Take short breaks and stretch if you sit for long periods."
+  ],
+  topicButtons: {
+    nutrition: { label: 'Nutrition', reply: 'Nutrition' },
+    healthyHabits: { label: 'Healthy Habits', reply: 'Healthy Habits' },
+    goodManners: { label: 'Good Manners', reply: 'Good Manners' },
+    mentalWellness: { label: 'Mental Wellness', reply: 'Mental Wellness' },
+    exerciseFitness: { label: 'Exercise & Fitness', reply: 'Exercise & Fitness' },
+  },
+  part2Buttons: {
+    retakeQuiz: { label: 'Retake Quiz', reply: 'Retake Quiz' },
+    chooseAnotherTopic: { label: 'Choose Another Topic', reply: 'Choose Another Topic' },
+    viewChallenges: { label: 'View Challenges', reply: 'View Challenges' },
+    seeHealthTips: { label: 'See Health Tips', reply: 'See Health Tips' }
+  }
 };

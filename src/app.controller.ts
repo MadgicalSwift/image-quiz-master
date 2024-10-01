@@ -27,6 +27,7 @@ export class AppController {
   async handleUserMessage(@Body() body, @Res() res: Response): Promise<void> {
     try {
       const { from, text } = body;
+      console.log(body);
       await this.chatbotService.processMessage(body);
       res.status(200).send({
         status: {

@@ -52,60 +52,226 @@ export class ChatbotService {
     //   } 
     //   return 'ok';
     // }
-   
-     if (button_response) {
+    // console.log(text.body);
+    // if (localisedStrings.validText.includes(text.body)) {
+    //   console.log("hiiiiiiiiiiiiii")
+    //   const userData = await this.userService.findUserByMobileNumber(from,botId);
+    //   if (!userData) {
+    //     await this.userService.createUser(from,"English", botId);
+    //   }
     
-      const response = button_response.body;
+    //   await this.message.sendWelcomeMessage(from, userData.language);
+    //   await this.userService.saveQuestIndex(from,botId, 0)
+    //   await this.userService.saveCurrentScore(from,botId, 0)
+    // } else{
+    //   console.log("not in button")
+    //   await this.message.sendName(from)
+    // }
+    //  if (button_response) {
+    //   console.log("button entered");
+    //   const response = button_response.body;
 
-      if (response === 'Yes' ) {
-      //   // userData.name=null;
-      //   // userData.isNameRequired= true;
+    //   if (response == 'Yes' ) {
+    //   //   // userData.name=null;
+    //   //   // userData.isNameRequired= true;
         
-      //   await this.userService.updateIsNameRequired(from, botId, true); 
+    //   //   await this.userService.updateIsNameRequired(from, botId, true); 
 
-      //   this.mixpanel.track('Button_Click', {
-      //     distinct_id: from,
-      //     language: userData.language,
-      //     button:button_response?.body,
-      //   });
-      
-       if (
-        [
-          'Nutrition',
-          'Healthy Habits',
-          'Good Manners',
-          'Mental Wellness',
-          'Exercise & Fitness',
-        ].includes(response)
-      ) {
-        let currentSet = this.getRandomSetNumber(response); // Assign a random set
-        let currentQuestionIndex = 0;
-        let correctAnswersCount = 0;
-        await this.userService.saveCurrentTopic(from,botId, response)
-        await this.userService.saveCurrentSetNumber(from,botId,currentSet)
-        await this.userService.saveQuestIndex(from,botId, currentQuestionIndex)
-        await this.userService.saveCurrentScore(from,botId, correctAnswersCount)
-        userData = await this.userService.findUserByMobileNumber(from,botId);
-        await this.swiftchatMessageService.sendSelectedSetMessage(
-          from,
-          userData.setNumber,
-        );
-        await this.startQuiz(from, response, userData.setNumber, userData);
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      } else if( response === 'Choose Another Topic' || response === 'Topic Selection'){
-        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //   //   this.mixpanel.track('Button_Click', {
+    //   //     distinct_id: from,
+    //   //     language: userData.language,
+    //   //     button:button_response?.body,
+    //   //   });
+    //   console.log('namaste');
+    //   await this.swiftchatMessageService.sendQues(from, userData.name);
+    //   await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //   }
+    //    else if (
+    //     [
+    //       'Nutrition',
+    //       'Healthy Habits',
+    //       'Good Manners',
+    //       'Mental Wellness',
+    //       'Exercise & Fitness',
+    //     ].includes(response)
+    //   ) {
+    //     let currentSet = this.getRandomSetNumber(response); // Assign a random set
+    //     let currentQuestionIndex = 0;
+    //     let correctAnswersCount = 0;
+    //     await this.userService.saveCurrentTopic(from,botId, response)
+    //     await this.userService.saveCurrentSetNumber(from,botId,currentSet)
+    //     await this.userService.saveQuestIndex(from,botId, currentQuestionIndex)
+    //     await this.userService.saveCurrentScore(from,botId, correctAnswersCount)
+    //     userData = await this.userService.findUserByMobileNumber(from,botId);
+    //     await this.swiftchatMessageService.sendSelectedSetMessage(
+    //       from,
+    //       userData.setNumber,
+    //     );
+    //     await this.startQuiz(from, response, userData.setNumber, userData);
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button:button_response?.body,
+    //     });
+    //   } else if( response === 'Choose Another Topic' || response === 'Topic Selection'){
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from);
        
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      } else if (response === 'See Health Tips') {
-        // Call method to send health tips
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button:button_response?.body,
+    //     });
+    //   } 
+    // else if (response === 'See Health Tips') {
+    //     // Call method to send health tips
+    //     await this.swiftchatMessageService.sendHealthTips(from);
+    //     // await this.message.sendEndBotMessage(from)
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button: button_response?.body,
+    //     });
+    //   }
+    //   else if(response ==='View Challenges'){
+    //     await this.handleViewChallenges(from, userData);
+    //     // await this.message.sendEndBotMessage(from)
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //     this.mixpanel.track('Button_Click', {
+    //         distinct_id: from,
+    //         language: userData.language,
+    //         button: button_response?.body,
+    //     })
+    //   }
+    //   else if (response === 'Start Quiz') {
+    //     const topic = userData.currentTopic
+    //     const set = userData.setNumber || 1;
+      
+    //     await this.startQuiz(from, topic, set, userData);
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button:button_response?.body,
+    //     });
+    //   } else if (response === 'Next Question') {
+       
+    //     await this.handleNextQuestion(from, userData);
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button:button_response?.body,
+    //     });
+    //   } else if (response === 'Retake Quiz') {
+    //     const topic = userData.currentTopic;
+    //     const set = userData.setNumber || 1;
+      
+
+    //     await this.userService.saveQuestIndex(from,botId,0)
+    //     await this.userService.saveCurrentScore(from,botId,0)
+
+    //     await this.startQuiz(from, topic, set, userData);
+    //     this.mixpanel.track('Button_Click', {
+    //       distinct_id: from,
+    //       language: userData.language,
+    //       button:button_response?.body,
+    //     });
+    //   } else if(response === 'END'){
+    //     await this.message.sendEndBotMessage(from)
+    //   }
+    //   else{
+    //     await this.processQuizAnswer(from, response, userData.language, userData);
+    //   }
+    // //  else {
+    // //   console.log("1");
+   
+    //   // if (localisedStrings.validText.includes(text.body)) {
+    //   //   console.log("hiiiiiiiiiiiiii")
+    //   //   const userData = await this.userService.findUserByMobileNumber(from,botId);
+    //   //   if (!userData) {
+    //   //     await this.userService.createUser(from,"English", botId);
+    //   //   }
+      
+    //   //   await this.message.sendWelcomeMessage(from, userData.language);
+    //   //   await this.userService.saveQuestIndex(from,botId, 0)
+    //   //   await this.userService.saveCurrentScore(from,botId, 0)
+    //   // } else{
+    //   //   await this.message.sendName(from)
+    //   // }
+    // // }
+    // return 'ok';
+
+  // }
+    //   if (userData.isNameRequired) {
+    //   if (text.body) { // User has sent their name
+    //     await this.userService.saveUserName(from, botId, text.body); // Save name
+    //     await this.userService.updateIsNameRequired(from, botId, false); // Update isNameRequired to false
+    //     userData = await this.userService.findUserByMobileNumber(from, botId);
+    //     await this.swiftchatMessageService.sendName(from);
+    //     await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+    //   } 
+    //   return 'ok';
+    // }
+    
+    
+    if (button_response) {
+    console.log('inside button')
+    const response = button_response.body;
+    if (response == 'Yes' ) {
+          // userData.name=null;
+          // userData.isNameRequired= true;
+          
+          // await this.userService.updateIsNameRequired(from, botId, true); 
+  
+          this.mixpanel.track('Button_Click', {
+            distinct_id: from,
+            language: userData.language,
+            button:button_response?.body,
+          });
+        console.log('namaste');
+        await this.swiftchatMessageService.sendQues(from, userData.name);
+        await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+        }
+    else if (
+      [
+        'Nutrition',
+        'Healthy Habits',
+        'Good Manners',
+        'Mental Wellness',
+        'Exercise & Fitness',
+      ].includes(response)
+    ) {
+    
+      let currentSet = this.getRandomSetNumber(response); // Assign a random set
+      let currentQuestionIndex = 0;
+      let correctAnswersCount = 0;
+
+      await this.userService.saveCurrentTopic(from,botId, response)
+      await this.userService.saveCurrentSetNumber(from,botId,currentSet)
+      await this.userService.saveQuestIndex(from,botId, currentQuestionIndex)
+      await this.userService.saveCurrentScore(from,botId, correctAnswersCount)
+      userData = await this.userService.findUserByMobileNumber(from,botId);
+      await this.swiftchatMessageService.sendSelectedSetMessage(
+        from,
+        userData.setNumber,
+      );
+      await this.startQuiz(from, response, userData.setNumber, userData);
+      this.mixpanel.track('Button_Click', {
+        distinct_id: from,
+        language: userData.language,
+        button:button_response?.body,
+      });
+    } else if ( response === 'Choose Another Topic' || response === 'Topic Selection') {
+      await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+     
+      this.mixpanel.track('Button_Click', {
+        distinct_id: from,
+        language: userData.language,
+        button:button_response?.body,
+      });
+    } 
+      else if (response === 'See Health Tips') {
+      // Call method to send health tips
+        
         await this.swiftchatMessageService.sendHealthTips(from);
         // await this.message.sendEndBotMessage(from)
         await this.swiftchatMessageService.sendTopicSelectionMessage(from);
@@ -125,63 +291,62 @@ export class ChatbotService {
             button: button_response?.body,
         })
       }
-      else if (response === 'Start Quiz') {
-        const topic = userData.currentTopic
-        const set = userData.setNumber || 1;
-      
-        await this.startQuiz(from, topic, set, userData);
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      } else if (response === 'Next Question') {
-       
-        await this.handleNextQuestion(from, userData);
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      } else if (response === 'Retake Quiz') {
-        const topic = userData.currentTopic;
-        const set = userData.setNumber || 1;
-      
+    else if (response === 'Start Quiz') {
+      const topic = userData.currentTopic
+      const set = userData.setNumber || 1;
+    
+      await this.startQuiz(from, topic, set, userData);
+      this.mixpanel.track('Button_Click', {
+        distinct_id: from,
+        language: userData.language,
+        button:button_response?.body,
+      });
+    } else if (response === 'Next Question') {
+     
+      await this.handleNextQuestion(from, userData);
+      this.mixpanel.track('Button_Click', {
+        distinct_id: from,
+        language: userData.language,
+        button:button_response?.body,
+      });
+    } else if (response === 'Retake Quiz') {
+      const topic = userData.currentTopic;
+      const set = userData.setNumber || 1;
+    
 
-        await this.userService.saveQuestIndex(from,botId,0)
-        await this.userService.saveCurrentScore(from,botId,0)
+      await this.userService.saveQuestIndex(from,botId,0)
+      await this.userService.saveCurrentScore(from,botId,0)
 
-        await this.startQuiz(from, topic, set, userData);
-        this.mixpanel.track('Button_Click', {
-          distinct_id: from,
-          language: userData.language,
-          button:button_response?.body,
-        });
-      } else if(response === 'END'){
-        await this.message.sendEndBotMessage(from)
-      }
-      else{
-        await this.processQuizAnswer(from, response, userData.language, userData);
-      }
-    } else {
-      
-   
-      if (localisedStrings.validText.includes(text.body)) {
-        console.log("hiiiiiiiiiiiiii")
-        const userData = await this.userService.findUserByMobileNumber(from,botId);
-        if (!userData) {
-          await this.userService.createUser(from,"English", botId);
-        }
-      
-        await this.message.sendWelcomeMessage(from, userData.language);
-        await this.userService.saveQuestIndex(from,botId, 0)
-        await this.userService.saveCurrentScore(from,botId, 0)
-      } else{
-        await this.message.sendName(from)
-      }
+      await this.startQuiz(from, topic, set, userData);
+      this.mixpanel.track('Button_Click', {
+        distinct_id: from,
+        language: userData.language,
+        button:button_response?.body,
+      });
+    } else if(response === 'END'){
+      console.log("End");
+      await this.message.sendEndBotMessage(from)
     }
-    return 'ok';
+    else{
+      await this.processQuizAnswer(from, response, userData.language, userData);
+    }
+  } 
+  else {
+    
+ 
+    if (localisedStrings.validText.includes(text.body)) {
+      const userData = await this.userService.findUserByMobileNumber(from,botId);
+      if (!userData) {
+        await this.userService.createUser(from,"English", botId);
+      }
+    
+      await this.message.sendWelcomeMessage(from, userData.language);
+      // await this.userService.updateIsNameRequired(from, botId, true);
+      await this.userService.saveQuestIndex(from,botId, 0)
+      await this.userService.saveCurrentScore(from,botId, 0)
+    } 
   }
+  return 'ok';
 }
   private async startQuiz(
     from: string,

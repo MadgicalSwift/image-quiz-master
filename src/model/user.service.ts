@@ -32,7 +32,7 @@ export class UserService {
           language: language,  // Use the language passed to the function
           Botid: botID,
           name:null,
-          isNameRequired:true,
+          isNameRequired:false,
           button_response: null,
           currentQuestIndex: null,
           currentTopic: null,
@@ -188,10 +188,10 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
       }
 
       // Ensure challenges field is present
-      if (!filteredUsers[0].challenges) {
-          console.error("Users missing expected fields (challenges):", filteredUsers);
-          return [];
-      }
+      // if (!filteredUsers[0].challenges) {
+      //     console.error("Users missing expected fields (challenges):", filteredUsers);
+      //     return [];
+      // }
 
       // Calculate total score for each user based on the given topic and set number
       filteredUsers.forEach(user => {
@@ -459,23 +459,5 @@ async findUserByMobileNumber(mobileNumber, Botid) {
       return null;
     }
   }
-  // async getTopStudents( Botid,topic,setNumber) {
-  //   try {
-  //     const params = {
-  //       TableName: USERS_TABLE,
-  //       KeyConditionExpression: 'Botid = :Botid',
-  //       ExpressionAttributeValues: {
-  //         ':Botid': Botid,
-  //       },
-  //     };
-  //     const result = await dynamoDBClient().query(params).promise();
-  //     console.log("res:",result.Items)
-  //     return result.Items?.[0] || null; // Return the first item or null if none found
-  //   } catch (error) {
-  //     console.error('Error querying user from DynamoDB:', error);
-  //     return null;
-  //   }
-  // }
-
   
 }

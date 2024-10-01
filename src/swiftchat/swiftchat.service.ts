@@ -94,19 +94,14 @@ export class SwiftchatMessageService {
   }
 
   public async sendHealthTips(from: string): Promise<void> {
-    const healthTips = [
-      "💧 Drink plenty of water to stay hydrated.",
-      "🍎 Eat more fruits and vegetables.",
-      "🏃‍♂️ Exercise regularly – at least 30 minutes a day.",
-      "😴 Get enough sleep – aim for 7-8 hours each night.",
-      "🚶‍♀️ Take short breaks and stretch if you sit for long periods."
-    ];
+    const healthTips = localisedStrings.healthTips;
 
     const tipsMessage = healthTips.join('\n');
     const messageData= this.prepareRequestData(from, tipsMessage);
     await this.sendMessage(messageData);
   }
   async sendTopicSelectionMessage(from: string) {
+    const buttons = localisedStrings.topicButtons;
     const messageData = {
       to: from,
       type: 'button',
@@ -116,11 +111,11 @@ export class SwiftchatMessageService {
           text: { body: localisedStrings.chooseTopic },
         },
         buttons: [
-          { type: 'solid', body: 'Nutrition', reply: 'Nutrition' },
-          { type: 'solid', body: 'Healthy Habits', reply: 'Healthy Habits' },
-          { type: 'solid', body: 'Good Manners', reply: 'Good Manners' },
-          { type: 'solid', body: 'Mental Wellness', reply: 'Mental Wellness' },
-          { type: 'solid', body: 'Exercise & Fitness', reply: 'Exercise & Fitness' },
+          { type: 'solid', body: buttons.nutrition.label, reply: buttons.nutrition.reply },
+          { type: 'solid', body: buttons.healthyHabits.label, reply: buttons.healthyHabits.reply },
+          { type: 'solid', body: buttons.goodManners.label, reply: buttons.goodManners.reply },
+          { type: 'solid', body: buttons.mentalWellness.label, reply: buttons.mentalWellness.reply },
+          { type: 'solid', body: buttons.exerciseFitness.label, reply: buttons.exerciseFitness.reply }
         ],
         allow_custom_response: false,
       },
@@ -214,17 +209,6 @@ export class SwiftchatMessageService {
   async sendQuizSummaryMessage(from: string, topic: string, correctAnswersCount: number, setNumber:number, badge:string): Promise<void> {
     const totalQuestions = 10; // Assuming there are always 10 questions
 
-    // let badge = '';
-    // if (correctAnswersCount === 10) {
-    //     badge = 'Gold'; // Gold badge for 10 correct answers
-    // } else if (correctAnswersCount >= 7) {
-    //     badge = 'Silver'; // Silver badge for 7 or more correct answers
-    // } else if (correctAnswersCount >= 5) {
-    //     badge = 'Bronze'; // Bronze badge for 5 or more correct answers
-    // } else {
-    //     badge = 'No'; // If less than 5, no badge
-    // }
-
     const summaryMessagePart1 = localisedStrings.quizCompletionMessagePart1(topic);
     const summaryMessagePart2 = localisedStrings.quizCompletionMessagePart2(correctAnswersCount, totalQuestions);
     const summaryMessageBadge = `Congratulations! You earned a ${badge} badge!`; // Add badge message
@@ -245,6 +229,7 @@ export class SwiftchatMessageService {
     };
 
     // Define message data for the second part
+    const buttonsPart2 = localisedStrings.part2Buttons;
     const messageDataPart2 = {
         to: from,
         type: 'button',
@@ -254,10 +239,10 @@ export class SwiftchatMessageService {
                 text: { body: `${summaryMessagePart2}\n\n${summaryMessageBadge}` },
             },
             buttons: [
-                { type: 'solid', body: localisedStrings.retakeQuiz, reply: 'Retake Quiz' },
-                { type: 'solid', body: localisedStrings.chooseAnotherTopic, reply: 'Choose Another Topic' },
-                { type: 'solid', body: 'View Challenges', reply: 'View Challenges' },                  
-                { type: 'solid', body: 'See Health Tips', reply: 'See Health Tips' }
+              { type: 'solid', body: buttonsPart2.retakeQuiz.label, reply: buttonsPart2.retakeQuiz.reply },
+              { type: 'solid', body: buttonsPart2.chooseAnotherTopic.label, reply: buttonsPart2.chooseAnotherTopic.reply },
+              { type: 'solid', body: buttonsPart2.viewChallenges.label, reply: buttonsPart2.viewChallenges.reply },
+              { type: 'solid', body: buttonsPart2.seeHealthTips.label, reply: buttonsPart2.seeHealthTips.reply }
             ],
             allow_custom_response: false,
         },
