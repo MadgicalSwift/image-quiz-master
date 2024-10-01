@@ -16,7 +16,7 @@ export class SwiftchatMessageService {
 
   async sendWelcomeMessage(from: string, language: string) {
     const message = localisedStrings.welcomeMessage;
-    console.log(message)
+    
     const requestData = this.prepareRequestData(from, message);
     await this.sendMessage(requestData);
     await this.sendInitialOptions(from);

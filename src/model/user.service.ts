@@ -97,73 +97,6 @@ export class UserService {
     }
   }
 
-//   async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
-//     try {
-//       const params = {
-//         TableName: USERS_TABLE,
-//         KeyConditionExpression: 'Botid = :Botid',
-//         ExpressionAttributeValues: {
-//           ':Botid': Botid,
-//         },
-//       };
-//       const result = await dynamoDBClient().query(params).promise();
-//       console.log("res:",result.Items)
-//         console.log(result)
-//         const resultKeys = Object.keys(result).slice(0, 5);
-        
-//         const users = result.Items || [];
-//         // console.log("userdata",users)
-//         console.log("5 users:",users.slice(0,5));
-
-//         // Filter users based on botId and mobileNumber
-//         const filteredUsers = users.filter(user => user.Botid == Botid);
-//         console.log("Filtered: ",filteredUsers);
-//         if (filteredUsers.length === 0) {
-//           console.log("No users matched the given Botid.");
-//           // return [];
-//       }
-//       if(!filteredUsers[0].challenges){
-//         console.error("Users missing expected fields:", filteredUsers);
-//       }
-
-//         // Calculate total score for each user based on the given topic and set number
-//         filteredUsers.forEach(user => {
-//             user['totalScore'] = 0;
-//             if (user.challenges && Array.isArray(user.challenges)) {
-//               console.log("User's challenges:", user.challenges);
-//                 user.challenges.forEach(challenge => {
-             
-//                     if (challenge.topic === topic) {
-//                       console.log(`checking from ${challenge.topic} with ${topic}`)
-//                         if (challenge.question && Array.isArray(challenge.question)) {
-//                             challenge.question.forEach(question => {
-//                               console.log(`Checking question with setnumber: ${question.setnumber}, score: ${question.score}`);
-//                                 if (Number(question.setnumber) === Number(setNumber) && question.score != null) {
-//                                   user['totalScore'] += question.score; // Sum up scores for the matching set number
-//                                   console.log(`Updated totalScore for user ${user.mobileNumber}:`, user['totalScore']);
-//                                 }else {
-//                                   console.log(`No match for setnumber or score missing: setnumber ${question.setnumber}, score ${question.score}`);
-//                               }
-//                             });
-//                         }
-//                     }
-//                 });
-//             }
-//             else {
-//               console.log(`User ${user.mobileNumber} has no challenges or challenges is not an array.`);
-//           }
-//         });
-
-//         // Sort by total score in descending order and get the top 3 users
-//         const topUsers = filteredUsers.sort((a, b) => b['totalScore'] - a['totalScore']).slice(0, 3);
-//         console.log("Top users: ",topUsers)
-//         return topUsers;
-//     } catch (error) {
-//         console.error('Error retrieving top students:', error);
-//         throw error;
-//     }
-// }
-
 async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<User[] | any> {
   try {
       const params = {
@@ -176,7 +109,7 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
       const result = await dynamoDBClient().query(params).promise();
 
       const users = result.Items || [];
-      console.log("5 users from the result:", users.slice(0, 5));  // Log first 5 users for debugging
+      // console.log("5 users from the result:", users.slice(0, 5));  // Log first 5 users for debugging
 
       // Filter users based on Botid
       const filteredUsers = users.filter(user => user.Botid === Botid);
@@ -187,11 +120,6 @@ async getTopStudents(Botid: string, topic: string, setNumber: number): Promise<U
           return [];  // No users found for this Botid
       }
 
-      // Ensure challenges field is present
-      // if (!filteredUsers[0].challenges) {
-      //     console.error("Users missing expected fields (challenges):", filteredUsers);
-      //     return [];
-      // }
 
       // Calculate total score for each user based on the given topic and set number
       filteredUsers.forEach(user => {
