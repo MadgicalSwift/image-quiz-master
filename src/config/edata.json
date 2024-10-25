@@ -2876,8 +2876,470 @@
               "explanation": "Eggs are a good source of protein and essential nutrients."
             }
           ]
-        }   
-       
+        },   
+        {
+          "set": 26,
+          "questions": [
+            {
+              "question": "What color are berries that are full of antioxidants?",
+              "options": [
+                {"text": "Red and blue", "isCorrect": true},
+                {"text": "Yellow", "isCorrect": false},
+                {"text": "White", "isCorrect": false},
+                {"text": "Green", "isCorrect": false}
+              ],
+              "answer": "Red and blue",
+              "explanation": "Red and blue berries, like blueberries and strawberries, are rich in antioxidants."
+            },
+            {
+              "question": "What do antioxidants help protect?",
+              "options": [
+                {"text": "Cells", "isCorrect": true},
+                {"text": "Shoes", "isCorrect": false},
+                {"text": "Toys", "isCorrect": false},
+                {"text": "Clothes", "isCorrect": false}
+              ],
+              "answer": "Cells",
+              "explanation": "Antioxidants help protect cells in your body from damage."
+            },
+            {
+              "question": "Which food has lots of antioxidants?",
+              "options": [
+                {"text": "Blueberries", "isCorrect": true},
+                {"text": "Chocolate", "isCorrect": false},
+                {"text": "Chips", "isCorrect": false},
+                {"text": "Candy", "isCorrect": false}
+              ],
+              "answer": "Blueberries",
+              "explanation": "Blueberries are high in antioxidants, which help keep the body healthy."
+            },
+            {
+              "question": "Are nuts good for antioxidants?",
+              "options": [
+                {"text": "Yes", "isCorrect": true},
+                {"text": "No", "isCorrect": false},
+                {"text": "Sometimes", "isCorrect": false},
+                {"text": "Not sure", "isCorrect": false}
+              ],
+              "answer": "Yes",
+              "explanation": "Nuts contain antioxidants that help protect your body from damage."
+            },
+            {
+              "question": "What type of food helps keep you healthy?",
+              "options": [
+                {"text": "Antioxidant-rich", "isCorrect": true},
+                {"text": "Candy", "isCorrect": false},
+                {"text": "Soda", "isCorrect": false},
+                {"text": "Fast food", "isCorrect": false}
+              ],
+              "answer": "Antioxidant-rich",
+              "explanation": "Antioxidant-rich foods, like fruits and vegetables, support health."
+            },
+            {
+              "question": "Which color of fruit is good for antioxidants?",
+              "options": [
+                {"text": "Bright", "isCorrect": false},
+                {"text": "Dark", "isCorrect": true},
+                {"text": "Yellow", "isCorrect": false},
+                {"text": "Pale", "isCorrect": false}
+              ],
+              "answer": "Dark",
+              "explanation": "Dark-colored fruits and vegetables, like berries, are often rich in antioxidants."
+            },
+            {
+              "question": "Which has more antioxidants?",
+              "options": [
+                {"text": "Strawberries", "isCorrect": true},
+                {"text": "Chips", "isCorrect": false},
+                {"text": "Cake", "isCorrect": false},
+                {"text": "Fries", "isCorrect": false}
+              ],
+              "answer": "Strawberries",
+              "explanation": "Strawberries contain antioxidants, which are beneficial for your health."
+            },
+            {
+              "question": "Antioxidants are good for your ___",
+              "options": [
+                {"text": "Body", "isCorrect": true},
+                {"text": "Toys", "isCorrect": false},
+                {"text": "Books", "isCorrect": false},
+                {"text": "Shoes", "isCorrect": false}
+              ],
+              "answer": "Body",
+              "explanation": "Antioxidants help protect the cells in your body from damage."
+            },
+            {
+              "question": "Which has more antioxidants?",
+              "options": [
+                {"text": "Grapes", "isCorrect": true},
+                {"text": "Crackers", "isCorrect": false},
+                {"text": "Donuts", "isCorrect": false},
+                {"text": "Chips", "isCorrect": false}
+              ],
+              "answer": "Grapes",
+              "explanation": "Grapes are rich in antioxidants, unlike crackers or other processed foods."
+            },
+            {
+              "question": "What do antioxidants protect against?",
+              "options": [
+                {"text": "Damage", "isCorrect": true},
+                {"text": "Sleep", "isCorrect": false},
+                {"text": "Sun", "isCorrect": false},
+                {"text": "Water", "isCorrect": false}
+              ],
+              "answer": "Damage",
+              "explanation": "Antioxidants protect cells from damage caused by free radicals."
+            }
+          ]
+},
+{
+  "set": 27,
+  "questions": [
+    {
+      "question": "Which fruit helps your immune system?",
+      "options": [
+        {"text": "Orange", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Orange",
+      "explanation": "Oranges are high in Vitamin C, which supports the immune system."
+    },
+    {
+      "question": "What vitamin is good for your immune system?",
+      "options": [
+        {"text": "Vitamin C", "isCorrect": true},
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Sugar", "isCorrect": false},
+        {"text": "Water", "isCorrect": false}
+      ],
+      "answer": "Vitamin C",
+      "explanation": "Vitamin C is known for boosting the immune system."
+    },
+    {
+      "question": "Does spinach help you stay healthy?",
+      "options": [
+        {"text": "Yes", "isCorrect": true},
+        {"text": "No", "isCorrect": false},
+        {"text": "Sometimes", "isCorrect": false},
+        {"text": "Never", "isCorrect": false}
+      ],
+      "answer": "Yes",
+      "explanation": "Spinach is rich in nutrients that support overall health."
+    },
+    {
+      "question": "Which food helps your immune system?",
+      "options": [
+        {"text": "Kiwi", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Kiwi",
+      "explanation": "Kiwi is packed with vitamins that are great for immune health."
+    },
+    {
+      "question": "What does your immune system do?",
+      "options": [
+        {"text": "Keeps you healthy", "isCorrect": true},
+        {"text": "Puts you to sleep", "isCorrect": false},
+        {"text": "Wakes you up", "isCorrect": false},
+        {"text": "Helps you grow", "isCorrect": false}
+      ],
+      "answer": "Keeps you healthy",
+      "explanation": "The immune system protects your body from infections and diseases."
+    },
+    {
+      "question": "Which drink helps your immune health?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Milkshake", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Staying hydrated with water supports overall immune function."
+    },
+    {
+      "question": "Which vegetable is good for immune health?",
+      "options": [
+        {"text": "Carrots", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Carrots",
+      "explanation": "Carrots contain antioxidants and vitamins that benefit the immune system."
+    },
+    {
+      "question": "Eating fruit and vegetables helps you stay ___.",
+      "options": [
+        {"text": "Healthy", "isCorrect": true},
+        {"text": "Tired", "isCorrect": false},
+        {"text": "Angry", "isCorrect": false},
+        {"text": "Sleepy", "isCorrect": false}
+      ],
+      "answer": "Healthy",
+      "explanation": "Fruits and vegetables provide essential nutrients for good health."
+    },
+    {
+      "question": "Which food helps keep you strong?",
+      "options": [
+        {"text": "Apples", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Apples",
+      "explanation": "Apples are nutritious and help maintain strength and health."
+    },
+    {
+      "question": "Does drinking milk help you stay strong?",
+      "options": [
+        {"text": "Yes", "isCorrect": true},
+        {"text": "No", "isCorrect": false},
+        {"text": "Only sometimes", "isCorrect": false},
+        {"text": "Rarely", "isCorrect": false}
+      ],
+      "answer": "Yes",
+      "explanation": "Milk provides calcium and protein, which are important for strong bones and muscles."
+    }
+  ]
+},
+{
+  "set": 28,
+  "questions": [
+    {
+      "question": "What food can help you feel good?",
+      "options": [
+        {"text": "Banana", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Banana",
+      "explanation": "Bananas contain nutrients that can improve mood and energy."
+    },
+    {
+      "question": "Does eating fish help your brain?",
+      "options": [
+        {"text": "Yes", "isCorrect": true},
+        {"text": "No", "isCorrect": false},
+        {"text": "Only sometimes", "isCorrect": false},
+        {"text": "Not sure", "isCorrect": false}
+      ],
+      "answer": "Yes",
+      "explanation": "Fish is rich in omega-3 fatty acids, which support brain health."
+    },
+    {
+      "question": "Which snack helps you feel happy?",
+      "options": [
+        {"text": "Apple", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Apple",
+      "explanation": "Apples have fiber and nutrients that support mood and well-being."
+    },
+    {
+      "question": "Which food helps your brain?",
+      "options": [
+        {"text": "Berries", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Berries",
+      "explanation": "Berries are rich in antioxidants that protect and support brain function."
+    },
+    {
+      "question": "Does eating healthy food help you focus?",
+      "options": [
+        {"text": "Yes", "isCorrect": true},
+        {"text": "No", "isCorrect": false},
+        {"text": "Only sometimes", "isCorrect": false},
+        {"text": "Never", "isCorrect": false}
+      ],
+      "answer": "Yes",
+      "explanation": "Healthy foods provide nutrients that improve focus and mental clarity."
+    },
+    {
+      "question": "Which makes you feel better?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Milkshake", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water helps keep you hydrated, which is essential for feeling good."
+    },
+    {
+      "question": "What food has omega-3?",
+      "options": [
+        {"text": "Fish", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Fish",
+      "explanation": "Fish is a great source of omega-3 fatty acids, which are beneficial for the brain and heart."
+    },
+    {
+      "question": "Which is better for your brain?",
+      "options": [
+        {"text": "Nuts", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Fries", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Nuts",
+      "explanation": "Nuts are high in healthy fats that support brain function."
+    },
+    {
+      "question": "Does eating breakfast help you feel good?",
+      "options": [
+        {"text": "Yes", "isCorrect": true},
+        {"text": "No", "isCorrect": false},
+        {"text": "Only sometimes", "isCorrect": false},
+        {"text": "Only if it's sweet", "isCorrect": false}
+      ],
+      "answer": "Yes",
+      "explanation": "Eating breakfast provides energy and helps improve mood throughout the day."
+    },
+    {
+      "question": "Which food helps with energy?",
+      "options": [
+        {"text": "Whole grains", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Whole grains",
+      "explanation": "Whole grains are a good source of lasting energy due to their fiber and nutrient content."
+    }
+  ]
+},
+{
+  "set": 32,
+  "questions": [
+    {
+      "question": "Which vitamin is known as the 'sunshine vitamin'?",
+      "options": [
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin B", "isCorrect": false},
+        {"text": "Vitamin C", "isCorrect": false},
+        {"text": "Vitamin D", "isCorrect": true}
+      ],
+      "answer": "Vitamin D",
+      "explanation": "Vitamin D is called the 'sunshine vitamin' because our bodies can produce it when exposed to sunlight."
+    },
+    {
+      "question": "Which vitamin is important for good eyesight?",
+      "options": [
+        {"text": "Vitamin K", "isCorrect": false},
+        {"text": "Vitamin E", "isCorrect": false},
+        {"text": "Vitamin A", "isCorrect": true},
+        {"text": "Vitamin D", "isCorrect": false}
+      ],
+      "answer": "Vitamin A",
+      "explanation": "Vitamin A is essential for good vision and helps prevent night blindness."
+    },
+    {
+      "question": "What vitamin helps keep our immune system strong?",
+      "options": [
+        {"text": "Vitamin C", "isCorrect": true},
+        {"text": "Vitamin B12", "isCorrect": false},
+        {"text": "Vitamin K", "isCorrect": false},
+        {"text": "Vitamin D", "isCorrect": false}
+      ],
+      "answer": "Vitamin C",
+      "explanation": "Vitamin C supports a healthy immune system and helps the body fight off illnesses."
+    },
+    {
+      "question": "Which vitamin is found in oranges and helps us fight colds?",
+      "options": [
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Vitamin C", "isCorrect": true},
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin B", "isCorrect": false}
+      ],
+      "answer": "Vitamin C",
+      "explanation": "Vitamin C, abundant in oranges, is known for boosting the immune system and helping prevent colds."
+    },
+    {
+      "question": "Which vitamin helps our blood clot when we get a cut?",
+      "options": [
+        {"text": "Vitamin K", "isCorrect": true},
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Vitamin C", "isCorrect": false}
+      ],
+      "answer": "Vitamin K",
+      "explanation": "Vitamin K plays a crucial role in blood clotting, which helps wounds heal properly."
+    },
+    {
+      "question": "What vitamin is important for strong bones and is often found in milk?",
+      "options": [
+        {"text": "Vitamin C", "isCorrect": false},
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin D", "isCorrect": true},
+        {"text": "Vitamin E", "isCorrect": false}
+      ],
+      "answer": "Vitamin D",
+      "explanation": "Vitamin D helps the body absorb calcium, which is essential for strong bones and teeth."
+    },
+    {
+      "question": "Which vitamin helps protect our skin and is found in nuts and seeds?",
+      "options": [
+        {"text": "Vitamin B", "isCorrect": false},
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Vitamin E", "isCorrect": true},
+        {"text": "Vitamin K", "isCorrect": false}
+      ],
+      "answer": "Vitamin E",
+      "explanation": "Vitamin E acts as an antioxidant and helps protect skin cells from damage."
+    },
+    {
+      "question": "What vitamin do we get from leafy green vegetables and helps with energy?",
+      "options": [
+        {"text": "Vitamin B", "isCorrect": true},
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin C", "isCorrect": false}
+      ],
+      "answer": "Vitamin B",
+      "explanation": "Vitamin B, found in leafy greens, plays a key role in energy production and metabolism."
+    },
+    {
+      "question": "Which vitamin helps babies grow and is found in eggs and meat?",
+      "options": [
+        {"text": "Vitamin K", "isCorrect": false},
+        {"text": "Vitamin B12", "isCorrect": true},
+        {"text": "Vitamin C", "isCorrect": false},
+        {"text": "Vitamin E", "isCorrect": false}
+      ],
+      "answer": "Vitamin B12",
+      "explanation": "Vitamin B12 supports growth and development, especially in young children."
+    },
+    {
+      "question": "What vitamin helps us absorb iron from our food and is found in bell peppers?",
+      "options": [
+        {"text": "Vitamin A", "isCorrect": false},
+        {"text": "Vitamin C", "isCorrect": true},
+        {"text": "Vitamin D", "isCorrect": false},
+        {"text": "Vitamin K", "isCorrect": false}
+      ],
+      "answer": "Vitamin C",
+      "explanation": "Vitamin C improves iron absorption from plant-based foods, helping prevent anemia."
+    }
+  ]
+}
+
+
+               
           ],
         
         
