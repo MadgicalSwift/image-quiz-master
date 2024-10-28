@@ -1,6 +1,5 @@
 {
     "Nutrition": [
-     
         {
           "set": 1,
           "questions": [
@@ -1613,6 +1612,121 @@
           ]
         },
         {
+          "set": 15,
+          "questions": [
+            {
+              "question": "What food do we eat that is made from milk?",
+              "options": [
+                { "text": "Cheese", "isCorrect": true },
+                { "text": "Candy", "isCorrect": false },
+                { "text": "Chips", "isCorrect": false },
+                { "text": "Bread", "isCorrect": false }
+              ],
+              "answer": "Cheese",
+              "explanation": "Cheese is a dairy product made from milk and is rich in calcium."
+            },
+            {
+              "question": "What snack is crunchy and healthy?",
+              "options": [
+                { "text": "Celery with peanut butter", "isCorrect": true },
+                { "text": "Cookies", "isCorrect": false },
+                { "text": "Chips", "isCorrect": false },
+                { "text": "Candy", "isCorrect": false }
+              ],
+              "answer": "Celery with peanut butter",
+              "explanation": "Celery with peanut butter provides a healthy crunch along with protein and fiber."
+            },
+            {
+              "question": "Which food gives us a quick boost of energy?",
+              "options": [
+                { "text": "Candy", "isCorrect": true },
+                { "text": "Vegetables", "isCorrect": false },
+                { "text": "Bread", "isCorrect": false },
+                { "text": "Nuts", "isCorrect": false }
+              ],
+              "answer": "Candy",
+              "explanation": "Candy is high in sugar, which can provide a quick but temporary boost of energy."
+            },
+            {
+              "question": "What do we call foods that are good for our heart?",
+              "options": [
+                { "text": "Junk food", "isCorrect": false },
+                { "text": "Healthy foods", "isCorrect": true },
+                { "text": "Candy", "isCorrect": false },
+                { "text": "Fast food", "isCorrect": false }
+              ],
+              "answer": "Healthy foods",
+              "explanation": "Healthy foods, such as fruits, vegetables, and whole grains, are beneficial for heart health."
+            },
+            {
+              "question": "Which fruit is juicy and red?",
+              "options": [
+                { "text": "Apple", "isCorrect": true },
+                { "text": "Potato", "isCorrect": false },
+                { "text": "Candy", "isCorrect": false },
+                { "text": "Orange", "isCorrect": false }
+              ],
+              "answer": "Apple",
+              "explanation": "Apples are juicy, red fruits that are high in fiber and vitamins."
+            },
+            {
+              "question": "What helps us digest our food?",
+              "options": [
+                { "text": "Fiber", "isCorrect": true },
+                { "text": "Sugar", "isCorrect": false },
+                { "text": "Candy", "isCorrect": false },
+                { "text": "Fat", "isCorrect": false }
+              ],
+              "answer": "Fiber",
+              "explanation": "Fiber aids in digestion by helping food move through the digestive system."
+            },
+            {
+              "question": "Which food can help reduce stress?",
+              "options": [
+                { "text": "Dark chocolate", "isCorrect": true },
+                { "text": "Chips", "isCorrect": false },
+                { "text": "Soda", "isCorrect": false },
+                { "text": "Candy", "isCorrect": false }
+              ],
+              "answer": "Dark chocolate",
+              "explanation": "Dark chocolate contains compounds that can improve mood and reduce stress."
+            },
+            {
+              "question": "What is a good way to cook vegetables?",
+              "options": [
+                { "text": "Boil them", "isCorrect": true },
+                { "text": "Fry them", "isCorrect": false },
+                { "text": "Add sugar", "isCorrect": false },
+                { "text": "Grill them", "isCorrect": false }
+              ],
+              "answer": "Boil them",
+              "explanation": "Boiling vegetables preserves their nutrients while making them soft and easy to eat."
+            },
+            {
+              "question": "Which nut is good for snacking?",
+              "options": [
+                { "text": "Almonds", "isCorrect": true },
+                { "text": "Peanuts", "isCorrect": false },
+                { "text": "Walnuts", "isCorrect": false },
+                { "text": "Cashews", "isCorrect": false }
+              ],
+              "answer": "Almonds",
+              "explanation": "Almonds are nutritious and a great source of healthy fats and protein."
+            },
+            {
+              "question": "What type of bread is healthier?",
+              "options": [
+                { "text": "White bread", "isCorrect": false },
+                { "text": "Whole grain bread", "isCorrect": true },
+                { "text": "Sweet bread", "isCorrect": false },
+                { "text": "Sourdough bread", "isCorrect": false }
+              ],
+              "answer": "Whole grain bread",
+              "explanation": "Whole grain bread contains more nutrients and fiber compared to white bread."
+            }
+          ]
+        },
+        {
           "set": 16,
           "questions": [
             {
@@ -2184,121 +2298,6 @@
               ],
               "answer": "Fiber",
               "explanation": "Fiber-rich foods take longer to digest, helping us feel full and satisfied."
-            }
-          ]
-        },
-        {
-          "set": 21,
-          "questions": [
-            {
-              "question": "What food do we eat that is made from milk?",
-              "options": [
-                { "text": "Cheese", "isCorrect": true },
-                { "text": "Candy", "isCorrect": false },
-                { "text": "Chips", "isCorrect": false },
-                { "text": "Bread", "isCorrect": false }
-              ],
-              "answer": "Cheese",
-              "explanation": "Cheese is a dairy product made from milk and is rich in calcium."
-            },
-            {
-              "question": "What snack is crunchy and healthy?",
-              "options": [
-                { "text": "Celery with peanut butter", "isCorrect": true },
-                { "text": "Cookies", "isCorrect": false },
-                { "text": "Chips", "isCorrect": false },
-                { "text": "Candy", "isCorrect": false }
-              ],
-              "answer": "Celery with peanut butter",
-              "explanation": "Celery with peanut butter provides a healthy crunch along with protein and fiber."
-            },
-            {
-              "question": "Which food gives us a quick boost of energy?",
-              "options": [
-                { "text": "Candy", "isCorrect": true },
-                { "text": "Vegetables", "isCorrect": false },
-                { "text": "Bread", "isCorrect": false },
-                { "text": "Nuts", "isCorrect": false }
-              ],
-              "answer": "Candy",
-              "explanation": "Candy is high in sugar, which can provide a quick but temporary boost of energy."
-            },
-            {
-              "question": "What do we call foods that are good for our heart?",
-              "options": [
-                { "text": "Junk food", "isCorrect": false },
-                { "text": "Healthy foods", "isCorrect": true },
-                { "text": "Candy", "isCorrect": false },
-                { "text": "Fast food", "isCorrect": false }
-              ],
-              "answer": "Healthy foods",
-              "explanation": "Healthy foods, such as fruits, vegetables, and whole grains, are beneficial for heart health."
-            },
-            {
-              "question": "Which fruit is juicy and red?",
-              "options": [
-                { "text": "Apple", "isCorrect": true },
-                { "text": "Potato", "isCorrect": false },
-                { "text": "Candy", "isCorrect": false },
-                { "text": "Orange", "isCorrect": false }
-              ],
-              "answer": "Apple",
-              "explanation": "Apples are juicy, red fruits that are high in fiber and vitamins."
-            },
-            {
-              "question": "What helps us digest our food?",
-              "options": [
-                { "text": "Fiber", "isCorrect": true },
-                { "text": "Sugar", "isCorrect": false },
-                { "text": "Candy", "isCorrect": false },
-                { "text": "Fat", "isCorrect": false }
-              ],
-              "answer": "Fiber",
-              "explanation": "Fiber aids in digestion by helping food move through the digestive system."
-            },
-            {
-              "question": "Which food can help reduce stress?",
-              "options": [
-                { "text": "Dark chocolate", "isCorrect": true },
-                { "text": "Chips", "isCorrect": false },
-                { "text": "Soda", "isCorrect": false },
-                { "text": "Candy", "isCorrect": false }
-              ],
-              "answer": "Dark chocolate",
-              "explanation": "Dark chocolate contains compounds that can improve mood and reduce stress."
-            },
-            {
-              "question": "What is a good way to cook vegetables?",
-              "options": [
-                { "text": "Boil them", "isCorrect": true },
-                { "text": "Fry them", "isCorrect": false },
-                { "text": "Add sugar", "isCorrect": false },
-                { "text": "Grill them", "isCorrect": false }
-              ],
-              "answer": "Boil them",
-              "explanation": "Boiling vegetables preserves their nutrients while making them soft and easy to eat."
-            },
-            {
-              "question": "Which nut is good for snacking?",
-              "options": [
-                { "text": "Almonds", "isCorrect": true },
-                { "text": "Peanuts", "isCorrect": false },
-                { "text": "Walnuts", "isCorrect": false },
-                { "text": "Cashews", "isCorrect": false }
-              ],
-              "answer": "Almonds",
-              "explanation": "Almonds are nutritious and a great source of healthy fats and protein."
-            },
-            {
-              "question": "What type of bread is healthier?",
-              "options": [
-                { "text": "White bread", "isCorrect": false },
-                { "text": "Whole grain bread", "isCorrect": true },
-                { "text": "Sweet bread", "isCorrect": false },
-                { "text": "Sourdough bread", "isCorrect": false }
-              ],
-              "answer": "Whole grain bread",
-              "explanation": "Whole grain bread contains more nutrients and fiber compared to white bread."
             }
           ]
         },
@@ -3223,7 +3222,7 @@
   ]
 },
 {
-  "set": 32,
+  "set": 29,
   "questions": [
     {
       "question": "Which vitamin is known as the 'sunshine vitamin'?",
@@ -3336,7 +3335,2442 @@
       "explanation": "Vitamin C improves iron absorption from plant-based foods, helping prevent anemia."
     }
   ]
+},
+{
+  "set": 30,
+  "questions": [
+    {
+      "question": "Which food can make us feel happy?",
+      "options": [
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Apples", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Popcorn", "isCorrect": false}
+      ],
+      "answer": "Apples",
+      "explanation": "Apples have natural sugars and fiber that can help lift our mood and give us energy."
+    },
+    {
+      "question": "What is a healthy snack that helps us think well?",
+      "options": [
+        {"text": "Broccoli", "isCorrect": true},
+        {"text": "Lollipops", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Broccoli",
+      "explanation": "Broccoli is rich in vitamins and nutrients that support brain health and concentration."
+    },
+    {
+      "question": "What drink helps us feel calm and relaxed?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Staying hydrated with water helps us feel calm and keeps our body functioning well."
+    },
+    {
+      "question": "Which food is good for our brain?",
+      "options": [
+        {"text": "Carrots", "isCorrect": false},
+        {"text": "French fries", "isCorrect": false},
+        {"text": "Fish", "isCorrect": true},
+        {"text": "Candy bars", "isCorrect": false}
+      ],
+      "answer": "Fish",
+      "explanation": "Fish, especially those high in omega-3 fats, support brain health and development."
+    },
+    {
+      "question": "When we are hungry, we feel...",
+      "options": [
+        {"text": "Happy", "isCorrect": false},
+        {"text": "Sleepy", "isCorrect": false},
+        {"text": "Grumpy", "isCorrect": true},
+        {"text": "Silly", "isCorrect": false}
+      ],
+      "answer": "Grumpy",
+      "explanation": "Hunger can make us feel irritable or grumpy as our body needs energy."
+    },
+    {
+      "question": "Eating which of these foods can help us focus?",
+      "options": [
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Bananas", "isCorrect": true},
+        {"text": "Gum", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Bananas",
+      "explanation": "Bananas provide natural sugars and potassium, which help keep our brain alert."
+    },
+    {
+      "question": "Which color vegetable is known to help our brain?",
+      "options": [
+        {"text": "Green (Spinach)", "isCorrect": false},
+        {"text": "Red (Tomatoes)", "isCorrect": false},
+        {"text": "Blue (Blueberries)", "isCorrect": true},
+        {"text": "Yellow (Corn)", "isCorrect": false}
+      ],
+      "answer": "Blue (Blueberries)",
+      "explanation": "Blueberries are high in antioxidants, which help protect the brain and improve memory."
+    },
+    {
+      "question": "Which food helps us stay happy and healthy?",
+      "options": [
+        {"text": "Potato chips", "isCorrect": false},
+        {"text": "Yogurt", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Yogurt",
+      "explanation": "Yogurt contains probiotics and proteins that are beneficial for digestive and mental health."
+    },
+    {
+      "question": "What do we need to eat to feel strong?",
+      "options": [
+        {"text": "French fries", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Apples", "isCorrect": false},
+        {"text": "Sandwiches", "isCorrect": true}
+      ],
+      "answer": "Sandwiches",
+      "explanation": "Sandwiches with protein and whole grains provide the nutrients needed for energy and strength."
+    },
+    {
+      "question": "Which food can help us sleep better?",
+      "options": [
+        {"text": "Cheese", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Turkey", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Turkey",
+      "explanation": "Turkey contains tryptophan, which helps the body produce melatonin, a hormone that aids in sleep."
+    }
+  ]
+},
+{
+  "set": 31,
+  "questions": [
+    {
+      "question": "Which food helps make our muscles strong?",
+      "options": [
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Fish", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Lollipops", "isCorrect": false}
+      ],
+      "answer": "Fish",
+      "explanation": "Fish is high in protein, which is essential for muscle growth and repair."
+    },
+    {
+      "question": "What do we call foods like chicken, beans, and eggs?",
+      "options": [
+        {"text": "Sweet", "isCorrect": false},
+        {"text": "Crunchy", "isCorrect": false},
+        {"text": "Protein", "isCorrect": true},
+        {"text": "Spicy", "isCorrect": false}
+      ],
+      "answer": "Protein",
+      "explanation": "Foods like chicken, beans, and eggs are rich in protein, a nutrient that supports muscle building."
+    },
+    {
+      "question": "Which food gives us energy for sports?",
+      "options": [
+        {"text": "Apples", "isCorrect": false},
+        {"text": "Chicken", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Chicken",
+      "explanation": "Chicken provides protein and nutrients that help give energy and build strength."
+    },
+    {
+      "question": "What type of food helps build our muscles?",
+      "options": [
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Eggs", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Eggs",
+      "explanation": "Eggs are a great source of protein, which supports muscle growth."
+    },
+    {
+      "question": "What is a protein food for breakfast?",
+      "options": [
+        {"text": "Donuts", "isCorrect": false},
+        {"text": "Pancakes", "isCorrect": false},
+        {"text": "Scrambled eggs", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Scrambled eggs",
+      "explanation": "Scrambled eggs are rich in protein, making them a nutritious breakfast choice."
+    },
+    {
+      "question": "Which protein food can we drink?",
+      "options": [
+        {"text": "Water", "isCorrect": false},
+        {"text": "Milk", "isCorrect": true},
+        {"text": "Lemonade", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false}
+      ],
+      "answer": "Milk",
+      "explanation": "Milk is a protein-rich drink that helps build strong muscles and bones."
+    },
+    {
+      "question": "Which snack helps us grow big and strong?",
+      "options": [
+        {"text": "Cheese sticks", "isCorrect": true},
+        {"text": "Candy bars", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Potato chips", "isCorrect": false}
+      ],
+      "answer": "Cheese sticks",
+      "explanation": "Cheese sticks are high in protein and calcium, essential for growth and strength."
+    },
+    {
+      "question": "What should we eat to build strong muscles?",
+      "options": [
+        {"text": "Carrots", "isCorrect": false},
+        {"text": "Pizza", "isCorrect": false},
+        {"text": "Beans", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Beans",
+      "explanation": "Beans are a good source of protein, which helps build strong muscles."
+    },
+    {
+      "question": "What is a good protein to have for lunch?",
+      "options": [
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Nuts", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Nuts",
+      "explanation": "Nuts are packed with protein and healthy fats, making them a nutritious lunch choice."
+    },
+    {
+      "question": "Which protein food can you find in a sandwich?",
+      "options": [
+        {"text": "Turkey", "isCorrect": true},
+        {"text": "Lettuce", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Pickles", "isCorrect": false}
+      ],
+      "answer": "Turkey",
+      "explanation": "Turkey is a high-protein food commonly added to sandwiches, helping support muscle growth."
+    }
+  ]
+},
+{
+  "set": 32,
+  "questions": [
+    {
+      "question": "Which drink has caffeine in it?",
+      "options": [
+        {"text": "Milk", "isCorrect": false},
+        {"text": "Orange juice", "isCorrect": false},
+        {"text": "Soda", "isCorrect": true},
+        {"text": "Water", "isCorrect": false}
+      ],
+      "answer": "Soda",
+      "explanation": "Soda often contains caffeine, which can make you feel more alert."
+    },
+    {
+      "question": "What drink should kids avoid before bedtime?",
+      "options": [
+        {"text": "Water", "isCorrect": false},
+        {"text": "Milk", "isCorrect": false},
+        {"text": "Soda", "isCorrect": true},
+        {"text": "Juice", "isCorrect": false}
+      ],
+      "answer": "Soda",
+      "explanation": "Soda contains caffeine, which can keep kids awake if consumed before bed."
+    },
+    {
+      "question": "What drink is best for playing sports?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Milkshake", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is essential for staying hydrated during sports and physical activities."
+    },
+    {
+      "question": "Caffeine can make us feel...",
+      "options": [
+        {"text": "Sleepy", "isCorrect": false},
+        {"text": "Thirsty", "isCorrect": false},
+        {"text": "Energetic", "isCorrect": true},
+        {"text": "Full", "isCorrect": false}
+      ],
+      "answer": "Energetic",
+      "explanation": "Caffeine is a stimulant that can make us feel more energetic."
+    },
+    {
+      "question": "Which drink has no caffeine?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Tea", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water does not contain caffeine and is great for hydration."
+    },
+    {
+      "question": "Which drink is healthier for kids?",
+      "options": [
+        {"text": "Milk", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Energy drinks", "isCorrect": false},
+        {"text": "Coffee", "isCorrect": false}
+      ],
+      "answer": "Milk",
+      "explanation": "Milk provides essential nutrients like calcium and is a healthy choice for kids."
+    },
+    {
+      "question": "What drink can keep us awake at night?",
+      "options": [
+        {"text": "Tea", "isCorrect": true},
+        {"text": "Milk", "isCorrect": false},
+        {"text": "Water", "isCorrect": false},
+        {"text": "Apple juice", "isCorrect": false}
+      ],
+      "answer": "Tea",
+      "explanation": "Tea contains caffeine, which can keep us awake if consumed at night."
+    },
+    {
+      "question": "Which drink helps keep teeth strong?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Chocolate milk", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water helps rinse away food particles and protects teeth from decay."
+    },
+    {
+      "question": "What should we drink to stay healthy?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Energy drinks", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is essential for overall health and helps keep our body hydrated."
+    },
+    {
+      "question": "Which drink can make us feel jumpy?",
+      "options": [
+        {"text": "Lemonade", "isCorrect": false},
+        {"text": "Water", "isCorrect": false},
+        {"text": "Soda", "isCorrect": true},
+        {"text": "Milk", "isCorrect": false}
+      ],
+      "answer": "Soda",
+      "explanation": "Soda often contains caffeine, which can make us feel jumpy or restless."
+    }
+  ]
+},
+{
+  "set": 33,
+  "questions": [
+    {
+      "question": "What drink helps our brain work better?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water helps keep our brain hydrated, which is essential for clear thinking and focus."
+    },
+    {
+      "question": "How do we feel if we don’t drink enough water?",
+      "options": [
+        {"text": "Happy", "isCorrect": false},
+        {"text": "Tired", "isCorrect": true},
+        {"text": "Silly", "isCorrect": false},
+        {"text": "Excited", "isCorrect": false}
+      ],
+      "answer": "Tired",
+      "explanation": "Without enough water, our bodies get tired because we need water to stay energized."
+    },
+    {
+      "question": "Which drink keeps us strong and focused?",
+      "options": [
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Milkshake", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water helps us stay strong and focused by keeping us hydrated and alert."
+    },
+    {
+      "question": "What should we drink every day to stay healthy?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Cola", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false},
+        {"text": "Chocolate milk", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Drinking water every day keeps us hydrated and supports all the functions of our body."
+    },
+    {
+      "question": "Drinking enough water can help us…",
+      "options": [
+        {"text": "Run fast", "isCorrect": false},
+        {"text": "Think clearly", "isCorrect": true},
+        {"text": "Get sleepy", "isCorrect": false},
+        {"text": "Dance better", "isCorrect": false}
+      ],
+      "answer": "Think clearly",
+      "explanation": "Water keeps our brain and body working well, helping us think clearly and stay focused."
+    },
+    {
+      "question": "What do our bodies need after playing outside?",
+      "options": [
+        {"text": "Milkshake", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "After physical activity, we need water to rehydrate and refresh our body."
+    },
+    {
+      "question": "How many glasses of water should we drink every day?",
+      "options": [
+        {"text": "10 glasses of soda", "isCorrect": false},
+        {"text": "A few glasses of water", "isCorrect": true},
+        {"text": "No water", "isCorrect": false},
+        {"text": "Only juice", "isCorrect": false}
+      ],
+      "answer": "A few glasses of water",
+      "explanation": "A few glasses of water daily help us stay hydrated and healthy."
+    },
+    {
+      "question": "What can we drink to help us feel less tired?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Fruit punch", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Staying hydrated by drinking water can reduce tiredness and boost energy."
+    },
+    {
+      "question": "What drink helps us feel good and strong?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Milkshake", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water supports our muscles, energy levels, and overall well-being."
+    },
+    {
+      "question": "If we are feeling thirsty, what should we drink?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Cola", "isCorrect": false},
+        {"text": "Chocolate milk", "isCorrect": false},
+        {"text": "Candy juice", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is the best choice to quench thirst and keep our bodies hydrated."
+    }
+  ]
+},
+{
+  "set": 34,
+  "questions": [
+    {
+      "question": "Which of these is a healthy, affordable snack?",
+      "options": [
+        {"text": "Apple", "isCorrect": true},
+        {"text": "Candy bar", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Apple",
+      "explanation": "Apples are affordable, nutritious, and make a great snack that supports good health."
+    },
+    {
+      "question": "What is a simple, healthy food to eat at home?",
+      "options": [
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Eggs", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Eggs",
+      "explanation": "Eggs are inexpensive and packed with protein, making them a healthy and filling option."
+    },
+    {
+      "question": "Which food is both healthy and not expensive?",
+      "options": [
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Carrots", "isCorrect": true},
+        {"text": "Donuts", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Carrots",
+      "explanation": "Carrots are affordable and rich in nutrients, making them a great choice for a healthy snack."
+    },
+    {
+      "question": "What drink is healthy and free at home?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false},
+        {"text": "Fruit punch", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is essential for hydration, and it’s often freely available at home, making it both healthy and affordable."
+    },
+    {
+      "question": "Which is cheaper to eat for breakfast?",
+      "options": [
+        {"text": "Pancakes", "isCorrect": false},
+        {"text": "Doughnuts", "isCorrect": false},
+        {"text": "Eggs", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Eggs",
+      "explanation": "Eggs are a cost-effective breakfast choice, providing essential nutrients to start the day."
+    },
+    {
+      "question": "What is a good snack we can find at the store that’s healthy and cheap?",
+      "options": [
+        {"text": "Banana", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Banana",
+      "explanation": "Bananas are inexpensive, widely available, and a great source of vitamins and energy."
+    },
+    {
+      "question": "What is a healthy fruit we can get for a low price?",
+      "options": [
+        {"text": "Strawberries", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Strawberries",
+      "explanation": "Strawberries are often affordable in season and provide many vitamins and antioxidants."
+    },
+    {
+      "question": "Which food can we buy to make healthy sandwiches?",
+      "options": [
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Bread", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Bread",
+      "explanation": "Whole-grain bread is a healthy choice for sandwiches, providing fiber and energy."
+    },
+    {
+      "question": "Which snack is healthy and good for a school lunch?",
+      "options": [
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Apple slices", "isCorrect": true},
+        {"text": "Chocolate bar", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Apple slices",
+      "explanation": "Apple slices are a nutritious and affordable option that’s easy to include in school lunches."
+    },
+    {
+      "question": "What can we drink at home that doesn’t cost money?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Lemonade", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Chocolate milk", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is free at home and is the healthiest choice for staying hydrated."
+    }
+  ]
+},
+{
+  "set": 35,
+  "questions": [
+    {
+      "question": "What food helps older people stay strong?",
+      "options": [
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Eggs", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Eggs",
+      "explanation": "Eggs are high in protein and nutrients, making them excellent for maintaining strength in older adults."
+    },
+    {
+      "question": "Which drink is important for everyone, even older people?",
+      "options": [
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Water", "isCorrect": true},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water is essential for hydration and overall health, especially for older individuals."
+    },
+    {
+      "question": "Which food is good for bones?",
+      "options": [
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Milk", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Lollipops", "isCorrect": false}
+      ],
+      "answer": "Milk",
+      "explanation": "Milk is rich in calcium and vitamin D, which are vital for maintaining strong bones."
+    },
+    {
+      "question": "What food can help older people feel strong and healthy?",
+      "options": [
+        {"text": "Cheese", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Cheese",
+      "explanation": "Cheese provides essential nutrients like calcium and protein, supporting health in older adults."
+    },
+    {
+      "question": "Which food helps everyone, especially older people, have energy?",
+      "options": [
+        {"text": "Apples", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Apples",
+      "explanation": "Apples are a healthy source of carbohydrates and fiber, providing sustained energy."
+    },
+    {
+      "question": "Which is a healthy snack for everyone, including older people?",
+      "options": [
+        {"text": "Popcorn", "isCorrect": false},
+        {"text": "Nuts", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Nuts",
+      "explanation": "Nuts are packed with healthy fats, protein, and vitamins, making them a great snack for all ages."
+    },
+    {
+      "question": "What drink should older people avoid before bed?",
+      "options": [
+        {"text": "Water", "isCorrect": false},
+        {"text": "Soda", "isCorrect": true},
+        {"text": "Milk", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false}
+      ],
+      "answer": "Soda",
+      "explanation": "Soda contains caffeine and sugar, which can disrupt sleep and should be avoided before bedtime."
+    },
+    {
+      "question": "Which vegetable is good for strong bones?",
+      "options": [
+        {"text": "Broccoli", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Broccoli",
+      "explanation": "Broccoli is rich in calcium and vitamin K, both important for maintaining strong bones."
+    },
+    {
+      "question": "Which food can help older people’s eyes stay healthy?",
+      "options": [
+        {"text": "Carrots", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Carrots",
+      "explanation": "Carrots contain beta-carotene, which is beneficial for eye health."
+    },
+    {
+      "question": "Which food is best for a strong body?",
+      "options": [
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chicken", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Chicken",
+      "explanation": "Chicken is a lean source of protein, essential for building and maintaining muscle mass."
+    }
+  ]
+},
+{
+  "set": 36,
+  "questions": [
+    {
+      "question": "What helps children grow strong bones?",
+      "options": [
+        {"text": "Milk", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Coffee", "isCorrect": false}
+      ],
+      "answer": "Milk",
+      "explanation": "Milk is rich in calcium and vitamin D, which are essential for developing strong bones in children."
+    },
+    {
+      "question": "Which fruit is good for kids to snack on?",
+      "options": [
+        {"text": "Apple", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Apple",
+      "explanation": "Apples are nutritious, providing fiber and vitamins, making them a great snack for kids."
+    },
+    {
+      "question": "What drink is best for kids to stay healthy?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Coffee", "isCorrect": false},
+        {"text": "Lemonade", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Water keeps kids hydrated and supports overall health without added sugars."
+    },
+    {
+      "question": "Which food is full of vitamins for kids?",
+      "options": [
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Carrots", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Carrots",
+      "explanation": "Carrots are high in vitamins, especially vitamin A, which is important for children's growth."
+    },
+    {
+      "question": "Which is a healthy breakfast for kids?",
+      "options": [
+        {"text": "Cereal", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Cereal",
+      "explanation": "Cereal can be a healthy breakfast option, especially when it is high in fiber and low in sugar."
+    },
+    {
+      "question": "Which food is a healthy choice for kids’ lunch?",
+      "options": [
+        {"text": "Sandwich", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Sandwich",
+      "explanation": "A sandwich made with whole grain bread and healthy fillings is a nutritious lunch option for kids."
+    },
+    {
+      "question": "Which is a healthy snack for kids?",
+      "options": [
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Yogurt", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Yogurt",
+      "explanation": "Yogurt is rich in calcium and probiotics, promoting healthy digestion and strong bones."
+    },
+    {
+      "question": "Which drink should kids have less of?",
+      "options": [
+        {"text": "Soda", "isCorrect": true},
+        {"text": "Water", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false},
+        {"text": "Milk", "isCorrect": false}
+      ],
+      "answer": "Soda",
+      "explanation": "Soda contains high amounts of sugar and can contribute to weight gain and dental problems."
+    },
+    {
+      "question": "What is a healthy fruit for kids to eat?",
+      "options": [
+        {"text": "Banana", "isCorrect": true},
+        {"text": "Chocolate bar", "isCorrect": false},
+        {"text": "Cookie", "isCorrect": false},
+        {"text": "Donut", "isCorrect": false}
+      ],
+      "answer": "Banana",
+      "explanation": "Bananas are rich in potassium and provide energy, making them a healthy choice for kids."
+    },
+    {
+      "question": "Which vegetable is good for kids’ eyes?",
+      "options": [
+        {"text": "Carrots", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Carrots",
+      "explanation": "Carrots are high in beta-carotene, which is beneficial for eye health."
+    }
+  ]
+},
+{
+  "set": 37,
+  "questions": [
+    {
+      "question": "Which fruit is sometimes called a 'superfood'?",
+      "options": [
+        {"text": "Blueberries", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Donuts", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Blueberries",
+      "explanation": "Blueberries are packed with antioxidants, vitamins, and minerals, making them a great choice for a superfood."
+    },
+    {
+      "question": "Which of these is a very healthy food?",
+      "options": [
+        {"text": "Spinach", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Spinach",
+      "explanation": "Spinach is rich in vitamins and minerals, making it one of the healthiest leafy greens."
+    },
+    {
+      "question": "What fruit is called a 'superfood' for its vitamins?",
+      "options": [
+        {"text": "Strawberries", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Strawberries",
+      "explanation": "Strawberries are high in vitamin C, fiber, and antioxidants, classifying them as a superfood."
+    },
+    {
+      "question": "Which 'superfood' is a green vegetable?",
+      "options": [
+        {"text": "Broccoli", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Broccoli",
+      "explanation": "Broccoli is a nutrient-dense vegetable known for its health benefits, including cancer-fighting properties."
+    },
+    {
+      "question": "What 'superfood' is good for breakfast?",
+      "options": [
+        {"text": "Oats", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Oats",
+      "explanation": "Oats are high in fiber and can help lower cholesterol levels, making them a great breakfast option."
+    },
+    {
+      "question": "Which 'superfood' can make smoothies yummy?",
+      "options": [
+        {"text": "Spinach", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Donuts", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Spinach",
+      "explanation": "Spinach adds nutrition and a creamy texture to smoothies without altering the taste significantly."
+    },
+    {
+      "question": "What 'superfood' is full of vitamins and good for salads?",
+      "options": [
+        {"text": "Kale", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Kale",
+      "explanation": "Kale is packed with vitamins A, C, and K, making it a popular choice for healthy salads."
+    },
+    {
+      "question": "Which nut is considered a 'superfood' snack?",
+      "options": [
+        {"text": "Almonds", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Almonds",
+      "explanation": "Almonds are rich in healthy fats, fiber, protein, and essential vitamins and minerals."
+    },
+    {
+      "question": "Which fruit is small and called a 'superfood'?",
+      "options": [
+        {"text": "Blueberries", "isCorrect": true},
+        {"text": "Chocolate bar", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Blueberries",
+      "explanation": "Blueberries are small yet mighty, loaded with antioxidants that promote heart health."
+    },
+    {
+      "question": "What’s a good 'superfood' for breakfast with milk?",
+      "options": [
+        {"text": "Oatmeal", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Donuts", "isCorrect": false}
+      ],
+      "answer": "Oatmeal",
+      "explanation": "Oatmeal is a nutritious breakfast option that pairs well with milk and can be enhanced with fruits."
+    }
+  ]
+},
+{
+  "set": 38,
+  "questions": [
+    {
+      "question": "What color are leafy greens often?",
+      "options": [
+        {"text": "Blue", "isCorrect": false},
+        {"text": "Green", "isCorrect": true},
+        {"text": "Red", "isCorrect": false},
+        {"text": "Yellow", "isCorrect": false}
+      ],
+      "answer": "Green",
+      "explanation": "Leafy greens are typically green due to the presence of chlorophyll."
+    },
+    {
+      "question": "Which leafy green can you put in a salad?",
+      "options": [
+        {"text": "Iceberg lettuce", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Iceberg lettuce",
+      "explanation": "Iceberg lettuce is a common leafy green used in salads."
+    },
+    {
+      "question": "What do leafy greens help you do?",
+      "options": [
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "See better", "isCorrect": false},
+        {"text": "Grow strong", "isCorrect": true},
+        {"text": "Jump high", "isCorrect": false}
+      ],
+      "answer": "Grow strong",
+      "explanation": "Leafy greens provide essential nutrients that contribute to strong growth."
+    },
+    {
+      "question": "Which leafy green is often used in smoothies?",
+      "options": [
+        {"text": "Spinach", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Spinach",
+      "explanation": "Spinach is commonly added to smoothies for its nutritional benefits."
+    },
+    {
+      "question": "What vitamin do leafy greens give you?",
+      "options": [
+        {"text": "Vitamin C", "isCorrect": true},
+        {"text": "Vitamin S", "isCorrect": false},
+        {"text": "Vitamin F", "isCorrect": false},
+        {"text": "Vitamin A", "isCorrect": false}
+      ],
+      "answer": "Vitamin C",
+      "explanation": "Many leafy greens are rich in vitamin C, which supports the immune system."
+    },
+    {
+      "question": "What’s a popular leafy green for making wraps?",
+      "options": [
+        {"text": "Lettuce", "isCorrect": true},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Lettuce",
+      "explanation": "Lettuce leaves are often used to wrap fillings in healthy wraps."
+    },
+    {
+      "question": "Which leafy green is crunchy and green?",
+      "options": [
+        {"text": "Cabbage", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Brown bread", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Cabbage",
+      "explanation": "Cabbage is known for its crunchy texture and is often used in salads and slaws."
+    },
+    {
+      "question": "Leafy greens are low in what?",
+      "options": [
+        {"text": "Calories", "isCorrect": true},
+        {"text": "Vitamins", "isCorrect": false},
+        {"text": "Water", "isCorrect": false},
+        {"text": "Sugar", "isCorrect": false}
+      ],
+      "answer": "Calories",
+      "explanation": "Leafy greens are typically low in calories, making them a great option for healthy eating."
+    },
+    {
+      "question": "What can you add leafy greens to?",
+      "options": [
+        {"text": "Smoothies", "isCorrect": true},
+        {"text": "Sweets", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Smoothies",
+      "explanation": "Leafy greens can be blended into smoothies for added nutrition."
+    },
+    {
+      "question": "Leafy greens are good for your what?",
+      "options": [
+        {"text": "Tummy", "isCorrect": true},
+        {"text": "Shoes", "isCorrect": false},
+        {"text": "Toys", "isCorrect": false},
+        {"text": "Books", "isCorrect": false}
+      ],
+      "answer": "Tummy",
+      "explanation": "Leafy greens are beneficial for digestive health, supporting a healthy tummy."
+    }
+  ]
+},
+{
+  "set": 39,
+  "questions": [
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        {"text": "Banana", "isCorrect": true},
+        {"text": "Apple", "isCorrect": false},
+        {"text": "Grape", "isCorrect": false},
+        {"text": "Cherry", "isCorrect": false}
+      ],
+      "answer": "Banana",
+      "explanation": "Bananas are known for their yellow color and curved shape."
+    },
+    {
+      "question": "Fruits are a good source of what?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Toys", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Fruits have a high water content, which helps keep the body hydrated."
+    },
+    {
+      "question": "Which fruit is red and can be found on trees?",
+      "options": [
+        {"text": "Apple", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Bread", "isCorrect": false}
+      ],
+      "answer": "Apple",
+      "explanation": "Apples grow on trees and are typically red when ripe."
+    },
+    {
+      "question": "What fruit is small and often blue?",
+      "options": [
+        {"text": "Blueberry", "isCorrect": true},
+        {"text": "Chocolate", "isCorrect": false},
+        {"text": "Bread", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false}
+      ],
+      "answer": "Blueberry",
+      "explanation": "Blueberries are small fruits that are blue in color."
+    },
+    {
+      "question": "What do fruits help our body do?",
+      "options": [
+        {"text": "Grow healthy", "isCorrect": true},
+        {"text": "Jump", "isCorrect": false},
+        {"text": "Play", "isCorrect": false},
+        {"text": "Sing", "isCorrect": false}
+      ],
+      "answer": "Grow healthy",
+      "explanation": "Fruits provide essential nutrients that promote overall health."
+    },
+    {
+      "question": "Which fruit is very juicy and orange?",
+      "options": [
+        {"text": "Orange", "isCorrect": true},
+        {"text": "Banana", "isCorrect": false},
+        {"text": "Apple", "isCorrect": false},
+        {"text": "Grape", "isCorrect": false}
+      ],
+      "answer": "Orange",
+      "explanation": "Oranges are known for their juicy, sweet flavor and vibrant orange color."
+    },
+    {
+      "question": "What’s a common misconception about fruit?",
+      "options": [
+        {"text": "All fruits are healthy", "isCorrect": false},
+        {"text": "Fruit has sugar", "isCorrect": false},
+        {"text": "Fruit is not sweet", "isCorrect": true},
+        {"text": "Fruit can’t be eaten", "isCorrect": false}
+      ],
+      "answer": "Fruit is not sweet",
+      "explanation": "While many fruits are sweet, some fruits like lemons and limes are sour."
+    },
+    {
+      "question": "Which fruit is often used in pies?",
+      "options": [
+        {"text": "Cherry", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Donuts", "isCorrect": false}
+      ],
+      "answer": "Cherry",
+      "explanation": "Cherries are commonly used in pies for their sweet and tart flavor."
+    },
+    {
+      "question": "What do you call a fruit that grows on vines and is often used in salads?",
+      "options": [
+        {"text": "Tomato", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Bread", "isCorrect": false}
+      ],
+      "answer": "Tomato",
+      "explanation": "Tomatoes are botanically classified as fruits and are commonly used in salads."
+    },
+    {
+      "question": "Fruits are good for your what?",
+      "options": [
+        {"text": "Heart", "isCorrect": true},
+        {"text": "Shoes", "isCorrect": false},
+        {"text": "Books", "isCorrect": false},
+        {"text": "Toys", "isCorrect": false}
+      ],
+      "answer": "Heart",
+      "explanation": "Fruits contain vitamins and antioxidants that are beneficial for heart health."
+    }
+  ]
+},
+{
+  "set": 40,
+  "questions": [
+    {
+      "question": "Which vegetable is orange and crunchy?",
+      "options": [
+        {"text": "Carrot", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Bread", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Carrot",
+      "explanation": "Carrots are known for their vibrant orange color and crunchy texture."
+    },
+    {
+      "question": "What vegetable can you eat in a salad?",
+      "options": [
+        {"text": "Lettuce", "isCorrect": true},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Lettuce",
+      "explanation": "Lettuce is a common base for salads and is known for its crisp texture."
+    },
+    {
+      "question": "Which vegetable is green and looks like a tree?",
+      "options": [
+        {"text": "Broccoli", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookie", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Broccoli",
+      "explanation": "Broccoli resembles a small tree and is a nutritious green vegetable."
+    },
+    {
+      "question": "What vegetable is used to make pickles?",
+      "options": [
+        {"text": "Cucumber", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Donuts", "isCorrect": false}
+      ],
+      "answer": "Cucumber",
+      "explanation": "Cucumbers are pickled to create the popular snack known as pickles."
+    },
+    {
+      "question": "Which vegetable is often found in pizza?",
+      "options": [
+        {"text": "Bell pepper", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Bell pepper",
+      "explanation": "Bell peppers are a common topping on pizzas, adding color and flavor."
+    },
+    {
+      "question": "Which vegetable can be mashed and is usually white?",
+      "options": [
+        {"text": "Potato", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Potato",
+      "explanation": "Potatoes are often mashed to create a creamy side dish."
+    },
+    {
+      "question": "What vegetable is small and round, often green?",
+      "options": [
+        {"text": "Peas", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Peas",
+      "explanation": "Peas are small, round vegetables that are often sweet and green."
+    },
+    {
+      "question": "What is a benefit of eating vegetables?",
+      "options": [
+        {"text": "They keep you healthy", "isCorrect": true},
+        {"text": "They taste like candy", "isCorrect": false},
+        {"text": "They make you sleepy", "isCorrect": false},
+        {"text": "They make you jump", "isCorrect": false}
+      ],
+      "answer": "They keep you healthy",
+      "explanation": "Eating vegetables provides essential nutrients that promote good health."
+    },
+    {
+      "question": "Which vegetable is long and orange?",
+      "options": [
+        {"text": "Carrot", "isCorrect": true},
+        {"text": "Banana", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Apple", "isCorrect": false}
+      ],
+      "answer": "Carrot",
+      "explanation": "Carrots are typically long, slender, and have an orange color."
+    },
+    {
+      "question": "Vegetables help your body get what?",
+      "options": [
+        {"text": "Strong", "isCorrect": true},
+        {"text": "Weak", "isCorrect": false},
+        {"text": "Tired", "isCorrect": false},
+        {"text": "Hungry", "isCorrect": false}
+      ],
+      "answer": "Strong",
+      "explanation": "Vegetables are rich in vitamins and minerals that support strength and health."
+    }
+  ]
+},
+{
+  "set": 41,
+  "questions": [
+    {
+      "question": "Which nut is often eaten as a snack?",
+      "options": [
+        {"text": "Almond", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Almond",
+      "explanation": "Almonds are a popular snack known for their crunchy texture and nutritional benefits."
+    },
+    {
+      "question": "Which nut is round and usually brown?",
+      "options": [
+        {"text": "Walnut", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Walnut",
+      "explanation": "Walnuts are round, hard-shelled nuts that are brown in color and rich in nutrients."
+    },
+    {
+      "question": "What can you make with nuts?",
+      "options": [
+        {"text": "Nut butter", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Nut butter",
+      "explanation": "Nuts can be ground into nut butter, which is a creamy spread used in various recipes."
+    },
+    {
+      "question": "What do seeds help plants do?",
+      "options": [
+        {"text": "Grow", "isCorrect": true},
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "Sing", "isCorrect": false},
+        {"text": "Dance", "isCorrect": false}
+      ],
+      "answer": "Grow",
+      "explanation": "Seeds are essential for the reproduction of plants, allowing them to grow into new plants."
+    },
+    {
+      "question": "Which seed is often used in bread?",
+      "options": [
+        {"text": "Sesame seed", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Sesame seed",
+      "explanation": "Sesame seeds are frequently sprinkled on bread for flavor and texture."
+    },
+    {
+      "question": "Nuts are a good source of what?",
+      "options": [
+        {"text": "Healthy fats", "isCorrect": true},
+        {"text": "Sweets", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Healthy fats",
+      "explanation": "Nuts contain healthy fats that are beneficial for heart health."
+    },
+    {
+      "question": "Which nut is small and often salted?",
+      "options": [
+        {"text": "Peanut", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookie", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Peanut",
+      "explanation": "Peanuts are small legumes that are commonly salted and enjoyed as snacks."
+    },
+    {
+      "question": "What do nuts and seeds give your body?",
+      "options": [
+        {"text": "Energy", "isCorrect": true},
+        {"text": "Sleepiness", "isCorrect": false},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Hunger", "isCorrect": false}
+      ],
+      "answer": "Energy",
+      "explanation": "Nuts and seeds are high in calories and nutrients, providing a great source of energy."
+    },
+    {
+      "question": "Which nut is used to make milk?",
+      "options": [
+        {"text": "Almond", "isCorrect": true},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Almond",
+      "explanation": "Almonds are commonly used to make almond milk, a popular dairy alternative."
+    },
+    {
+      "question": "Seeds can grow into what?",
+      "options": [
+        {"text": "Plants", "isCorrect": true},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Plants",
+      "explanation": "Seeds are the starting point for new plants, containing the necessary genetic material for growth."
+    }
+  ]
+},
+{
+  "set": 42,
+  "questions": [
+    {
+      "question": "Which legume is often found in chili?",
+      "options": [
+        {"text": "Kidney bean", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Kidney bean",
+      "explanation": "Kidney beans are commonly used in chili for their hearty texture and flavor."
+    },
+    {
+      "question": "What’s a type of legume that is yellow and round?",
+      "options": [
+        {"text": "Pea", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cookie", "isCorrect": false}
+      ],
+      "answer": "Pea",
+      "explanation": "Peas are small, round legumes that are typically yellow or green."
+    },
+    {
+      "question": "Which legume can be made into a spread?",
+      "options": [
+        {"text": "Hummus from chickpeas", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Hummus from chickpeas",
+      "explanation": "Hummus is a popular spread made from blended chickpeas, tahini, and spices."
+    },
+    {
+      "question": "What do legumes help our bodies with?",
+      "options": [
+        {"text": "Protein", "isCorrect": true},
+        {"text": "Sugar", "isCorrect": false},
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "Fun", "isCorrect": false}
+      ],
+      "answer": "Protein",
+      "explanation": "Legumes are an excellent source of plant-based protein, essential for muscle growth and repair."
+    },
+    {
+      "question": "Which legume is often used in soups?",
+      "options": [
+        {"text": "Lentils", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Lentils",
+      "explanation": "Lentils are commonly added to soups for their nutritional value and texture."
+    },
+    {
+      "question": "Which legume is often found in salads?",
+      "options": [
+        {"text": "Chickpeas", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false}
+      ],
+      "answer": "Chickpeas",
+      "explanation": "Chickpeas are frequently used in salads for added protein and crunch."
+    },
+    {
+      "question": "What can legumes help you do?",
+      "options": [
+        {"text": "Grow big and strong", "isCorrect": true},
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "Dance", "isCorrect": false},
+        {"text": "Sing", "isCorrect": false}
+      ],
+      "answer": "Grow big and strong",
+      "explanation": "Legumes provide essential nutrients that support growth and overall health."
+    },
+    {
+      "question": "Legumes are high in what?",
+      "options": [
+        {"text": "Fiber", "isCorrect": true},
+        {"text": "Sugar", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Fiber",
+      "explanation": "Legumes are rich in fiber, which aids digestion and promotes gut health."
+    },
+    {
+      "question": "Which legume can be found in sandwiches?",
+      "options": [
+        {"text": "Peanut (as peanut butter)", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Peanut (as peanut butter)",
+      "explanation": "Peanut butter, made from ground peanuts, is a common sandwich spread."
+    },
+    {
+      "question": "Legumes can be used to make what type of dish?",
+      "options": [
+        {"text": "Salads", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Pizza", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Salads",
+      "explanation": "Legumes can be added to salads to enhance flavor, texture, and nutritional value."
+    }
+  ]
+},
+{
+  "set": 43,
+  "questions": [
+    {
+      "question": "Which fish is high in omega-3 fatty acids?",
+      "options": [
+        {"text": "Salmon", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Salmon",
+      "explanation": "Salmon is known for its high omega-3 fatty acid content, which is beneficial for health."
+    },
+    {
+      "question": "What do omega-3 fatty acids help with?",
+      "options": [
+        {"text": "Heart health", "isCorrect": true},
+        {"text": "Sleeping", "isCorrect": false},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Dancing", "isCorrect": false}
+      ],
+      "answer": "Heart health",
+      "explanation": "Omega-3 fatty acids are essential for maintaining heart health and reducing inflammation."
+    },
+    {
+      "question": "Which nut is a good source of omega-3?",
+      "options": [
+        {"text": "Walnuts", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Walnuts",
+      "explanation": "Walnuts are one of the best plant-based sources of omega-3 fatty acids."
+    },
+    {
+      "question": "What is one way to get omega-3 fatty acids?",
+      "options": [
+        {"text": "Eating fish", "isCorrect": true},
+        {"text": "Eating candy", "isCorrect": false},
+        {"text": "Eating chips", "isCorrect": false},
+        {"text": "Eating cake", "isCorrect": false}
+      ],
+      "answer": "Eating fish",
+      "explanation": "Consuming fish, especially fatty fish, is an excellent way to obtain omega-3 fatty acids."
+    },
+    {
+      "question": "Which food has omega-3 fatty acids?",
+      "options": [
+        {"text": "Chia seeds", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Chia seeds",
+      "explanation": "Chia seeds are rich in omega-3 fatty acids, making them a healthy addition to diets."
+    },
+    {
+      "question": "Omega-3 fatty acids can help improve what?",
+      "options": [
+        {"text": "Brain health", "isCorrect": true},
+        {"text": "Sleepiness", "isCorrect": false},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Hunger", "isCorrect": false}
+      ],
+      "answer": "Brain health",
+      "explanation": "Omega-3 fatty acids are crucial for brain function and development."
+    },
+    {
+      "question": "What can you do to keep your heart healthy?",
+      "options": [
+        {"text": "Eat foods with omega-3", "isCorrect": true},
+        {"text": "Eat only sweets", "isCorrect": false},
+        {"text": "Drink soda", "isCorrect": false},
+        {"text": "Eat only chips", "isCorrect": false}
+      ],
+      "answer": "Eat foods with omega-3",
+      "explanation": "Including omega-3-rich foods in your diet can support heart health."
+    },
+    {
+      "question": "Which type of fish is often recommended for heart health?",
+      "options": [
+        {"text": "Fatty fish", "isCorrect": true},
+        {"text": "Candy fish", "isCorrect": false},
+        {"text": "Chip fish", "isCorrect": false},
+        {"text": "Cake fish", "isCorrect": false}
+      ],
+      "answer": "Fatty fish",
+      "explanation": "Fatty fish like salmon and mackerel are recommended for their omega-3 content."
+    },
+    {
+      "question": "Omega-3 is good for what part of your body?",
+      "options": [
+        {"text": "Heart", "isCorrect": true},
+        {"text": "Shoes", "isCorrect": false},
+        {"text": "Toys", "isCorrect": false},
+        {"text": "Books", "isCorrect": false}
+      ],
+      "answer": "Heart",
+      "explanation": "Omega-3 fatty acids are known to promote heart health and function."
+    },
+    {
+      "question": "What do you call a food that helps your heart?",
+      "options": [
+        {"text": "Heart-healthy food", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Heart-healthy food",
+      "explanation": "Foods rich in omega-3 and low in saturated fats are considered heart-healthy."
+    }
+  ]
+},
+{
+  "set": 44,
+  "questions": [
+    {
+      "question": "Which oil is high in omega-6 fatty acids?",
+      "options": [
+        {"text": "Corn oil", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Corn oil",
+      "explanation": "Corn oil is rich in omega-6 fatty acids, which are essential for various body functions."
+    },
+    {
+      "question": "Omega-6 fatty acids can help with what?",
+      "options": [
+        {"text": "Inflammation", "isCorrect": true},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Sleeping", "isCorrect": false},
+        {"text": "Dancing", "isCorrect": false}
+      ],
+      "answer": "Inflammation",
+      "explanation": "Omega-6 fatty acids play a role in reducing inflammation in the body."
+    },
+    {
+      "question": "What is a good source of omega-6 fatty acids?",
+      "options": [
+        {"text": "Nuts and seeds", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Nuts and seeds",
+      "explanation": "Nuts and seeds are excellent sources of omega-6 fatty acids."
+    },
+    {
+      "question": "Omega-6 is important for what?",
+      "options": [
+        {"text": "Healthy skin", "isCorrect": true},
+        {"text": "Sleeping", "isCorrect": false},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Singing", "isCorrect": false}
+      ],
+      "answer": "Healthy skin",
+      "explanation": "Omega-6 fatty acids are vital for maintaining healthy skin."
+    },
+    {
+      "question": "What is one food high in omega-6?",
+      "options": [
+        {"text": "Sunflower oil", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Sunflower oil",
+      "explanation": "Sunflower oil is known for its high content of omega-6 fatty acids."
+    },
+    {
+      "question": "Omega-6 fatty acids are found in which seeds?",
+      "options": [
+        {"text": "Pumpkin seeds", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Pumpkin seeds",
+      "explanation": "Pumpkin seeds are a good source of omega-6 fatty acids."
+    },
+    {
+      "question": "What can omega-6 fatty acids help reduce?",
+      "options": [
+        {"text": "Inflammation", "isCorrect": true},
+        {"text": "Happiness", "isCorrect": false},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Tiredness", "isCorrect": false}
+      ],
+      "answer": "Inflammation",
+      "explanation": "Omega-6 fatty acids can help reduce inflammation in the body."
+    },
+    {
+      "question": "Which type of oil is often used in salad dressings?",
+      "options": [
+        {"text": "Omega-6 oil", "isCorrect": true},
+        {"text": "Candy oil", "isCorrect": false},
+        {"text": "Ice cream oil", "isCorrect": false},
+        {"text": "Cookie oil", "isCorrect": false}
+      ],
+      "answer": "Omega-6 oil",
+      "explanation": "Omega-6 oils are commonly used in salad dressings for their flavor and health benefits."
+    },
+    {
+      "question": "Eating omega-6 fatty acids can help support what?",
+      "options": [
+        {"text": "Health", "isCorrect": true},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Sleepiness", "isCorrect": false},
+        {"text": "Hunger", "isCorrect": false}
+      ],
+      "answer": "Health",
+      "explanation": "Incorporating omega-6 fatty acids into your diet supports overall health."
+    },
+    {
+      "question": "Which oil can be found in some snack foods?",
+      "options": [
+        {"text": "Soybean oil", "isCorrect": true},
+        {"text": "Candy oil", "isCorrect": false},
+        {"text": "Cookie oil", "isCorrect": false},
+        {"text": "Ice cream oil", "isCorrect": false}
+      ],
+      "answer": "Soybean oil",
+      "explanation": "Soybean oil is commonly used in many snack foods due to its omega-6 fatty acid content."
+    }
+  ]
+},
+{
+  "set": 45,
+  "questions": [
+    {
+      "question": "Probiotics are good for your what?",
+      "options": [
+        {"text": "Tummy", "isCorrect": true},
+        {"text": "Shoes", "isCorrect": false},
+        {"text": "Toys", "isCorrect": false},
+        {"text": "Books", "isCorrect": false}
+      ],
+      "answer": "Tummy",
+      "explanation": "Probiotics help maintain a healthy digestive system, which is often referred to as the tummy."
+    },
+    {
+      "question": "Which food is a source of probiotics?",
+      "options": [
+        {"text": "Yogurt", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Yogurt",
+      "explanation": "Yogurt is rich in probiotics, which are beneficial for gut health."
+    },
+    {
+      "question": "What do probiotics help with?",
+      "options": [
+        {"text": "Digestion", "isCorrect": true},
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "Dancing", "isCorrect": false},
+        {"text": "Jumping", "isCorrect": false}
+      ],
+      "answer": "Digestion",
+      "explanation": "Probiotics help improve digestion by balancing gut bacteria."
+    },
+    {
+      "question": "Which drink can contain probiotics?",
+      "options": [
+        {"text": "Kefir", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Juice", "isCorrect": false}
+      ],
+      "answer": "Kefir",
+      "explanation": "Kefir is a fermented drink that contains live probiotics."
+    },
+    {
+      "question": "What can probiotics help keep healthy?",
+      "options": [
+        {"text": "Gut health", "isCorrect": true},
+        {"text": "Shoe health", "isCorrect": false},
+        {"text": "Toy health", "isCorrect": false},
+        {"text": "Book health", "isCorrect": false}
+      ],
+      "answer": "Gut health",
+      "explanation": "Probiotics are essential for maintaining a healthy gut."
+    },
+    {
+      "question": "What do you call the good bacteria in your tummy?",
+      "options": [
+        {"text": "Probiotics", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Probiotics",
+      "explanation": "Probiotics are beneficial bacteria that support digestive health."
+    },
+    {
+      "question": "Which fermented food is known for probiotics?",
+      "options": [
+        {"text": "Kimchi", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Kimchi",
+      "explanation": "Kimchi is a fermented food rich in probiotics."
+    },
+    {
+      "question": "Probiotics can help you feel what?",
+      "options": [
+        {"text": "Good", "isCorrect": true},
+        {"text": "Tired", "isCorrect": false},
+        {"text": "Sleepy", "isCorrect": false},
+        {"text": "Hungry", "isCorrect": false}
+      ],
+      "answer": "Good",
+      "explanation": "Probiotics can improve gut health, leading to an overall feeling of well-being."
+    },
+    {
+      "question": "What’s a benefit of eating yogurt?",
+      "options": [
+        {"text": "Probiotics for your tummy", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Probiotics for your tummy",
+      "explanation": "Eating yogurt provides probiotics that are beneficial for digestive health."
+    },
+    {
+      "question": "Which food helps keep your gut happy?",
+      "options": [
+        {"text": "Probiotics", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Probiotics",
+      "explanation": "Foods rich in probiotics contribute to a healthy gut environment."
+    }
+  ]
+},
+{
+  "set": 46,
+  "questions": [
+    {
+      "question": "What do prebiotics feed?",
+      "options": [
+        {"text": "Good bacteria", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Good bacteria",
+      "explanation": "Prebiotics serve as food for the beneficial bacteria in your gut."
+    },
+    {
+      "question": "Which food can be a source of prebiotics?",
+      "options": [
+        {"text": "Bananas", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Bananas",
+      "explanation": "Bananas are a good source of prebiotic fiber."
+    },
+    {
+      "question": "What do prebiotics help support?",
+      "options": [
+        {"text": "Gut health", "isCorrect": true},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Dancing", "isCorrect": false}
+      ],
+      "answer": "Gut health",
+      "explanation": "Prebiotics support a healthy gut by nourishing good bacteria."
+    },
+    {
+      "question": "Which type of fiber is found in prebiotics?",
+      "options": [
+        {"text": "Soluble fiber", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Soluble fiber",
+      "explanation": "Prebiotics are primarily made up of soluble fiber that can be fermented by gut bacteria."
+    },
+    {
+      "question": "What’s a benefit of eating foods with prebiotics?",
+      "options": [
+        {"text": "Feeding good bacteria", "isCorrect": true},
+        {"text": "Eating candy", "isCorrect": false},
+        {"text": "Eating chips", "isCorrect": false},
+        {"text": "Eating ice cream", "isCorrect": false}
+      ],
+      "answer": "Feeding good bacteria",
+      "explanation": "Foods with prebiotics help sustain and enhance the growth of beneficial gut bacteria."
+    },
+    {
+      "question": "What do prebiotics help make in your tummy?",
+      "options": [
+        {"text": "Healthy bacteria", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Healthy bacteria",
+      "explanation": "Prebiotics promote the growth of healthy bacteria in the gut."
+    },
+    {
+      "question": "Which vegetable is a good source of prebiotics?",
+      "options": [
+        {"text": "Onion", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Potato", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Onion",
+      "explanation": "Onions contain prebiotic fibers that can support gut health."
+    },
+    {
+      "question": "What can prebiotics help your body do?",
+      "options": [
+        {"text": "Stay healthy", "isCorrect": true},
+        {"text": "Feel sleepy", "isCorrect": false},
+        {"text": "Dance", "isCorrect": false},
+        {"text": "Jump", "isCorrect": false}
+      ],
+      "answer": "Stay healthy",
+      "explanation": "Prebiotics help maintain a healthy gut microbiome, which supports overall health."
+    },
+    {
+      "question": "What type of food helps feed your gut?",
+      "options": [
+        {"text": "Prebiotics", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Prebiotics",
+      "explanation": "Prebiotic foods are essential for nourishing the beneficial bacteria in your gut."
+    },
+    {
+      "question": "Prebiotics are found in which fruit?",
+      "options": [
+        {"text": "Apples", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Apples",
+      "explanation": "Apples contain prebiotic fibers that help support gut health."
+    }
+  ]
+},
+{
+  "set": 47,
+  "questions": [
+    {
+      "question": "Why is it important to eat at regular times?",
+      "options": [
+        {"text": "Keeps you healthy", "isCorrect": true},
+        {"text": "So you can eat sweets", "isCorrect": false},
+        {"text": "To stay up late", "isCorrect": false},
+        {"text": "To skip meals", "isCorrect": false}
+      ],
+      "answer": "Keeps you healthy",
+      "explanation": "Eating at regular times helps maintain good health by regulating your metabolism."
+    },
+    {
+      "question": "What should you eat before school?",
+      "options": [
+        {"text": "Breakfast", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Breakfast",
+      "explanation": "Breakfast provides the energy and nutrients needed to start your day."
+    },
+    {
+      "question": "Eating dinner at the same time helps what?",
+      "options": [
+        {"text": "Routine", "isCorrect": true},
+        {"text": "Jumping", "isCorrect": false},
+        {"text": "Dancing", "isCorrect": false},
+        {"text": "Sleeping", "isCorrect": false}
+      ],
+      "answer": "Routine",
+      "explanation": "Having dinner at the same time each day helps establish a healthy eating routine."
+    },
+    {
+      "question": "Why should you have snacks in between meals?",
+      "options": [
+        {"text": "To keep energy up", "isCorrect": true},
+        {"text": "To eat sweets", "isCorrect": false},
+        {"text": "To skip meals", "isCorrect": false},
+        {"text": "To sleep", "isCorrect": false}
+      ],
+      "answer": "To keep energy up",
+      "explanation": "Healthy snacks help maintain your energy levels between meals."
+    },
+    {
+      "question": "When is a good time to eat lunch?",
+      "options": [
+        {"text": "At school", "isCorrect": true},
+        {"text": "In the morning", "isCorrect": false},
+        {"text": "At night", "isCorrect": false},
+        {"text": "When you’re hungry for dessert", "isCorrect": false}
+      ],
+      "answer": "At school",
+      "explanation": "Lunch is typically eaten during the school day to refuel for the afternoon."
+    },
+    {
+      "question": "Meal timing helps you have what?",
+      "options": [
+        {"text": "Energy", "isCorrect": true},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Sleepiness", "isCorrect": false},
+        {"text": "Sadness", "isCorrect": false}
+      ],
+      "answer": "Energy",
+      "explanation": "Proper meal timing provides your body with the energy needed throughout the day."
+    },
+    {
+      "question": "Eating meals at the same time helps your body know when to?",
+      "options": [
+        {"text": "Eat", "isCorrect": true},
+        {"text": "Sleep", "isCorrect": false},
+        {"text": "Play", "isCorrect": false},
+        {"text": "Jump", "isCorrect": false}
+      ],
+      "answer": "Eat",
+      "explanation": "Consistent meal times help regulate your body's hunger signals."
+    },
+    {
+      "question": "Why is breakfast called the most important meal?",
+      "options": [
+        {"text": "It starts your day", "isCorrect": true},
+        {"text": "It’s the biggest meal", "isCorrect": false},
+        {"text": "It’s just for fun", "isCorrect": false},
+        {"text": "It’s full of sweets", "isCorrect": false}
+      ],
+      "answer": "It starts your day",
+      "explanation": "Breakfast kickstarts your metabolism and provides essential nutrients."
+    },
+    {
+      "question": "What should you avoid doing at mealtime?",
+      "options": [
+        {"text": "Eating too quickly", "isCorrect": true},
+        {"text": "Eating slowly", "isCorrect": false},
+        {"text": "Eating a lot of veggies", "isCorrect": false},
+        {"text": "Eating with family", "isCorrect": false}
+      ],
+      "answer": "Eating too quickly",
+      "explanation": "Eating too quickly can lead to overeating and digestive issues."
+    },
+    {
+      "question": "What is a good habit for meal timing?",
+      "options": [
+        {"text": "Eating together as a family", "isCorrect": true},
+        {"text": "Eating sweets all day", "isCorrect": false},
+        {"text": "Skipping meals", "isCorrect": false},
+        {"text": "Eating only chips", "isCorrect": false}
+      ],
+      "answer": "Eating together as a family",
+      "explanation": "Eating together promotes healthy eating habits and strengthens family bonds."
+    }
+  ]
+},
+{
+  "set": 48,
+  "questions": [
+    {
+      "question": "What are minerals good for?",
+      "options": [
+        {"text": "Keeping our bones strong", "isCorrect": true},
+        {"text": "Making ice cream", "isCorrect": false},
+        {"text": "Flying in the sky", "isCorrect": false},
+        {"text": "Growing flowers", "isCorrect": false}
+      ],
+      "answer": "Keeping our bones strong",
+      "explanation": "Minerals are essential for various body functions, including bone strength."
+    },
+    {
+      "question": "Where can we find minerals?",
+      "options": [
+        {"text": "In food", "isCorrect": true},
+        {"text": "In toys", "isCorrect": false},
+        {"text": "In water", "isCorrect": false},
+        {"text": "In the air", "isCorrect": false}
+      ],
+      "answer": "In food",
+      "explanation": "Minerals are present in many foods, especially fruits, vegetables, and dairy."
+    },
+    {
+      "question": "What does calcium help build?",
+      "options": [
+        {"text": "Strong bones", "isCorrect": true},
+        {"text": "Soft pillows", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Toys", "isCorrect": false}
+      ],
+      "answer": "Strong bones",
+      "explanation": "Calcium is crucial for developing and maintaining strong bones."
+    },
+    {
+      "question": "Which food is rich in calcium?",
+      "options": [
+        {"text": "Milk", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Ice cream", "isCorrect": false}
+      ],
+      "answer": "Milk",
+      "explanation": "Milk is one of the best sources of calcium."
+    },
+    {
+      "question": "Why do we need strong bones?",
+      "options": [
+        {"text": "To jump and play", "isCorrect": true},
+        {"text": "To stay in bed", "isCorrect": false},
+        {"text": "To watch TV", "isCorrect": false},
+        {"text": "To eat sweets", "isCorrect": false}
+      ],
+      "answer": "To jump and play",
+      "explanation": "Strong bones support movement and physical activity."
+    },
+    {
+      "question": "What does iron help our blood do?",
+      "options": [
+        {"text": "Carry oxygen", "isCorrect": true},
+        {"text": "Taste sweet", "isCorrect": false},
+        {"text": "Fly high", "isCorrect": false},
+        {"text": "Make us sleepy", "isCorrect": false}
+      ],
+      "answer": "Carry oxygen",
+      "explanation": "Iron is essential for the production of hemoglobin, which carries oxygen in the blood."
+    },
+    {
+      "question": "Which food is a good source of iron?",
+      "options": [
+        {"text": "Spinach", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Spinach",
+      "explanation": "Spinach is a leafy green vegetable that provides a good amount of iron."
+    },
+    {
+      "question": "What does magnesium help our muscles do?",
+      "options": [
+        {"text": "Move and work", "isCorrect": true},
+        {"text": "Sleep all day", "isCorrect": false},
+        {"text": "Make ice cream", "isCorrect": false},
+        {"text": "Jump high", "isCorrect": false}
+      ],
+      "answer": "Move and work",
+      "explanation": "Magnesium plays a crucial role in muscle contraction and relaxation."
+    },
+    {
+      "question": "Which food has magnesium in it?",
+      "options": [
+        {"text": "Nuts", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Nuts",
+      "explanation": "Nuts are a great source of magnesium, which supports muscle function."
+    },
+    {
+      "question": "What does zinc help our body fight?",
+      "options": [
+        {"text": "Germs", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Boredom", "isCorrect": false}
+      ],
+      "answer": "Germs",
+      "explanation": "Zinc is vital for a healthy immune system, helping to fight off infections."
+    }
+  ]
+},
+{
+  "set": 49,
+  "questions": [
+    {
+      "question": "Which food is a good source of zinc?",
+      "options": [
+        {"text": "Meat", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Chocolate", "isCorrect": false}
+      ],
+      "answer": "Meat",
+      "explanation": "Meat is one of the best sources of zinc, which is important for immune function."
+    },
+    {
+      "question": "What do antioxidants help keep us safe from?",
+      "options": [
+        {"text": "Bad things called free radicals", "isCorrect": true},
+        {"text": "Getting tired", "isCorrect": false},
+        {"text": "Eating sweets", "isCorrect": false},
+        {"text": "Boring things", "isCorrect": false}
+      ],
+      "answer": "Bad things called free radicals",
+      "explanation": "Antioxidants help protect our cells from damage caused by free radicals."
+    },
+    {
+      "question": "Which fruit is high in antioxidants?",
+      "options": [
+        {"text": "Berries", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Berries",
+      "explanation": "Berries, like blueberries and strawberries, are rich in antioxidants."
+    },
+    {
+      "question": "What are phytonutrients good for?",
+      "options": [
+        {"text": "Keeping us healthy", "isCorrect": true},
+        {"text": "Making ice cream", "isCorrect": false},
+        {"text": "Running fast", "isCorrect": false},
+        {"text": "Sleeping", "isCorrect": false}
+      ],
+      "answer": "Keeping us healthy",
+      "explanation": "Phytonutrients are beneficial compounds found in plants that support health."
+    },
+    {
+      "question": "Which food contains phytonutrients?",
+      "options": [
+        {"text": "Vegetables", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cookies", "isCorrect": false}
+      ],
+      "answer": "Vegetables",
+      "explanation": "Vegetables are a rich source of phytonutrients that promote good health."
+    },
+    {
+      "question": "Why is water important for our bodies?",
+      "options": [
+        {"text": "It keeps us hydrated", "isCorrect": true},
+        {"text": "It tastes sweet", "isCorrect": false},
+        {"text": "It helps us fly", "isCorrect": false},
+        {"text": "It makes us sleepy", "isCorrect": false}
+      ],
+      "answer": "It keeps us hydrated",
+      "explanation": "Water is essential for maintaining hydration and supporting all bodily functions."
+    },
+    {
+      "question": "What should we drink to stay healthy?",
+      "options": [
+        {"text": "Water", "isCorrect": true},
+        {"text": "Soda", "isCorrect": false},
+        {"text": "Juice with lots of sugar", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false}
+      ],
+      "answer": "Water",
+      "explanation": "Drinking water is the healthiest choice for hydration."
+    },
+    {
+      "question": "What are electrolytes important for?",
+      "options": [
+        {"text": "Keeping our body balanced", "isCorrect": true},
+        {"text": "Making toys", "isCorrect": false},
+        {"text": "Eating sweets", "isCorrect": false},
+        {"text": "Sleeping", "isCorrect": false}
+      ],
+      "answer": "Keeping our body balanced",
+      "explanation": "Electrolytes help regulate fluid balance, muscle function, and other bodily processes."
+    },
+    {
+      "question": "Which food is rich in potassium?",
+      "options": [
+        {"text": "Bananas", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Cake", "isCorrect": false}
+      ],
+      "answer": "Bananas",
+      "explanation": "Bananas are well known for their high potassium content."
+    },
+    {
+      "question": "What do whole grains give us?",
+      "options": [
+        {"text": "Energy", "isCorrect": true},
+        {"text": "Tiredness", "isCorrect": false},
+        {"text": "Sweetness", "isCorrect": false},
+        {"text": "Boredom", "isCorrect": false}
+      ],
+      "answer": "Energy",
+      "explanation": "Whole grains provide carbohydrates, which are a primary source of energy for our bodies."
+    }
+  ]
+},
+{
+  "set": 50,
+  "questions": [
+    {
+      "question": "Which food is a whole grain?",
+      "options": [
+        {"text": "Brown rice", "isCorrect": true},
+        {"text": "Ice cream", "isCorrect": false},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false}
+      ],
+      "answer": "Brown rice",
+      "explanation": "Brown rice is a whole grain that retains its bran and germ, providing more nutrients."
+    },
+    {
+      "question": "What should we eat to stay healthy?",
+      "options": [
+        {"text": "A variety of foods", "isCorrect": true},
+        {"text": "Just sweets", "isCorrect": false},
+        {"text": "Only chips", "isCorrect": false},
+        {"text": "Only ice cream", "isCorrect": false}
+      ],
+      "answer": "A variety of foods",
+      "explanation": "Eating a variety of foods ensures we get all the nutrients our body needs."
+    },
+    {
+      "question": "What color should our plate be?",
+      "options": [
+        {"text": "Many colors with fruits and veggies", "isCorrect": true},
+        {"text": "Just white", "isCorrect": false},
+        {"text": "Only brown", "isCorrect": false},
+        {"text": "Only green", "isCorrect": false}
+      ],
+      "answer": "Many colors with fruits and veggies",
+      "explanation": "A colorful plate usually indicates a variety of nutrients from fruits and vegetables."
+    },
+    {
+      "question": "What is a good snack to have?",
+      "options": [
+        {"text": "Fruits or nuts", "isCorrect": true},
+        {"text": "Candy", "isCorrect": false},
+        {"text": "Chips", "isCorrect": false},
+        {"text": "Soda", "isCorrect": false}
+      ],
+      "answer": "Fruits or nuts",
+      "explanation": "Fruits and nuts provide healthy nutrients and energy between meals."
+    },
+    {
+      "question": "Why should we eat breakfast?",
+      "options": [
+        {"text": "To start our day with energy", "isCorrect": true},
+        {"text": "To stay in bed", "isCorrect": false},
+        {"text": "To eat sweets", "isCorrect": false},
+        {"text": "To skip school", "isCorrect": false}
+      ],
+      "answer": "To start our day with energy",
+      "explanation": "Breakfast fuels our body and brain for a productive day ahead."
+    },
+    {
+      "question": "What can we make with healthy foods?",
+      "options": [
+        {"text": "A yummy smoothie", "isCorrect": true},
+        {"text": "A sugary drink", "isCorrect": false},
+        {"text": "A giant candy", "isCorrect": false},
+        {"text": "A salty snack", "isCorrect": false}
+      ],
+      "answer": "A yummy smoothie",
+      "explanation": "Smoothies can be made with fruits, vegetables, and other healthy ingredients for a nutritious drink."
+    },
+    {
+      "question": "Why is it fun to try new foods?",
+      "options": [
+        {"text": "To discover new flavors", "isCorrect": true},
+        {"text": "To stay in one place", "isCorrect": false},
+        {"text": "To eat the same thing", "isCorrect": false},
+        {"text": "To be bored", "isCorrect": false}
+      ],
+      "answer": "To discover new flavors",
+      "explanation": "Trying new foods can be exciting and help expand our taste preferences."
+    },
+    {
+      "question": "What should we choose for lunch?",
+      "options": [
+        {"text": "A sandwich with veggies", "isCorrect": true},
+        {"text": "Only candy", "isCorrect": false},
+        {"text": "Just chips", "isCorrect": false},
+        {"text": "Only sweets", "isCorrect": false}
+      ],
+      "answer": "A sandwich with veggies",
+      "explanation": "A veggie sandwich provides essential nutrients and keeps us satisfied."
+    },
+    {
+      "question": "How can we make our meals colorful?",
+      "options": [
+        {"text": "By adding different fruits and veggies", "isCorrect": true},
+        {"text": "By only using white foods", "isCorrect": false},
+        {"text": "By only using brown foods", "isCorrect": false},
+        {"text": "By only using green foods", "isCorrect": false}
+      ],
+      "answer": "By adding different fruits and veggies",
+      "explanation": "Adding a variety of colorful fruits and vegetables enhances the nutritional value of meals."
+    },
+    {
+      "question": "What helps us stay strong while playing?",
+      "options": [
+        {"text": "Eating healthy foods", "isCorrect": true},
+        {"text": "Only eating sweets", "isCorrect": false},
+        {"text": "Skipping meals", "isCorrect": false},
+        {"text": "Eating chips only", "isCorrect": false}
+      ],
+      "answer": "Eating healthy foods",
+      "explanation": "Healthy foods provide the necessary nutrients and energy for physical activity."
+    }
+  ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                
