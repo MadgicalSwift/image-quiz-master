@@ -90,6 +90,15 @@ export class SwiftchatMessageService {
           { type: 'solid', body: 'Good Manners', reply: 'Good Manners' },
           { type: 'solid', body: 'Mental Wellness', reply: 'Mental Wellness' },
           { type: 'solid', body: 'Exercise & Fitness', reply: 'Exercise & Fitness' },
+          { type: 'solid', body: 'Physical Activity', reply: 'Physical Activity' },
+          { type: 'solid', body: 'Cooking Skills', reply: 'Cooking Skills' },
+          { type: 'solid', body: 'Mindfulness and Relaxation', reply: 'Mindfulness and Relaxation' },
+          { type: 'solid', body: 'Screen Time Management', reply: 'Screen Time Management' },
+          { type: 'solid', body: 'Environmental Awareness', reply: 'Environmental Awareness' },
+          { type: 'solid', body: 'Personal Hygiene', reply: 'Personal Hygiene' },
+          { type: 'solid', body: 'Sleep Hygiene', reply: 'Sleep Hygiene' },
+          { type: 'solid', body: 'Healthy Relationships', reply: 'Healthy Relationships' },
+          
         ],
         allow_custom_response: false,
       },
@@ -101,6 +110,8 @@ export class SwiftchatMessageService {
       console.error('Error sending topic selection message:', error);
     }
   }
+    
+
 
   async sendQuizInstructions(from: string, topic: string): Promise<void> {
     const messageData = {

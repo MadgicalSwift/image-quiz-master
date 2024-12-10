@@ -33,11 +33,37 @@ export class ChatbotService {
   public async processMessage(body: any): Promise<any> {
     console.log('processMessage: Start', body);
 
-    const { from, text, button_response } = body;
+    const { from, text, button_response, persistent_menu_response } = body;
     const botId = process.env.BOT_ID;
     const userData = await this.userService.findUserByMobileNumber(from,botId);
 console.log(userData)
-    if (button_response) {
+
+// added by me 
+
+        if (persistent_menu_response) {
+          console.log('processMessage: Handling persistent menu response', persistent_menu_response);
+          const response = persistent_menu_response.body;
+
+          if (response === 'Topic Selection') {
+            console.log('processMessage: Triggering topic selection menu');
+            await this.swiftchatMessageService.sendTopicSelectionMessage(from);
+          } 
+          
+          else if (response === 'Set Selection') {
+            console.log('processMessage: Triggering set selection menu');
+            await this.swiftchatMessageService.sendSetSelectionMessage(from);
+          } 
+          
+          else {
+            console.log('processMessage: Unrecognized persistent menu response, sending default options');
+            await this.swiftchatMessageService.sendInitialOptions(from);
+          }
+        }
+
+
+
+
+    else if (button_response) {
       console.log('processMessage: Handling button response', button_response);
       const response = button_response.body;
 
@@ -48,6 +74,14 @@ console.log(userData)
           'Good Manners',
           'Mental Wellness',
           'Exercise & Fitness',
+          'Physical Activity',
+          'Cooking Skills',
+          'Mindfulness and Relaxation',
+          'Screen Time Management',
+          'Environmental Awareness',
+          'Personal Hygiene',
+          'Sleep Hygiene',
+          'Healthy Relationships'
         ].includes(response)
       ) {
         console.log(`processMessage: User selected topic: ${response}`);
